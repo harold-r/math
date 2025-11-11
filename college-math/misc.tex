@@ -1,0 +1,125 @@
+\documentclass[math.tex]{subfiles}
+\begin{document}
+
+\section{MISC}
+\dotfill
+
+$a^3-b^3$ 因式分解， hint\footnote{转化为立方体体积, $=(a-b)(a^2+ab+b^2)$}\\
+然后，令$b=-z \Rightarrow a^3+z^3$
+
+
+\dotfill
+
+$(x^2-7x+11)^{x^2-13x+42}=1$ hint\footnote{case1:$1^y=1$, case2:$y^0=1$, case3:$(-1)^{2k}=1$, when using log, 缩小了定义域}
+
+\dotfill
+
+$\sqrt[3]{8+3\sqrt{21}}+\sqrt[3]{8-3\sqrt{21}}$, hint\footnote{let $a=8+3\sqrt{21}, b=8-3\sqrt{21}$ and let the equation $=x$, so $x^3=(\sqrt[3]{a}+\sqrt[3]{b})^3=a+b+3\sqrt[3]{ab}x=16-15x \Rightarrow x^3+15x-16=0$ , and obviously $x=1$ is a solution , so $(x-1)(x^2+x+16)=0$ , but $x^3=c$ has three solutions, and ...}
+
+\dotfill
+
+$615+x^2=2^y$ over the integers.  hint\footnote{find patterns. x 0 1 2 3 4 5 6 7 8 9, the last digit pattern of $615+x^2$ is 5 6 9 4 1 0 1 4 9 6, where the $2^y$ pattern is 2 4 8 6..., while 4, 6 are sufficient, what's most important is that we find y is even, so y can be set as 2n, $615=2^y-x^2=3\times 5 \times 41=1\times 615=3\times 205=5\times 123=15 \times 41$, To solve the equations, use $(2^n+x)+(2^n-x)=2^{n+1}$, better not list all}
+
+\dotfill
+
+$\frac{(10^4+324)(22^4+324)(34^4+324)(46^4+324)(58^4+324)}{(4^4+324)(16^4+324)(28^4+324)(40^4+324)(52^4+324)}$, hint\footnote{It's the form of $a^4+4b^4$, Sophie-Germain's identity}
+
+\dotfill
+
+[Abraham lincon]\\
+If 4 men in 5 days eat 7lb of bread, how much will be sufficient for 16 men in 15 days? hint\footnote{$4\times 5=20 $ man-days ;$16\times 15=240$ man-days, So, $\frac{7}{20}\times 240$ (lb)}
+
+\dotfill
+
+圆互相垂直的弦，长度abcd，so, what's the R， hint\footnote{$ab=cd,\quad R^2=(\frac{c+d}{2})^2+(\frac{a+b}{2}-a)^2=\frac{a^2+b^2+c^2+d^2}{4}$}
+
+\dotfill
+
+If $a,b,c,d$ are positive integers, with a sum of 63, what's the maximum value of $ab+bc+cd$. hint\footnote{use area model, rectangle, $=(a+b)(c+d)-ad$, the area of ad should be the smallest, and a=d=1,($a+b$固定，如果面积最小，d应最小，对应的，a也应该最小), max $-c^2+61c+61\Rightarrow c=30,31$}
+
+\dotfill
+
+Top Four Secret Weapons:
+
+The fact: $\lim_{n \to \infty}(1+\frac{a}{n})^{bn}=e^{ab} \equiv \lim_{n \to 0}(1+an)^{\frac{b}{n}}$ \\
+The list: As $n \to \infty$ $\ln n \ll n^p \ll b^n \ll n! \ll n^n$ and $p > 0, b>1$  \\
+The limit: $\lim_{\theta \to 0}\frac{\sin \theta}{\theta}=1$\\
+Best friend: $\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ where $|x| < 1$
+
+\dotfill
+
+[Facebook interview]\\
+You are waiting for your flight to Seattle, and to pass the time you call 3 friends in Seattle. You independently ask each one if it's raining.\\
+All 3 of them say,"Yes it's raining.", but each on lies with probability 1/3 and tell the truth with probability 2/3\\
+Can you solve for probability it's actually raining in Seattle?\\
+Hint
+
+
+\dotfill
+
+A ladder 垂直立在墙旁，倒下的中心位置的轨迹
+
+Case1: 滑落
+
+Case2: 倒下
+
+\dotfill
+
+Pythagoras Pie Puzzle:\\
+Giant pie is divided to 100 guests, Guest 1 get 1\%, Guest 2 get 2\% of what left, and so on and on. Who get the largest piece of pie?
+\footnote{
+Patterns:\\
+\[\begin{array}{cll}
+    \mbox{} & \mbox{Get} & \mbox{Left}\\
+    \mbox{Guest 1}& \frac{1}{100} & \frac{99}{100}\\
+    \mbox{Guest 2}& \frac{99}{100}\frac{2}{100}&\frac{99}{100}\frac{98}{100}\\
+    \mbox{Guest 3}& \frac{99}{100}\frac{98}{100}\frac{3}{100}&\frac{99}{100}\frac{98}{100}\frac{97}{100}\\
+    \mbox{Guest k}& \frac{99\cdot 98\cdot (99-k+2)}{100^k}\frac{k}{100}&
+  \end{array}\]
+Let $\frac{G_{k+1}}{G_k} > 1$（如果得到的不是连续的数值呢？）, the final answer is guest 10
+}
+
+
+\dotfill
+
+二项式：$(a+b)^n=C_n^0a^nb^0+\cdots C_n^ra^{n-r}b^r\cdots+C_n^na^0b^n$, but how to prove?\\
+Let $a=b=1 \Rightarrow 2^n=C_n^0+C_n^1+\cdots+C_n^n$\\
+Let $a=1, b=-1 \Rightarrow C_n^0-C_n^1+C_n^2-\cdots=0 \Rightarrow C_n^0+C_n^2+C_n^4+\cdots=C_n^1+C_n^3+\cdots=2^n/2$
+
+二项式系数最大值：中间一项或者两项(how to prove?)
+
+e.g.\\
+$(x+\frac{4}{x}-4)^4$的常数项, hint\footnote{$(\frac{x^2-4x+4}{x})^4$}\\
+$(1+x)+(1+x)^2+\cdots+(1+x)^{50}$展开式中$x^3$的系数. hint\footnote{1. 等比 2.$C_3^3+C_4^3=C_5^4$}
+
+\dotfill
+
+zero to the zero power\\
+
+$x^0=1, x\neq 0$, since $x^y/x^y=x^0 $\\
+$0^x=0, x\neq 0$
+but, what's $0^0$? while, there's no agreement, The most common possibilities are 1 or undefined
+
+\dotfill
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm,scale=0.9]
+\draw [line width=1pt] (1,1)-- (5,4);
+\draw [line width=1pt] (1,1)-- (5.82,1.05);
+\draw [line width=1pt] (5,4)-- (5.82,1.05);
+\draw [line width=1pt] (5.82,1.05)-- (3.486666666666667,2.865);
+\draw [line width=1pt] (1,1)-- (5.428485130962389,2.458498614220676);
+\draw (3.14,2.51) node[anchor=north west] {s=3};
+\draw (3.94,1.9) node[anchor=north west] { s=4};
+\draw (4.78,2.23) node[anchor=north west] {s=2};
+\draw (4.34,3.11) node[anchor=north west] {s=?};
+\end{tikzpicture}
+hint\footnote{连接顶点到交点，s分别为$x,y$，面积比（大三角形小三角形）=底边比（同高）列等式，$\frac{a_1}{a_2}=\frac{x}{3}=\frac{x+y+2}{3+4}，同理...$}
+
+\dotfill
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "math"
+%%% TeX-engine: xetex
+%%% End:

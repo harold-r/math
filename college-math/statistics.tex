@@ -1,0 +1,240 @@
+\documentclass[math.tex]{subfiles}
+\begin{document}
+
+\section{概率统计}
+\subsection{tips}
+Use tree diagram or venn diagram， it will be very easy.
+
+\textbf{ Venn diagram is usually meant for sets, when used in Probability, it must be reconsidered in your mind. \\公式类的题多用venn，叙述性的题多用tree}
+
+\textbf{But how to describe the tree branch is the most important}
+
+% Set the overall layout of the tree
+\tikzstyle{level 1}=[level distance=2.5cm, sibling distance=2.5cm]
+\tikzstyle{level 2}=[level distance=2.5cm, sibling distance=2cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+% The sloped option gives rotated edge labels. Personally
+% I find sloped labels a bit difficult to read. Remove the sloped options
+% to get horizontal labels.
+\begin{tikzpicture}[grow=right, sloped]
+\node[bag] {20黄 30白}
+    child {
+        node[bag] {white}
+            child {
+                node[end, label=right:
+                    {white}] {}
+                edge from parent
+                node[above]  {$\frac{29}{49}$}
+            }
+            child {
+                node[end, label=right:
+                    {yellow}] {}
+                edge from parent
+                node[above]  {$\frac{30}{49}$}
+            }
+            edge from parent
+            node[above] {$\frac{30}{50}$}
+            % node[below]  {$\frac{4}{7}$}
+    }
+    child {
+        node[bag] {yellow}
+        child {
+                node[end, label=right:
+                    {white}] {}
+                edge from parent
+                node[above]  {$\frac{30}{49}$}
+            }
+            child {
+                node[end, label=right:
+                    {yellow}] {}
+                edge from parent
+                node[above]  {$\frac{29}{49}$}
+            }
+        edge from parent
+            node[above]  {$\frac{20}{50}$}
+    };
+\end{tikzpicture}
+
+树形图的每个分支\textbf{不必为同一属类}，\textbf{垂直相加(note must include all father node)}为1
+\subsection{排列、组合}
+$P_n^m=n(n-1)(n-2)\cdots(n-m+1)=\frac{n!}{(n-m)!}$
+
+$C_n^m=\frac{P_n^m}{P_m^m}=\frac{P_n^m}{m!}=\frac{n!}{(n-m)!m!}$
+
+e.g.
+0,1,2,3,4,5,6,7 排成三位数. hint\footnote{1. loci: 7x7x6; 2.$P_8^3-P_7^2$; 3. loci $P_7^1  P_7^2$}
+
+1,1,1,2,2,3(可用来理解$C$) 排六位数. hint\footnote{ $P_6^6/3!2!$}
+
+捆绑法：5男3女，3女必须在一起. hint\footnote{ =$P_6^6P_3^3$}
+
+插空法：8学生4老师，老师不能相邻，且学生在中间. hint\footnote{-0-0-0-0-0-0-0-0- =$P_8^8P_7^4$}
+
+隔板法: n元素，m堆，每堆至少一个. hint\footnote{相当于m-1个木板插入n-1个空, $C_{n-1}^{m-1}$}
+
+\subsection{Probability}
+全概率公式：$P(B)=\sum_{i=1}^nP(A_i)P(B|A_i)$, $A_1\cdots A_n$为一个完备事件组
+
+So we have: $P(B)=P(A|B)P(B)+P(A|\bar{B})P(\bar{B})$
+
+贝叶斯定理(Bayes' theorem): $P(A|B)=\frac{P(B|A)P(A)}{P(B)}$
+
+So we have: $P(AB)=P(A|B)P(B)=P(B|A)P(A)$
+
+Visualizing bayes theorem\footnote{https://oscarbonilla.com/2009/05/visualizing-bayes-theorem/} \\
+$P(A|B)=\frac{|AB|}{|B|}=\frac{\frac{|AB|}{|U|}}{\frac{|B|}{|U|}}=\frac{P(AB)}{P(B)}$, that means take B as Universe(U)
+
+$P(A-B)=P(A \bar B)=P(A)-P(AB)$\\
+$P(A \cup B)=P(A)+P(B)-P(AB)$
+
+\subsection{独立和互斥}
+独立和互斥是两个概念
+
+\textbf{A和B独立(independent) $\Leftrightarrow$ $P(AB)=P(A)P(B)$ }
+
+SO, when independent $P(A|B)=P(A)$ and $P(B|A)=P(B)$
+
+独立情况下venn图大多是AB交叉的\\
+互斥情况下venn图是不交叉的
+
+\subsection{概率空间、分布函数、期望、方差}
+\textbf{概率空间$(\Omega, F, P)$}：是概率论的基础，概率的严格定义基于此概念
+
+\textbf{分布函数}：$F(x)=P\{X \leq x \}=\int_{-\infty}^xf(t)dt, -\infty < x < \infty$
+
+$F'(x)=f(x)$
+
+\textbf{期望}(大数定律)与平均值： 期望是样本趋于无穷的极限\\
+例：掷色子(可以用来理解E，离散型和连续型)， 2,2,2,6,4 average=(2+2+2+6+4)/5=3\\
+而E是固定的=$1\cdot \frac{1}{6} +2\cdot \frac{1}{6}+\cdots+6\cdot \frac{1}{6}=3.5$,但是3.5数值是扔不出的
+
+\begin{align*}
+E(X) &=\int_{\Omega}XdP = \left\{\begin{array}{ll}
+              \sum x_ip_i & \mbox{离散函数 \textbf{Win XP}}\\
+              \int_{-\infty}^{\infty}xf(x)dx & \mbox{连续函数}
+            \end{array}\right.\\
+E(X^2) &=\int_{\Omega}X^2dP = \left\{\begin{array}{ll}
+              \sum x_i^2p_i & \mbox{离散函数}\\
+              \int_{-\infty}^{\infty}x^2f(x)dx & \mbox{连续函数}
+            \end{array}\right.
+\end{align*}
+
+\begin{align*}
+  x=y=1
+  a-b=b-c=a
+\end{align*}
+
+
+\textbf{方差(Variance)}: 描述它的“离散程度”，变量离“期望值”的距离\\
+例：色子 2,3,3,4,4, $D=[(2-3.5)^2+(3-3.5)^2+(3-3.5)^2+(4-3.5)^2+(4-3.5)^2]/5$
+
+
+\[DX=E[(X-EX)^2]=E(X^2)-(EX)^2=\left\{\begin{array}{ll}
+              \sum (x_i-EX)^2p_i & \mbox{离散}\\
+              \int (x-EX)^2f(x)dx & \mbox{连续}\end{array}\right.\]
+
+$DX=E(X-\mu)^2=E(X^2-2\mu X+\mu^2)=E(x^2)-2\mu EX+(EX)^2, \mu=EX$
+
+Why方差不用绝对值, hint\footnote{1.positive2.放大差异3.$x^2$是光滑函数，绝对值不可微4.polynomial，人们对polynomial研究的多，绝对值不是，比如Tailor}
+
+期望值$E$是线性函数\\
+$E(aX+bY+C)=aE(X)+bE(Y)+C$\\
+$E(XY)=EX \cdot EY$ (XY的协方差为0(此时称不相关，两个随机变量独立是一种情况))\\
+$E(E(X))=E(X)$\\
+$E(X-E(X))=0$\\
+$E(g(X))\neq g(E(x))$一般情况下
+
+$D(C)=0$\\
+$D(aX)=a^2DX$\\
+$D(aX+C)=a^2DX$\\
+$D(X \pm Y)=DX+DY \pm 2E\{(X-EX)(Y-EY)\}$
+
+e.g.
+
+Find $E(X^2)$, $x \in \{1,2,3,4,5,6\}$, hint1\footnote{$x \in \{1,2,3,4,5,6\}$,x$^2 \in \{1,4,9.16.35,36\}$,$E(X^2)=\sum X_i^2P_i\{X=x_i\}=1/6+4/6+9/6+16/6+36/6=15.167$}, hint2\footnote{let $f(x)=x^2$, then $E(x^2)=\sum (x_i)^2P(X=x_i)$}
+
+$X\sim B(100,0.2)$，求$D(X^2)$, Note: not the $n\times(0,1)$分布，概率空间变了，即$E(g(X))\neq g(E(x))$一般情况下
+
+
+\subsubsection{变异系数（离散系数） coefficient of variation}
+$c_v=\frac{\sigma}{\mu}$,无量纲量，概率分布离散程度的归一化量度,变异系数也称为标准差离率或单位风险，只在平均值不为0时有意义,一般适用于大于零的情况。
+
+变异系数只对由比率标量计算出来的数值有意义。举例来说，对于一个气温的分布，使用开尔文或摄氏度来计算的话并不会改变标准差的值，但是温度的平均值会改变，因此使用不同的温标的话得出的变异系数是不同的。也就是说，使用区间标量得到的变异系数是没有意义的
+
+\subsection{常见分布}
+\subsubsection{0-1、Bernulli Trial}
+同条件下重复、相互独立的试验，只有两种结果，发生或者不发生，如掷硬币\\
+$EX=\mu=\sum X_iP(X=x_i)=1\cdot p +0\cdot (1-p)=p$\\
+$DX=\sigma^2=(1-p)^2p+(0-p)^2(1-p)=p(1-p)$
+
+\subsubsection{二项分布}
+N次独立的Bernulli Trial, 记为 $X \sim B(n,p)$\\
+N次实验中正好得到k次成功的概率为$C_n^kp^k(1-p)^{n-k}$
+
+$P\{X=k\}=C_n^kp^k(1-p)^{n-k}$\\
+$E=\sum_{i=1}^n\mu=np$\\
+$D=\sum_{i=1}^n\sigma^2=np(1-p)$
+
+e.g.\\
+$B(2,p)$, if $p\{X\geq1\}=5/9$, find the p and DX, hint\footnote{1.$P\{X\geq 1\}=P\{X=1\}+P\{X=2\}$
+2. $np(1-p)$
+}
+
+\subsubsection{泊松分布}
+$P_k=\frac{\lambda^k}{k!}e^{-\lambda}$\\
+$E=D=\lambda$, hint\footnote{
+$
+E=\sum_{k=0}^{\infty}kP_k=e^{-\lambda}\sum_{k=0}^{\infty}k\frac{\lambda^k}{k!}=e^{-\lambda}\sum_{k=1}^{\infty}\frac{\lambda^k}{(k-1)!}=e^{-\lambda}\lambda \sum_{k=0}^{\infty}\frac{\lambda^k}{k!}=e^{-\lambda}\lambda e^{\lambda}=\lambda
+$}
+
+\subsubsection{指数分布}
+$P(x)=\lambda e^{-\lambda x}, x\geq 0$\\
+$E=1/\lambda$\\
+$D=1/\lambda^2$
+
+\subsubsection{均匀分布}
+$f(x)=\frac{1}{b-a}, F(x)=\frac{x}{b-a}$
+
+x落在任一子区间的概率只与长度有关，而与位置无关。具有下属意义的等可能性？？
+
+$EX=\int_a^bxf(x)dx=\frac{a+b}{2}$\\
+$DX=E(X^2)-(EX)^2=\frac{(a-b)^2}{12}$, if you use $D=\int_a^b(x-EX)^2f(x)dx$很繁琐
+
+\subsubsection{正态分布、高斯分布}
+众数=中位数=E=$\mu$
+
+标准正态分布 $\mu=0$ $\sigma^2=1$
+
+\subsection{Examples}
+
+A和B独立,$P(A \cup B)=0.8, P(A)=0.4, P(\bar B|A)=?, hint$\footnote{$P(A\cup B)=P(A)+P(B)-P(A)P(B)$ answer is $1/3$ }
+
+共50球，20黄球，30白球，两人依次取出不放回，求第二人取黄球的P，求 如第二人黄球第一人黄球的P, 思考第一人黄球第二人也是黄球的P, hint\footnote{Tree diagram, final answer is 2/5, 19/49, 19/49}
+
+参加考试考生中，本专业学生占6成，本专业通过率是85\%，非本专业通过率是50\%。某位考生通过了考试，他是本专业的P是多少, hint\footnote{重点是怎么画tree, tree的各节点是同性质的吗？？, 考生\{考生-本专业\{考生-通过、考生-未通过\}，考生-非本专业\{考生-通过、考生-未通过\}\}, answer is 51/71}
+
+10个产品，4次品，任取两个(第一次第二次)，至少一个正品的P是多少，hint\footnote{1. 1-$\frac{C_4^2}{C_{10}^2}$ 2. Tree diagram}
+
+快递员，A到B地送货，开汽车或骑电动车，分别记录了deliver cargo 100times 的时间，开汽车：平均24分钟，方差为36；电动车：平均34分钟，方差为4\\
+quest1: 建议用哪种方式，and why\\
+question2: 如果开车和电动车的送货时间都服从正态分布，如果某次送货有38分钟可用，应该选哪种方式，如果有34分钟可用，选哪种。\\
+hint\footnote{key1:变异系数？key2正态分布的转换到标准正态分布$N(0,1)$\\
+  1.$c_1=6/24, c_2=2/34$, 表示离散程度，变异系数越小，分布越集中，所以选电动车。\\
+  2.$X~N(24,36)$, $Y~N(34,4)$,标准化$P(X\leq38)=P(\frac{X-24}{6}\leq \frac{38-24}{6})=\phi(7/3)$, 另一个是$\phi(2)$, 故选汽车，选概率大的？？
+}
+
+甲乙两种饮料，颜色气味很相似，饮料放在外观相同的6个杯子中，每个品牌3个杯子作为实验样品。从6个杯子中随机选3杯作为一次实验，若所选饮料全部为甲，则视为成功。独立进行5次实验，求3次成功的P,
+hint\footnote{一次实验成功的P为$\frac{C_3^3}{C_6^3}=1/20$, 5次独立实验，$X\sim B(5,1/20)$,$P\{X=3\}=C_5^3(1/20)^3(19/20)^2$}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "math"
+%%% TeX-engine: xetex
+%%% End:

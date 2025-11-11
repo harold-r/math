@@ -1,0 +1,13 @@
+
+*.tex#
+*.log
+*.el
+*.aux
+*.out
+*.synctex(busy)
+*.toc
+*#*.*
+_region_.*
+_region_.prv/
+auto/
+math.prv/

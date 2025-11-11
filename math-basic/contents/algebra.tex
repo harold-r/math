@@ -1,0 +1,325 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+
+\section{MISC}
+
+$0!$规定为$1$
+
+数域(域：field)：指一个数集，它对加法、减法、乘法和除法（除数不为零）运算是封闭的，并且包含$0$和$1$\\
+换句话说，对数域中任意两个数进行这四种基本运算，其结果仍然属于这个数域。\\
+常见的数域包括有理数域(Q)、实数域(R) 和复数域(C)\\
+一个集合成为数域，需满足以下条件：\\
+1. 包含0和1：数域中必须有加法单位元0和乘法单位元1\\
+2. 封闭性：加法和减法封闭；乘法封闭；除法封闭\\
+非数域例子：自然数集和整数集，不构成数域，因为除法运算不封闭，例如$2/3$不属于自然数或者整数
+
+
+\section{代数基本定理(Fundamental theorem of algebra)}
+Also called "d'Alembert–Gauss theorem"\\
+描述为：任何一个复系数的一元$n$ 次多项式方程($n\geq 1$)，至少有一个复数根。﻿
+
+有时候这个定理描述为：任何一个非零的一元n次复系数多项式，都正好有$n$个复数根（重根视为多个根）。但实际上，是“至少有一个根的”直接结果，因为把多项式除以它的线性因子可以推出。也就是说，任何一个$n$次多项式，都可以因式分解为$n$个复系数一次多项式的乘积(根据多项式除法\todo{Proof?})。
+
+推论：任何一个非零的一元n次复系数多项式，都正好有n个复数根（重根视为多个根）。
+
+意义：复数域是代数封闭的；该定理是代数学和近世代数中的一个基础性结论
+
+尽管这个定理被命名为“代数基本定理”，但它还没有纯粹的代数证明，许多数学家都相信这种证明不存在。另外，它也不是最基本的代数定理；因为在那个时候，代数基本上就是关于解实系数或复系数多项式方程，所以才被命名为代数基本定理。
+
+所有的证明都包含了一些数学分析，至少是实数或复数函数的连续性概念。有些证明也用到了可微函数，甚至是解析函数。
+
+
+
+\section{多项式除法、多项式余式定理(Polynomial division, Polynomial remainder theorem)}
+
+\begin{flalign*}
+  \frac{P(x)}{D(x)} = Q(x)+\frac{R(x)}{D(x)} \Rightarrow P(x)=D(x)Q(x)+R(x)&&
+\end{flalign*}
+
+If $D(x)=x-a$, then $P(x)=(x-a)Q(x)+R(x) = (x-a)Q(x)+r$\\
+根据定义，$R(x)$的次数小于$1$, so $R(x)$只能为常数\\
+$\Rightarrow P(a)=(a-a)Q(x)+r=r$\\
+得到\textbf{多项式余式定理}：多项式$P(x)$除以$x-a$所得的余式$=P(a)$
+
+dividend = divisor x quotient + reminder
+
+\subsection{Examples}
+Let $f(x)=x^{3}-12x^{2}-42$, divided by $x-3$, gives the quotient $x^{2}-9x-27$, and the remainder $-123$.\\
+By the polynomial remainder theorem, $f(3)=-123$
+
+寻找多项式的切线？ \todo{?直觉要用微积分，但是这个是啥情况？} \url{https://zh.wikipedia.org/wiki/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E9%99%A4%E6%B3%95}
+
+
+\section{因式定理(Factor theorem)}
+The Factor theorem connects polynomial factors with polynomial roots.(关于多项式的因式和零点的定理)
+
+一个多项式$f(x)$有一个因式$ax-b$当且仅当 $f(\frac{b}{a})=0$
+
+普遍应用于因式分解，利用长除法，除以零点$(x-a)$
+
+Example:
+
+分解因式：$(x-y)^{3}+(y-z)^{3}+(z-x)^{3}$\\
+$x=y, y=x, x=z$是$0$点，so $k(x-y)(y-z)(x-z)$, let $x=0,y=1,z=2 \Rightarrow k=3$
+
+\section{因式分解}
+\subsection{因式分解定理}
+数域$F$上的每个次数$\ge 1$的多项式$f(x)$都可以分解为数域$F$上一些不可约多项式的乘积，并且是唯一的，即：\\
+$f(x)=p_{x}(x)p_{2}(2)p_{3}(x)\cdots p_{s}(x) = q_{1}(x)q_{2}(x)q_{3}(x)\cdots q_{t}(x)$,其中$p_{i}(x)$和$q_{j}(x)$都是数域$F$上的不可约多项式，那么必有$s=t$，而且可以适当排列因式的次序，使得\\
+$p_{i}(x)=c_{i}q_{i}(x)$
+
+\subsection{分解方法}
+公因式
+
+公式法
+
+分组分解
+
+拆添项
+
+十字交叉
+
+一次因式检验法(有理根定理)
+
+
+\section{算术基本定理}
+
+
+\section{有理根定理(Rational root theorem)}
+Also called rational root test, rational zero theorem, rational zero test or $p/q$ theorem
+
+描述：对于$a_{n}x^{n} + a_{n-1}x^{n-1}+\cdots + a_{1}x+a_{0}=0$, \colorbox{BurntOrange}{系数$a_{i}\in \mathbb{Z}$}, and $a_{0}, a_{n} \neq 0$.\\
+该定理指出，如果存在有理根$x=\frac{p}{q}$, written in lowest term(that is $p$ and $q$ are relatively prime, 互质)，满足：\\
+$p$是$a_{0}$的整数因子，i.e. $p|a_{0}$.整除符号,Tips\footnote{$a|b$： $a$整除$b$，$b$能被$a$整除，也就是$b$除以非零$a$，商是一个整数. i.e. $2|6$}\\
+$q$是$a_{n}$的整数因子，i.e. $q|a_{n}$.
+
+该定理是高斯定理关于多项式分解的一个特例
+
+\subsection{Proof}
+Let $P(x) = a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots +a_{1}x+a_{0}$ with $a_{i} \in \mathbb{Z}$, $a_{0},a_{n} \neq 0$
+
+Suppose $P(p/q) = 0$ for some coprime $p,q \in \mathbb{Z}$:\\
+$P(\frac{p}{q}) = a_{n}(\frac{p}{q})^{n} + a_{n-1}(\frac{p}{q})^{n-1}+\cdots + a_{1}(\frac{p}{q}) + a_{0} = 0$\\
+$\Rightarrow a_{n}p^{n}+ a_{n-1}p^{n-1}q+\cdots +a_{1}pq^{n-1}+ a_{0}q^{n} = 0$\\
+$\Rightarrow p(a_{n}p^{n-1}+a_{n-1}qp^{n-2}+\cdots +a_{1}q^{n-1}) = -a_{0}q^{n} \Rightarrow ()=-a_{0}\frac{q^{n}}{p}$ \\
+$\Rightarrow q(a_{n-1}p^{n-1}+a_{n-2}qp^{n-2}+\cdots +a_{0}q^{n-1}) = -a_{n}p^{n} \Rightarrow ()=-a_{n}\frac{p^{n}}{q}$\\
+我们注意到，括弧内是整数，因为$a_{i}$是整数，所以这是关键
+
+$p,q$互质，$\frac{p}{q} = \pm \frac{a_{0}\text{的因子}}{a_{n}\text{的因子}}$
+
+注意$p, q$为$1$的特殊情况，显而易见$1$永远是第一个选择
+
+关键点：\\
+1. 系数是整数\\
+2. 如果存在有理根，则必符合此定理，否则存在无理根(如$\sqrt{89}$)亦或者复数根
+
+\subsection{Example}
+$x^{3}-7x+6=0$: \\
+有理根有可能是：$\pm \frac{\{1,2,3,6\}}{1}=\pm {1, 2, 3, 6}$，恰好$1, 2, -3$，所以也恰好可以写为：$(x-1)(x-2)(x+3)=0$
+
+$3x^{3}-5x^{2}+5x-2=0$, 如果有有理根，则必在$\pm \frac{1,2}{1,3}=\pm{1,2, \frac{1}{3}, \frac{2}{3}}$中。8个候选根，需要测试8次，最后才知道$x=2/3$是唯一有理根.\\
+很是繁琐不是？所以可以通过评估$P(r)$来测试缩小范围(比如使用秦九韶算法?)。\\
+Firstly, if $x<0$, the $P$ will be negative, so every root is positive\\
+$P(1)=1$, so 1 is not the root. Moreover, if one sets $x=1+t$, so $Q(t)=P(1+t)$, 展开后，三次项是3，一次项是1，implies $Q$ must belongs to ${\pm 1, \pm \frac{1}{3}}$, and $P$ satisfy $x=1+t \in {2,0,4/3,2/3}$. 再次显示必须为正，两个候选项是$2, 2/3$, 将$2$带入，显然不是，最后测试$2/3$\
+
+If $a, b$ and $\frac{a^{2}}{b}+\frac{b^{2}}{a}$ are integers, then both $\frac{a^{2}}{b}$ and $\frac{b^{2}}{a}$ must be integers.\\
+
+% see https://en.wikipedia.org/wiki/Rational_root_theorem
+
+\section{韦达定理(Vieta's formulas)}
+Any general polynomial of degree $n, P(x)=a_{n}x^{n}+ a_{n-1}x^{n-1}+\cdots +a_{1}x+a_{0}$, by the "fundamental theorem of algebra", roots are $x_{1}, x_{2}, x_{3}\cdots$
+\[
+  \left\{
+    \begin{array}{l}
+      x_{1}+x_{2}+x_{3}+\cdots + x_{n-1}+ x_{n} = -\frac{a_{n-1}}{a_{n}}\\
+      (x_{1}x_{2}+x_{1}x_{3}+x_{1}x_{4}+\cdots +x_{1}x_{n})+(x_{2}x_{3}+x_{2}x_{4}+\cdots +x_{2}x_{n})+\cdots + x_{n-1}x_{n} = \frac{a_{n-2}}{a_{n}}\\
+      \vdots\\
+      x_{1}x_{2}x_{3}\cdots x_{n} = (-1)^{n}\frac{a_{0}}{a_{n}}
+    \end{array}
+  \right.
+\]
+
+\subsection{Proof}
+$a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots + a_{1}x + a_{0} = a_{n}(x-x_{1})(x-x_{2})\cdots (x-x_{n}) $\\
+展开后比较系数\\
+\[
+  \left\{
+    \begin{aligned}
+      a_{n-1} &= -a_{n}(x_{1}+x_{2}+\cdots + x_{n-1}+ x_{n})\\
+      a_{n-2} &= a_{n}[(x_{1}x_{2}+x_{1}x_{3}+\cdots +x_{1}x_{n})+ (x_{2}x_{3}+ x_{2}x_{4}+\cdots + x_{2}x_{n})+\cdots + x_{n-1}x_{n}]\\
+      \vdots \\
+      a_{0} &= (-1)^{n}a_{n}x_{1}x_{2}\cdots x_{n}
+    \end{aligned}
+  \right.
+\]
+
+\subsection{韦达定理的逆定理}
+对于一元二次方程
+
+利用圆来研究一元二次方程？  http://202.175.82.54/tplan/2006/intro/R027.pdf
+
+
+\subsection{Examples}
+If $n=2$(quadratic), $ax^{2}+bx+c=0 = a(x-x_{1})(x-x_{2})$展开比较即有，也可以用求根公式
+
+if $n=3$, $x_{1}, x_{2}, x_{3}$是$ax^{3}+bx^{2}+cx+d=0$的三个根, then:\\
+$ax^{3}+bx^{2}+cx+d = a(x-x_{1})(x-x_{2})(x-x_{3})=a(x^{3}-(x_{1}+x_{2}+x_{3})x^{2}+(x_{1}x_{2}+x_{2}x_{3}+x_{1}x_{3})x- x_{1}x_{2}x_{3}=0)$, That is\\
+$x_{1}+x_{2}+x_{3}= -\frac{b}{a}, x_{1}x_{2}+x_{1}x_{3}+x_{2}x_{3}=\frac{c}{a}, x_{1}x_{2}x_{3}=-\frac{d}{a}$
+
+
+\section{排列组合(permutation and combination)}
+
+\subsection{排列(permutation)}
+Permutaion(排列、变换、置换，比如古典密码里的置换) or Arrangement，所以数学符合$P$和$A$都可以。
+
+利用乘法原理：$A_{n}^{k}=\overbrace{n(n-1)(n-2)...(n-k+1)}^{\text{k factors}}=\frac{n!}{(n-k)!}$\\
+Also use:  $P^{n}_{k}$, $P(n,k)$, $_{n}P_{k}$, $^{n}P_{k}$, $P_{n,k}$. Note the slight difference: $P^{n}_{k}$ and $A_{n}^{k}$
+
+重复排列：从$n$个元素中取出$k$个元素，$k$个元素可以重复：$U^{n}_{k}=n^{k}$
+
+\subsection{组合(combination)}
+Combination just likes permutation, but the order doesn't matter
+
+This formula can be derived from the fact that each k-combination of a set $S$ of $n$ members has permutations so\\
+$P_{n}^{k}=C_{n}^{k}\times k!$ or $C_{n}^{k}=P_{n}^{k}/k!$. The $C_{n}^{k}$ often denoted by $\binom{n}{k}$
+
+\section{二项式定理(Binomial theorem)}
+\[
+  (x+y)^{n}=C_{n}^{0}x^{n}y^{0}+C_{n}^{1}x^{n-1}y^{1}+C_{n}^{2}x^{n-2}y2+\cdots +C_{n}^{n}x^{0}y^{n}
+\]
+
+Examples:
+
+$(x+y)^{0}=1$\\
+$(x+y)^{1}=x+y$\\
+$(x+y)^{2}=x^{2}+2xy+y^{2}$\\
+$(x+y)^{3}=x^{3}+3x^{2}y+3xy^{2}+y^{3}$\\
+$(x+y)^{4}=x^{4}+4x^{3}y+6x^{2}y^{2}+4xy^{3}+y^{4}$
+
+$(x+y)^{3}=xxx+xxy+xyx+xyy+yxx+yxy+yyx+yyy$, total $2^{3}$ terms
+
+Let $x=y=1$, we have $2^{n}=C_{n}^{0}+C_{n}^{1}+\cdots +C_{n}^{n}$
+
+\subsection{Proof}
+
+Method 1:数学归纳法(inductive proof)
+
+Method 2: 组合方法
+
+$(a+b)^{n}=\overbrace{(a+b)(a+b)\cdots (a+b)}^{\text{n terms}}$, $n$个括号相乘，从$n$个选出$k$个括号中的$a$,再从剩余的$n-k$个括号中选出$(n-k)$个$b$，得到一组$a^{k}b^{n-k}$，而这种选法共有$C_{n}^{k}$种，故总共有$C_{n}^{k}$个$a^{k}b^{n-k}$；其他同理
+
+\subsection{More}
+$(1+x)^{-1}$
+
+$(1+x)^{\frac{1}{2}}$
+
+$(1+\frac{1}{n})^{n}$
+
+Multinomial theorem:\\
+$(x_{1}+x_{2}\cdots +x_{m})^{n}$
+
+
+\section{绝对值}
+\subsection{绝对值的意义}
+本质是表示距离，比如数轴上的线段距离，差值的绝对值
+
+第一要务一般是如果去绝对值，从代数上看就是要去讨论
+
+不但要会去绝对值，还要会用绝对值列出题目相应的等式或者不等式，然后去解
+
+又比如$|3-2x| + |x-3|$的最小值，要善于变换，以方便几何上的直观
+
+\subsection{最值}
+$f(x)= |x+1|+ |2-x|$的最值\\
+$f(x) = |x+1| + |2x-1|$的最值，Tips\footnote{$|2x-1| = 2|x-\frac{1}{2}|$}\\
+$f(x)= |x+1| + |x| + |x-2|$的最值\\
+$f(x)=|2x-1|+|4x-3|$\\
+$f(x)=||x-1|-3|$
+
+
+\subsection{推广}
+$f(x) = |x-a_{1}| + |x-a_{2}|+ |x-a_{3}| + \cdots + |x-a_{n}| $
+$f(x)=|x+1|+|2x-1|$可以化简为：$f(x)=|x+1|+2|x-\frac{1}{2}|=|x+1|+|x-\frac{1}{2}|+|x-\frac{1}{2}|$
+
+奇点偶段，证明方法：从1到3到5，从2到4到6，以至无穷
+
+
+\section{整除规则(divisibility rule)}
+Let $A$ = $\overline{a_{n}a_{n-1}...a_{2}a_{1}} = a_{n}\times 10^{n-1}+a_{n-1}\times 10^{n-2}...+a_{2}\times 10 + a_{1}$
+\subsection{基本判别(rules)}
+
+被2整除：\\
+The last digit is even
+
+被3整除和被9整除:\\
+The sum of digits must be divisible by $3$ or $9$.
+Tips\footnote{$A = a_{n}\times (9+1)^{n-1}+a_{n-1}\times (9+1)^{n-2}...+a_{2}\times (9+1)+a_{1} \\
+~~~   = (a_{n}\times 9^{n-1} + a_{n-1}\times 9^{n-2}+...+a_{2}\times 9)+(a_{n}+a_{n-1}+...+a_{2}+a_{1}) $}
+
+被4整除：\\
+The last two digits must be divisible by 4. Tips\footnote{$A=\overline{a_{n}a_{n-1}...a_{3}} \times 100 + \overline{a_{2}a_{1}}$}，后者是关键
+
+被5整除：
+
+被6整除：
+
+被7整除：\\
+
+
+被8整除：\\
+The last three digits must be divisible by 8
+
+被9整除：
+
+被11整除：\\
+第一位数$-$第二位数$+$第三位数$-$...，最终值如果能被11整除，正负交替，从前往后和从后往前一样，负数也可以判定. Tips\footnote{$10=11\times 1 - 1, 100=11\times 9 + 1, 1000=11\times 91-1$}
+
+被13整除：
+
+被17整除：
+
+\newpage
+
+\subsection{proof} \label{sec:proof}
+被7整除\\
+\textbf{方法1}：三位截断：if $A=\overline{b_{1}b_{2}b_{3}a_{1}a_{2}a_{3}}$ 能被7整除，then: $\overline{a_{1}a_{2}a_{3}} - \overline{b_{1}b_{2}b_{3}}$可以被7整除\\
+$A/7 = (\overline{b_{1}b_{2}b_{3}}\times 10^{3} + \overline{a_{1}a_{2}a_{3}})/7
+= 143\times \overline{b_{1}b_{2}b_{3}} + (\overline{a_{1}a_{2}a_{3}} - \overline{b_{1}b_{2}b_{3}})/7
+$
+
+\textbf{方法2}：降位，如五位数变为四位，再变为三位，再两位。\\
+Suppose we have a number $A=\overline{a_{1}a_{2}a_{3}a_{4}b}$, let $A=\overline{ab}$, while $a=\overline{a_{1}a_{2}a_{3}a_{4}}$.\\
+if 能化简为判断 $a+mb$能否被7整除，则简化成功：\\
+\[
+\begin{cases}
+  a + mb = 7n_{1}\\
+  10a + b = 7n_{2}
+\end{cases}
+\Rightarrow
+(10m-1)b = 7(n_{1}-n_{2})
+\]
+\\
+That means $10m-1$必须是7的倍数，此时$m$可以为$5$ or $-2$。那么我们就可以简化为判断$a-2b$ or $a+5b$, $-2$ 和 $5$ 正好相差7.\\
+e.g.\\
+$329 \to 32-2\times 9=14 $ \\
+$4564 \to 456-2\times 4=448 \to 44+8\times 5=7\times 12$
+
+推广：\\
+被$11$整除：$(10m-1)|11$, $m=-1$。当然，被$11$整除还有一个更方便的方法，那就是依次加减\\
+被$13$整除： $(10m-1)|13$, $m=4,-7$\\
+被$17$整除：$(10m-1)|17$, $m=-5$\\
+我们可以看到，m是一个呈周期循环，太大了就没有意义了，如果一个三位数，最后化简还是三位数，就没有了意义
+
+这种方法用计算机编程来判断很方便
+
+
+\newpage
+\subfile{algebra-misc}
+
+\end{document}
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "../main"
+%%% End:

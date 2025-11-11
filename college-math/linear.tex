@@ -1,0 +1,287 @@
+\documentclass[math.tex]{subfiles}
+\begin{document}
+
+\section{线性代数 Linear algebra}
+
+\subsection{Vector}
+\subsubsection{Basic}
+
+The fundamental for linear algebra is the vector
+
+Two fundamental vector operations: additon and scalar multiplication
+
+basic vectors: $\hat{\imath}$ and $\hat{\jmath}$
+
+"Span" is the set of all linear combinations: $a\vec{v}+b\vec{w}$
+
+linearly independent:
+
+向量正统的表示为 $\bigl[ \begin{smallmatrix}  x\\y \end{smallmatrix} \bigr]$，有时候(x,y), $(x,y)^{T}$, $[x,y]^T$
+
+vector in $\mathbb{R}^2$ coordinate is $\bigl[ \begin{smallmatrix} x\\y \end{smallmatrix} \bigr]$
+
+vector in $\mathbb{R}^3$ coordinate is $ \bigl[ \begin{smallmatrix} x\\y\\z \end{smallmatrix} \bigr]$ and so on and on
+
+When we say $\vec a$ 可以任意位置，座标系内也可以任意位置，但如果用tuple表示(tuple就是坐标)，那么必须是从原点开始的。
+
+||x|| 范数:Norm, scalar\\
+|x| 绝对值，是实数集上的一个范数，一维向量中 ||x|| = |x| \\
+$ x = (x_1,x_2,x_3...x_n)^T \Rightarrow ||x||= \sqrt{x_1^2+x_2^2+x_3^2+...+x_n^2} $\\
+欧几里得空间里，内积等价于点积，故：||x||=$\sqrt{x \cdot x}$
+
+\subsubsection{Matrix as linear transformation}
+
+Matrix is the transformations of space
+
+linear tranformations are  a way to move around space such that the grid lines remain parallel and evenly spaced and such that the origin remains fixed
+
+"linear" has two properties: 1.line remain lines, 2. origin remains fixed
+
+e.g. $90^{\circ}$ rotation counterwise:
+
+$\hat{\imath} \quad \bigl[ \begin{smallmatrix} 1\\0 \end{smallmatrix} \bigr] \rightarrow \bigl[ \begin{smallmatrix} 0\\1 \end{smallmatrix} \bigr]$ where $\hat{\imath}$ land and
+$\hat{\jmath} \quad \bigl[ \begin{smallmatrix} 0\\1 \end{smallmatrix} \bigr] \rightarrow \bigl[ \begin{smallmatrix} -1\\0 \end{smallmatrix} \bigr]$ where $\hat{\jmath}$ land, so the transormation is \\
+
+$\begin{bmatrix}
+  0 & -1 \\
+  1 & 0
+\end{bmatrix}
+$
+
+
+
+\subsubsection{Vector 加减}
+坐标对应的加减
+\subsubsection{Dot Product(点积)}
+$\vec{a} \cdot \vec{b}$ = |a||b|$\cos\theta$, |a|表示模 \\
+代数定义: $\vec{a} \cdot \vec{b} = \sum_{i=1}^na_ib_i = a_1b_1+a_2b_2+...+a_nb_n$\\
+几何定义:投影 and 余弦定理(why $\cos$) $(\vec{a} - \vec{b})^{\,2}= \vec{a}^{\,2}+\vec{b}^{\,2}-2|a||b|\cos\theta $
+\subsubsection{Cross Product(叉积)}
+$\vec{a} \times \vec{b} = \|a\|\|b\| \sin(\theta)n$; n is normal \underline{\textbf{unit}} vector\\
+几何意义：平行四边形的面积\\
+右手定则 $\vec{a} \times \vec{b} = -(\vec{a} \times \vec{b})$\\
+If $ U = (u_1,u_2,u_3), V = (v_1,v_2,v_3)$, (i,j,k)为基向量\\
+$
+U \times V =
+\begin{vmatrix}
+  i & j & k\\
+  u_1 & u_2 & u_3\\
+  v_1 & v_2 & v_3
+\end{vmatrix}
+=
+\begin{vmatrix}
+  i & u_1 & v_1\\
+  j & u_2 & v_2\\
+  k & u_3 & v_3
+\end{vmatrix}
+=
+i\bigl[\begin{smallmatrix} u_2&u_3\\v_2&v_3 \end{smallmatrix} \bigr]-
+j\bigl[\begin{smallmatrix} u_1&u_3\\v_1&v_3 \end{smallmatrix} \bigr]+
+k\bigl[\begin{smallmatrix} u_1&u_2\\v_1&v_2 \end{smallmatrix} \bigr]
+$
+
+\subsubsection{Vector Relations(向量关系)}
+向量平行$ \vec{a}=\lambda\vec{b} \Leftrightarrow \frac{x_1}{x_2}=\frac{y_1}{y_{2}}=\frac{z_1}{z_2} = \lambda $\\
+向量垂直$ \vec{a}\cdot\vec{b}=0 \Leftrightarrow x_1x_2+y_1y_2+z_1z_2=0  $
+
+\subsubsection{Linear Independence}
+$c_1v_1+c_2v_2+\cdots + c_nv_n=0$， 有非全零的$c_1, c_2, \cdots c_n$则线性相关 dependent，否则independent\\
+即：有一个向量可以用其他向量组合来表示是线性相关
+
+Basis of a subspace. Basis is “minimum” set of vectors that spans the subspace\\
+$V=span(\vec v_1, \vec v_2 \cdots \vec v_n)$. if V is a basics, ${\vec v_1 \cdots }$ are linear indenpendent.\\
+$S=\{[2,3]^T,[7,0]^T\}$, $span(S)=\mathbb{R}^2$
+
+e.g.\\
+$S= (1,-1,2), (1,1,3), (-1,0,2)$, $span(S)=\mathbb{R}^3?$ and linear independent?
+
+Prove: $\mathbb{R}^4$内，$[1,4,2,-3]^T, [7,10,-4,-1]^T,[-2,1,5,-4]^T$是线性相关的。hint\footnote{Using defination: let $k_1\alpha_1+k_2\alpha_2+k_3\alpha_3=0 \Leftrightarrow [\alpha_1,\alpha_2,\alpha_3]\bigl[ \begin{smallmatrix} k_1\\k_2\\k_3 \end{smallmatrix} \bigr]=0$}
+
+\subsubsection{MISC}
+Cauchy–Schwarz inequality:
+$\vec a, \vec b \in \mathbb{R}^n$, $|\vec a \cdot \vec b| \leq \|\vec a\| \|\vec b\|$, proof
+
+Triangle inequality: $\|\vec a+\vec b \| \leq \|\vec a\| + \| \vec b\|$, proof
+
+
+
+\subsection{方程的解}
+\subsubsection{$Ax=b$}
+有\quad 解的充要条件： $r(A)=r(A|b)$\\
+唯一解的充要条件：$r(A)=r(A|b)=n$\\
+无穷解的充要条件：$r(A)<r(A|b)$
+
+克莱姆法则(Cramer's Rule): $|A|\neq 0$则方程有解且唯一
+
+基础解系(化简为行最简，k不同时为0):
+\[
+  \begin{bmatrix}
+    1&0&-4&-5 \\
+    0&1&3&4\\
+    0&0&0&0
+  \end{bmatrix}
+  x=0 \Rightarrow
+  \left \{
+    \begin{array}{l}
+      x_1=4x_3+5x_4\\
+      x_2=-3x_3-4x_4\\
+      x_3=1x_3+0x_4\\
+      x_4=0x_3+1x_4
+    \end{array}
+  \right.
+  Let \quad \alpha_1=
+  \begin{bmatrix}
+    4\\
+   -3\\
+    1\\
+    0
+  \end{bmatrix}
+  \quad
+  \alpha_2=
+  \begin{bmatrix}
+    5\\
+    -4\\
+    0\\
+    1
+  \end{bmatrix}
+  \Rightarrow x=k_1\alpha_1+k_2\alpha_2
+\]
+
+\subsubsection{$Ax=0$}
+Cramer's Rule:\\
+只有零解： $|A|\neq 0$\\
+有非零解： $|A|=0$
+
+\subsection{伴随矩阵}
+$adj(A)=C^T$ and $C_{ij}=(-1)^{i+j}M_{ij}$, and $M_{ij}$是余子式， C是代数余子式\\
+即：先代数余子式，再转置
+
+if $A=\bigl[ \begin{smallmatrix} a&b \\ c&d  \end{smallmatrix} \bigr]$ then $adj(A)=\bigl[ \begin{smallmatrix} d&-b \\-c&a \end{smallmatrix} \bigr]$
+
+\subsection{逆矩阵$A^{-1}$}
+可逆的充要条件： $|A|\neq 0$
+
+\textbf{求法:}\\
+1. $A^{-1}=\frac{A^{\ast}}{|A|}$, $A^{\ast}$为伴随矩阵\\
+2. $(A|E) \to (E|A^{-1})$
+
+\textbf{性质:}\\
+$(\lambda A)^{-1}=\frac{1}{\lambda}A^{-1}$\\
+$(AB)^{-1}=B^{-1}A^{-1}$, how to prove, hint\footnote{$ABB^{-1}A^{-1}=E$, matrix的结合律,(AB)(B$^{-1}A^{-1)}=E$, also $(AB)(AB)^{-1}=E$, so ...)}\\
+$(A^T)^{-1}=(A^{-1})^T$\\
+$det(A^{-1})=\frac{1}{det(A)}$
+
+对于转置矩阵\\
+$(\lambda A)^{-T}=\lambda A^{T}$
+$(AB)^T=B^TA^T$, 不同于上，要用矩阵结构去证明\\
+
+\subsection{正交、合同、正定、相似}
+
+\textbf{正交：}$AA^T=E$ or $A^TA=E$。xx交得带T
+
+\textbf{合同：}$\exists$可逆的$C$, $B=C^TAC$，则称A、B合同。合在一起，T
+
+\textbf{相似：} $P^{-1}AP=B$，称为A和B相似\\
+必要条件：1. 同样特征值（也意味着$|A|=|B|$）. 2. rank相同 3. 迹相同（主对角线的和）
+
+% e.g.\\
+% A$\bigl[ \begin{smallmatrix} 1&4 \\ 2&3 \end{smallmatrix} \bigr],$
+% B$\bigl[ \begin{smallmatrix} 6&a \\ -1&b \end{smallmatrix} \bigr]$相似，Find $a,b$, hint\footnote{
+% $\left \{
+%   \begin{array}{left}
+%     1+3=6+b\\
+%     2+4=-1+a
+%   \end{array}
+% \right.
+% $
+% }
+
+\textbf{二次型的正定：}\\
+二次型：$f(x_1,x_2\cdots x_n)=a_{11}x_1^2+2a_{12}x_1x_2+\cdots =\sum_{i=1}^na_{ii}x_i^2+2\sum_{i\neq j}a_{ij}x_ix_j$\\
+$A=
+\begin{bmatrix}
+  a_{11}&a_{12}&\cdots&a_{1n}\\
+  a_{12}&a_{22}&\cdots&a_{2n}\\
+  \vdots&\vdots&\vdots&\vdots\\
+  a_{1n}&a_{2n}&\cdots&a_{nn}
+\end{bmatrix}
+$
+
+二次型的正定定义：$x_{1,2,\cdots ,n}$不全为0时，$f(x_1,x_2\cdots x_n)>0$\\
+充要条件是：A的特征值都是正数 或者 顺序主子式$>0$ 或者合同于单位矩阵
+
+所有特征值都是正数的矩阵被称为正定\\
+所有特征值都是非负数的矩阵被称为半正定\\
+所有特征值都是负数的矩阵被称为负定\\
+所有特征值都是非正数的矩阵被称为半负定
+
+例：$x^2-xy+y^2$ $\to$ $A=\bigl[ \begin{smallmatrix} 1&-\frac{1}{2}\\ -\frac{1}{2}&1 \end{smallmatrix} \bigr] $，顺序主子式大于0
+
+\textbf{顺序主子式}
+$
+\begin{bmatrix}
+  1&2&3\\
+  4&5&6\\
+  7&8&9
+\end{bmatrix}
+\Rightarrow
+\left \{
+  \begin{array}{l}
+    D_1=|1|\\
+    D_2=\mid \begin{smallmatrix} 1&2\\4&5 \end{smallmatrix} \mid\\
+   D_3=\mid \begin{smallmatrix} 1&2&3\\4&5&6\\6&7&8 \end{smallmatrix} \mid                      \end{array}
+\right.
+$
+
+\subsection{特征值、特征向量}
+定义：$\exists \lambda$ and $\alpha$, 使$A\alpha=\lambda \alpha$, 则$\lambda$为特征值，而$\alpha$为特征值$\lambda$的特征向量
+
+\textbf{特征值求法}
+$A\alpha=\lambda \alpha \Rightarrow (\lambda E-A)\lambda=0$，齐次线性方程有非零解$|\lambda E-A|=0$
+
+\textbf{特征向量求法}:$\lambda_i$为一特征值，$(\lambda_iE-A)x=0$的解即是,如果基础解系$\alpha_1,\alpha_2\cdots\alpha_s$，特征向量$=k_1\alpha_1+k_2\alpha \cdots +k_s\alpha$, $k$不同时为0
+
+特点：\\
+1. $|A|=\displaystyle\prod_{i=1}^n\lambda_i$，即所有特征值的乘积，$|A|\neq 0 \Rightarrow A$无零特征值
+
+2. 不同的特征值对应的$\alpha$线性无关
+
+\subsection{欧式空间、标准正交基}
+定义了内积的线性空间称为欧式空间， $(\alpha, \beta)$为$\alpha$和$\beta$的内积
+
+标准正交基： 施密特正交化(所有$\beta$化，替一个)
+\[
+\left \{
+  \begin{array}{l}
+    \beta_1=\alpha_1\\
+    \beta_2=\alpha_2-\frac{(\alpha_2,\beta_1)}{(\beta_1,\beta_1)}\cdot \beta_1\\
+    \beta_3=\alpha_3-\frac{(\alpha_3,\beta_1)}{(\beta_1,\beta_1)}\cdot \beta_1-
+            \frac{(\alpha_3,\beta_2)}{(\beta_2,\beta_2)}\cdot \beta_2\\
+    \vdots \\
+    \beta_n=\alpha_n-\frac{(\alpha_n,\beta_1)}{(\beta_1,\beta_1)}\cdot \beta_1-\cdots
+            \frac{(\alpha_n,\beta_{n-1})}{(\beta_{n-1},\beta_{n-1})}\cdot \beta_{n-1}
+  \end{array}
+\right.
+\]
+
+\subsection{MISC}
+
+$\mid \begin{smallmatrix} A&B\\0&D \end{smallmatrix} \mid = det(A)det(D)$
+
+$|A|=\displaystyle\prod_{i=1}^n\lambda_i$
+
+反对称矩阵 $A^T=-A$，对角线为零，其他反
+
+单位正交矩阵， $A$各行列为单位向量，且两两正交
+
+像即线性映射、线性变换\\
+求直线$y=3x$在矩阵$\bigl[ \begin{smallmatrix} 1&-1\\-1&1 \end{smallmatrix} \bigr]$所对应的线性变换下的像的方程。hint\footnote{随意取直线两点，比如$(0,0),(1,3)$, $\bigl[ \begin{smallmatrix} 1&-1\\-1&1 \end{smallmatrix} \bigr] \bigl[ \begin{smallmatrix} 0\\0 \end{smallmatrix} \bigr]=\bigl[ \begin{smallmatrix} 0\\0 \end{smallmatrix} \bigr]$, the other is $\bigl[ \begin{smallmatrix} -2\\2 \end{smallmatrix} \bigr]$, so 新方程经过$(0,0),(-2,2)$}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "math"
+%%% TeX-engine: xetex
+%%% End:

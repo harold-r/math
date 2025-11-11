@@ -1,0 +1,394 @@
+\documentclass[math.tex]{subfiles}
+\begin{document}
+
+\section{Calculus微积分}
+
+\subsection{Misc}
+$d(uv)=udv+vdu$\\
+$uv=\int udv + \int vdu$
+
+\subsection{无穷小}
+
+if $f(x)$在$x\to x_0$时极限为0，则称$f(x)$为当$x\to x_0$时的无穷小
+
+无穷小是个概念，非正式描述：“最终会消失的量”， “绝对值比任何正数都要小的量”\\
+无穷小量不是一个数，是一个变量，0可以作为无穷小量的唯一一个常量。
+
+$\lim\frac{\beta}{\alpha}=0$, $\beta$ 是比 $\alpha$ 高阶的无穷小\\
+$\lim\frac{\beta}{\alpha}=\infty$, $\beta$ 是比 $\alpha$ 低阶的无穷小\\
+$\lim\frac{\beta}{\alpha}=C$, $\beta$ 和 $\alpha$ 是同阶无穷小，if $C=1$称为等价无穷小\\
+
+\subsection{Limit(极限)}
+
+$\lim_{x \to \infty}(1+\frac{1}{x})^x=e$ and $\lim_{x \to 0}(1+x)^{\frac{1}{x}}=e$
+
+\subsubsection{L hospital's rule}
+if $f(x), g(x)$ 在 $x=c$ 可微, and $g'(x)\neq 0$, then
+\[
+  \lim_{x \to c}\frac{f(x)}{g(x)} =  \lim_{x \to c}\frac{f'(x)}{g'(x)}
+\]
+
+柯西中值to prove
+
+\subsection{Derivative导数}
+Left derivative:
+\[
+f'_-(x_0)=\lim_{\Delta x \to 0^-}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x} = \lim_{x \to x_0^-}\frac{f(x)-f(x_0)}{x-x_0}
+\]
+Right derivative:
+\[
+f'_+(x_0)=\lim_{\Delta x \to 0^+}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x} =\lim_{x \to x_0^+}\frac{f(x)-f(x_0)}{x-x_0}
+\]
+
+Let: $x-x_0=\Delta x$, they are same. But the latter is better, especially 左右导数
+
+\subsubsection{二阶导数}
+图像的凹凸性判定： $f''(x) \geq 0$ 是凹的，反之是凸的\\
+任意两点连出的线段在函数图像的下方或者上方，称之为凸凹\\
+等价于： 切线在函数的上方是凸的，在函数下方是凹的\\
+也就是$f'(x)$的增减性，可以以$y=x^2$为例, visualize 一条条的切线，便于理解\\
+
+证明？？？how to prove?
+
+\subsubsection{导数的乘积法则(莱布尼兹法则)}
+$(uv)'=u'v+uv'$
+
+Prove:\\
+$d(u\cdot v)=(u+du)\cdot(v+dv)-u\cdot v=u\cdot dv+v\cdot du+du\cdot dv$ 由于$du\cdot dv$可以忽略，因此有$d(u\cdot v)=v\cdot du+u\cdot dv$两边同时除以$dx$即可
+
+\subsubsection{chain rule}
+$\dfrac{d}{dx}[f(g(x))]=f'(g(x))g'(x)$
+
+e.g.
+
+$(\frac{1}{1-x})'=[(1-x)^{-1}]'=-1\cdot (1-x)^{-2}(-x)'=(1-x)^{-2}$
+
+$(tanx)'=$... while it's a good example to understand
+
+\subsection{Integral积分}
+黎曼可积的条件：有界，几乎处处连续
+
+\subsubsection{二重积分}
+$\iint_Df(x,y)dA=\int_{y=c}^{y=d}\underbrace{\int_{x=a}^{x=b}f(x,y)dx}_{\text{function of y}}dy$
+$=\int_{y=c}^{y=d}dy\int_{x=a}^{x=b}f(x,y)dx$
+
+e.g.\\
+$\int_0^2dx\int_x^2e^{-y^2}dy=\int_{x=0}^{x=2}dx\int_{y=x}^{y=2}e^{-y^2}dy=\int_{y=0}^{y=2}\int_{x=0}^{x=y}e^{-y^2}dxdy$
+
+\subsubsection{三重积分}
+$\iiint_Rfdv$, and R is 3-d space, $dv=dxdydz$
+
+$\int_{z=z_1}^{z=z_2}\int_{y=y_1(z)}^{y=y_2(z)}\int_{x=x_1(y,z)}^{x=x_2(y,z)}dxdydz$
+
+e.g.\\
+$f=x^2yz$ and V is
+$
+\left \{
+  \begin{array}{l}
+    2x+y+3z=6\\
+    z=2\\
+    x=0,y=0
+  \end{array}
+\right.
+$
+$\Rightarrow\int_{y=0}^{y=6}\int_{x=0}^{x=3-\frac{y}{2}}\int_{z=2-\frac{2}{3}x-\frac{y}{3}}^{z=2}fdzdxdy$
+
+\subsection{多元微积分 multivariable calculus}
+偏导数、全微分
+
+偏导数是它关于其中一个变量的导数，而保持其他变量恒定\\
+全导数是所有变量都允许变化
+
+偏导数的符号是$\partial $是$d$的变体
+
+全微分：$dz=f_xdx+f_ydy=\frac{\partial z}{\partial x}dx+\frac{\partial z}{\partial y}dy$
+
+\subsection{多元函数的极值}
+$f(x,y)=x^3-3xy+y^3$的极值\\
+1. 找出临界点
+$
+\left \{
+  \begin{array}{l}
+    f'_x=3x^2-3y=0\\
+    f'_y=3y^2-3x=0
+  \end{array}
+\right.
+\Rightarrow (1,1) or (0,0)
+$\\
+2.二阶偏导数\\
+$
+\left \{
+  \begin{array}{l}
+    f''_{xx}(x_0,y_0)=A=6x\\
+    f''_{xy}(x_0,y_0)=B=-3\\
+    f''_{yy}(x_0,y_0)=C=6y
+  \end{array}
+\right.
+$
+and
+$
+\left \{
+  \begin{array}{l}
+    1. AC-B^2>0 \quad and \quad A>0  \quad min\\
+    2. AC-B^2>0 \quad and \quad A<0 \quad max\\
+    3. AC-B^2<0 \quad not max or min\\
+    4. AC-B^2=0 \quad not sure
+  \end{array}
+\right.
+$
+
+\subsection{条件函数的极值}
+求函数$z=x^2+2y^2$在$x^2+y^2=1$上的最值\\
+构造lagrange函数$F(x,y,\lambda)=x^2+2y^2+\lambda (x^2+y^2-1)$\\
+let $F'_x=0 \quad F'_y=0 \quad F'_{\lambda}=0$ 求出驻点，然后再比较
+
+$S=xy+2(xz+yz)$ 在 $xyz=V$下的min\\
+Let$F=xy+2(xz+yz)+\lambda(xyz-V)$, let $F'_x \quad F'_y \quad F'_z \quad F'_{\lambda} =0 $
+
+\subsection{介值定理 Intermediate value theorem}
+中值定理是 mean value theorem
+
+介值定理描述的是连续函数在两点之间的连续性
+
+直觀地比喻，這代表在$[a,b]$區間上可以畫出一個连续曲线，而不讓筆離開紙面
+\subsubsection{零点定理（波尔查诺定理）}
+零点定理是介值定理的一种特殊情况－如果曲线上兩點的值正负号相反($f(a)\cdot f(b)<0$)，其间必定存在一個根，也称勘根定理
+
+\subsection{极值定理}
+如果f在[a,b]上连续，则它一定取得最大值和最小值，至少一次。\\
+它强化了有界性定理
+
+\subsection{微积分基本定理}
+
+\subsubsection{Theorem prove order}
+罗尔定理
+拉格朗日、柯西 $\leftarrow$ 罗尔定理 \\
+积分第一中值定理 $\leftarrow$ 拉格朗日中值定理\\
+微积分第一基本定理 $\leftarrow$ 积分第一中值定理+夹逼定理\\
+微积分第二基本定理 $\leftarrow$ 积分第一中值定理+微积分第一基本定理+黎曼积分\\
+
+\subsubsection{第一部分(微积分第一基本定理)}
+$ F(x)=\int_a^xf(t)dt$ 有 $F'(x)=f(x)$
+
+表明不定积分是微分的逆运算，保证某连续函数的原函数的存在性
+
+Prove: 导数的定义(在$x_1$处的导数)、积分第一中值定理、夹逼定理:\\
+$F(x)=\int_a^xf(t)dt$，我们有$F(x_1)=\int_a^{x_1}f(t)dt$ 和 $F(x_1+\Delta x)=\int_a^{x_1+\Delta x}f(t)dt $\\
+$F(x_1+\Delta x)-F(x_1) = \int_a^{x_1+\Delta x}f(t)dt-\int_a^{x_1}f(t)dt=\int_{x_1}^{x_1+\Delta x}f(t)dt$\\
+由积分第一中值定理，在$(x_1,x_1+\Delta x)$存在一个c，$\int_{x_1}^{x_1+\Delta x}f(t)dt=f(c)\Delta x$\\
+故$F(x_1+\Delta x)-F(x_1)=f(c)\Delta x \Rightarrow \frac{F(x_1+\Delta x)-F(x_1)}{\Delta x}=f(c)$\\
+$\Delta x \to 0$，有$F'(x_1)=\lim_{\Delta x \to 0}f(c)$\\
+根据squeeze定理， $\lim_{\Delta x \to 0}c = x_1$，带入，有$F'(x_1)=\lim_{c_\to x_1}f(c)=f(x_1)$
+
+\subsubsection{第二部分(微积分第二基本定理，牛顿-莱布尼兹公式)}
+$\int_a^bf(x)dx = F(b)-F(a)$
+
+定积分可以用原函数来计算，简化计算
+
+Prove：(矩形面积、积分第一中值定理、黎曼积分) 设$a=x_0<x_1<x_2\cdots <x_n$\\
+$F(b)-F(b)=[F(x_n)-F(x_{n-1})]+\cdots = \sum_{i=1}^n[F(x_i)-F(x_{i-1})]=\sum_{i=1}^n[F'(c_i)(x_i-x_{i-1})]=\sum_{i=1}^n[f(c_i)(\Delta x_i)] $\\
+两面取极限(黎曼积分)$\lim_{\| \Delta \| \to 0}[F(b)-F(a)]= F(b)-F(a)=\lim_{\| \Delta \| \to 0}\sum_{i=1}^n[F(c_i)(\Delta x_i)]$\\
+右侧表达式定义了f从a到b的积分，so，$F(b)-F(a)=\int_a^bf(x)dx$
+
+\subsection{中值定理(Mean Value Theorem)}
+
+\subsubsection{微分中值定理}
+1. 罗尔定理:是三个theorems的基础，另两个都是基于此证明\\
+f(x)在[a,b]连续,(a,b)可导，f(a)=f(b)，那么$\exists c, f'(c)=0 $\\
+Prove: 根据极值定理，证明极值点(假设$\varepsilon$处最大值)导数为0\\
+$f'(\varepsilon^-) = \lim_{x\to \varepsilon^-}\frac{f(x)-f(\varepsilon)}{x-\varepsilon} \geq 0$\\
+$f'(\varepsilon^+) = \lim_{x\to \varepsilon^+}\frac{f(x)-f(\varepsilon)}{x-\varepsilon} \leq 0$\\
+
+2. Lagrange拉格朗日\\
+f(x)在[a,b]连续,(a,b)可导，那么$\exists \xi \in (a,b), f(b)-f(a)=f'(\xi)(b-a)$\\
+Prove: $g(x)=\frac{f(b)-f(a))}{b-a}(x-a)+f(a)-f(x) $ \\
+or let $g(x)=\frac{f(b)-f(a)}{b-a}(x-b)+f(b)-f(x)$\\
+Both $g(a)=g(b)=0$
+
+3. 柯西定理：可推导出洛必达法则\\
+f(x)在[a,b]连续,(a,b)可导，那么$\exists \xi \in (a,b), \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)}$\\
+Prove: $h(x)=f(x)-\frac{f(b)-f(a)}{g(b)-g(a)}g(x)$\\
+or let $h(x)=\frac{f(b)-f(a)}{g(b)-g(a)}g(x)-f(x)$\\
+Both $h(a)=h(b)$
+
+4. 几何意义：\\
+拉格朗日是核心，罗尔定理是其特殊情况，柯西定理是其推广。\\
+罗尔定理：极值点导数为0；拉格朗日；存在切线与首尾平行；柯西：参数方程下……平行
+
+\subsubsection{积分中值定理}
+第一中值定理：
+$f:[a,b]\to \mathbb{R}$连续函数，$g:[a,b] \to \mathbb{R}$可积切在积分区间不变号,那么存在一点$\varepsilon$, 使得$\int_a^bf(x)g(x)dx=f(\varepsilon)\int_a^bg(x)dx$
+
+Prove:\\ $mg(x)\leq f(x)g(x)\leq Mg(x)$, 对此求积分: \\$m\int_a^bg(x)dx\leq \int_a^bf(x)g(x)dx\leq M\int_a^bg(x)dx$\\
+if $\int_a^bg(x)dx=0$, then.... else $>0$, $m\leq \frac{\int_a^bf(x)g(x)dx}{\int_a^bg(x)dx} \leq M$, 而g(x)为连续函数 \\
+
+
+$\int_a^bf(x)dx=f(\varepsilon)(b-a)$是$g(x)=1$的特殊形式\\
+
+几何意思：积分面积=矩形面积，可以解释为什么可以用矩形代替不规则形状
+
+y\subsection{Taylor's Formula(泰勒公式)}
+设n是正整数，在a点n+1次可导，那么
+\begin{equation*}
+\begin{split}
+  f(x) &=f(a)+\frac{f'(a)}{n!}(x-a)+\frac{f^{(2)}(a)}{2!}(x-a)^2+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x)\\
+  & =\sum_{n=0}^{\infty}\frac{f^n(a)}{n!}(x-a)^{n}
+\end{split}
+\end{equation*}
+
+Just remember $\frac{f^{(n)}(a)}{n!}(x-a)^n $, \textbf{三个n，导、阶、幂}\\
+If $R_n(x) = o[(x-a)^n] $, Peano form of remainder\\
+If $R_n(x)= \frac{f^{(n+1)(\theta)}}{(n+1)!}(x-a)^{n+1}$, $\theta \in (a, x)$, Lagrange form of remainder
+
+\subsubsection{由来}
+$f(a+h)=f(a)+f'(a)h+o(h)$，对于足够光滑的函数…………
+
+\subsubsection{意义}
+一叶知秋
+
+泰勒公式，if only函数在点展开的级数收敛时才有意义
+
+\subsubsection{Taylor series(级数)、Maclaurin series}
+麦克劳林级数是泰勒级数在0点的展开，常用的麦克劳林序列：
+
+$e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots=\sum_{n=0}^{\infty}\frac{x^n}{n!} \quad \forall x$
+
+$\frac{1}{1-x}=1+x+x^2+\cdots+x^k+\cdots=\sum_{n=0}^{\infty}x^n \quad \forall |x| \leq 1 $\\
+$f'(x)=(1-x)^{-2}, f''(x)=2(1-x)^{-3},\cdots f^n(x)=n!(1-x)^{-(n+1)}$\\
+
+$(1+x)^{\alpha}=\sum_{n=0}^{\alpha}C(\alpha,n)x^n \quad \forall x: |x|<1, \forall\alpha \in \mathbb{C} $\\
+$f'(x)=\alpha (1+x)^{\alpha-1}, f''(x)=\alpha(\alpha-1)(1+x)^{\alpha-2} \cdots $\\
+$f^{(n)}(x)=\alpha(\alpha-1)(\alpha-2)\cdots(\alpha-n+1)(1+x)^{{\alpha-n}}$
+
+$ln(1+x)=\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}x^n \quad \forall x \in (-1,1]$\\
+$f'(x)=(1+x)^{-1},f''(x)=-1(1+x)^{-2},f'''(x)=1\cdot 2(1+x)^{-3} \cdots $\\
+$f^{(4)}(x)=-1\cdot 2 \cdot 3 (1+x)^{-4}$
+
+$\sin x = x - \frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\cdots$\\
+$\cos x = 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\cdots $
+
+$\arctan x=x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+\cdots$
+
+$x^2=0+\frac{0}{1!}x+\frac{2}{2!}x^2+\frac{0}{3!}x^3+\cdots$
+
+Notice: $\sin'x =\cos x$, so it's easy to remember
+
+\subsection{级数}
+无穷级数: $s=\lim_{n=1}^{\infty}u_n=u_1+u_2+\cdots+u_n+\cdots$\\
+$S_n$(前n项和)收敛，则称级数s收敛
+
+级数收敛的必要条件 $\lim_{n \to \infty}u_n=0$
+
+\textbf{级数收敛的判定：}\\
+1. 比较判别($v_n$ 为另一个级数)：\\
+$\lim |\frac{v_n}{u_n}|=A$(constant, $\neq 0$), 同时收敛与发散， 比如与标准级数$\sum\frac{1}{n^p}$对比, $p=1$时为调和级数, it's divergent\\
+if $A=0$, 根据$v_n$的发散或者收敛也可以判断
+
+2. 比值判定(达朗贝尔)：$\lim|\frac{u_{n+1}}{u_n}|=\rho$, $<1$收敛，$>1$发散，$=1$无法判定
+
+3. 极值判定(柯西)：$\lim \sqrt[n]{u_n}=\rho$, 同上
+
+\textbf{交错级数的判定：}
+$\sum_{n=0}^{\infty}(-1)^na_n$\\
+莱布尼兹判定：1.$u_n\leq u_{n+1}$, 即单调递减 2.$\lim u_n=0$ 同时满足1、2则级数收敛
+
+
+绝对收敛($\sum|u_n|$收敛)\\
+条件收敛($\sum|u_n|$发散，$\sum u_n$收敛)\\
+绝对收敛的级数一定收敛\\
+条件收敛的正项或者负项构成的级数一定发散
+
+\subsubsection{幂级数}
+$\sum_{n=0}^{\infty}a_n(x-x_0)^n$\\
+
+收敛域($\lim|\frac{u_{n+1}}{u_n}|$)、收敛半径(=收敛域(是对称的)/2)\\
+两种思路(最后都要讨论端点)：\\
+1. 达朗贝尔，此法比较易懂, 令$|\frac{u_{n+1}}{u_n}|<1$，求出范围即是收敛域 \\
+2. 此较为正统，$|\frac{a_{n+1}}{a_n}=l|$ and $R=1/l$
+
+Example: $\sum_{n=1}^{\infty}\frac{x^n}{n\cdot 2^n}$， hint\footnote{$R=2$}
+
+
+\subsection{常用}
+$e^{\ln x}=x$ and $\ln e^x=x$\\
+$\ln(x)'=\frac{1}{x}$\\
+$(a^x)'=a^x\ln a$\\
+$\sin'x = \cos x$ and $\cos'x=-\sin x$\\
+$\arcsin'x=\frac{1}{\sqrt{1-x^2}}$, 可以用三角形简单的推导一下 \\
+$\arccos'x=-\frac{1}{\sqrt{1-x^2}}$\\
+$\arctan' x=\frac{1}{1+x^2}$ and $arccot' x=-\frac{1}{1+x^2}$\\
+$\tan'x=\frac{1}{\cos^2x}=\sec^2x$\\
+$\cot'x=-\frac{1}{\sin^2x}=\csc^2x$\\
+$\ln'(x+\sqrt{x^2+a^2})=\frac{1}{\sqrt{x^2+a^2}}$\\
+$\ln'(x+\sqrt{x^2-a^2})=\frac{1}{\sqrt{x^2-a^2}}$\\
+$\int \frac{1}{x}dx=\ln|x|+c$\\
+
+$\int_a^bf(x)dx=\int_a^bf(a+b-x)dx$, hint\footnote{$\int_2^4\frac{f(x)}{f(6-x)+f(x)}dx$, $\int_0^{\frac{\pi}{2}}\frac{\sqrt{\sin x}}{\sqrt{\sin x}+\sqrt{\cos x}}dx$}
+
+\subsubsection{换元积分法}
+它是由链式法则和微积分基本定理推导而来的。
+
+第一类(配凑)：$\int_a^bf(g)g'dx=\int_{g(a)}^{g(b)}f(g)dg$
+
+第二类：$\int_a^bf(x)dx=\int_{x^{-1}(a)}^{x^{-1}(b)}f(x(g))x'dg$, Like $\sqrt{x^2\pm a^2}$,$\sqrt{a^2-x^2}$.
+
+前提是$f$为可积函数，$g$为连续可导函数
+
+e.g.\\
+$\int_0^r\sqrt{r^2-x^2}dx$, In three ways:\\
+1. Let $x=r\sin x$, then $\int_{x=0}^{x=r} \to \int_{\theta=0}^{\theta=\pi/2}$\\
+2. Let $x=r\cos x$, then $\int_{x=0}^{x=r} \to \int_{\theta=\pi/2}^{\theta=0}$\\
+3. 数形结合: 注意积分上限都要做改变
+
+\subsection{MISC}
+不定积分常用方法：降幂 分部积分 分母合并
+
+分部积分（定积分、不定积分）：\\
+$\int udv=uv-\int vdu$ and $\int_a^budv=uv|_a^b-\int_a^bvdu$\\
+Prove: $\frac{d(uv)}{dx}=u'dv+v'du$ 两边求不定积分和定积分
+
+$\int \arctan xdx=$
+
+$\int \sin \sqrt[3]{x}=$
+
+$\int \sec xdx=$ hint\footnote{$\ln(\sec x + \tan x)+C$}
+
+$\int \frac{1}{\sin x + \tan x}=$
+
+$\int x\sin^2xdx=$
+
+$\int \csc^3x \sec x=$
+
+$\int \sec^4xdx$, hint\footnote{$\sec^2 x \sec^2 xdx \to \frac{\sin^2 x + \cos^2 x}{\cos^2 x}d\tan x$}
+
+$\int e^x\cos xdx$, hint\footnote{$\int \cos xde^x = e^x\cos x+\int e^x\sin xdx=e^x\cos x+e^x \sin x-\int e^x\cos xdx$}
+
+$\int \frac{2x+3}{x^2-5x+4}dx$, hint\footnote{有定式，$\frac{A}{x-4}+\frac{B}{x-1}$}
+
+$\int_0^{\frac{\pi}{2}}\frac{\sin x}{3\sin x+4\cos x}dx$, hint\footnote{Like above, $3A+4B$ and $3B-4A$, find 系数}
+
+$\int e^{\sqrt x}dx$
+
+$\int \frac{1}{1+\cos x}dx$, hint\footnote{$\frac{1-\cos x}{(1+\cos x)(1-\cos x)}$}
+
+$\int \frac{1}{1+x+x^2}dx$
+
+$\int \frac{x}{1+x^4}dx$
+
+$\int \frac{1}{1+\sqrt{x}}dx$
+
+$\int_{-2}^2(x^2\cos\frac{x}{2}+\frac{1}{2})\sqrt{4-x^2}dx$, hint\footnote{奇偶性}
+
+$f(a)=f(b)=0$, prove $\exists\xi \quad f'(\xi)+f(\xi)g'(\xi)=0$, hint\footnote{$\int\frac{f'(x)}{f(x)}=\int(-g'(x)) \to\ln f(x)=-g(x)+C$, note $f(a)=f(b)=0$, cannot $\log$, so further, let $F(x)=f(x)-e^{-g(x)}$}
+
+prove $x=a\sin x+b$, $a>0, b>0$,至少存在一正根，且不超过$a+b$, ???
+
+$y=x^2$绕y和x轴分别旋转一周形成的曲面$s_1, s_2$,求出两个曲面方程，并求$y=4$与$s_1$围成的体积。hint\footnote{绕y轴，y不变，$x \rightarrow \pm\sqrt{x^2+z^2}$; $v=\int_{y=0}^{y=4}\pi x^2dy$，看成一个个圆柱体,而$y=x^2$}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "math"
+%%% TeX-engine: xetex
+%%% End:

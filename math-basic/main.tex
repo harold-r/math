@@ -1,0 +1,58 @@
+\documentclass[12pt,fleqn]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%% Packges %%%%%%%%%%%%%%%%%%%%%
+\usepackage{xeCJK}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm, mathtools, amsfonts} % math
+\usepackage{graphicx} %figures
+\usepackage[dvipsnames]{xcolor} %dvipsnames loads 68 names colors(CMYK)
+\usepackage{todonotes}
+\graphicspath{{images/}}
+\usepackage[a4paper, top=20mm]{geometry} %page dimension
+\usepackage[hang,flushmargin]{footmisc} %footnote no indent
+%%%%%%%%%%%%%%%%%%%%%%%% End Packages %%%%%%%%%%%%%%%%
+
+% Tree diagram
+\usepackage{tikz}
+\usetikzlibrary{trees}
+
+% Drawing
+\usepackage{pgf,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
+
+%%%%%%%%%%%%%%%%%%%%%%%% MISC %%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0em} % paragragh indent
+\setlength{\parskip}{0.5em}  % paragragh spacing or use \bigskip \medskip \smallskip in content
+\linespread{1.2} % line spacing
+\title{MATH} \author{zhb} \date{2025}
+%%%%%%%%%%%%%%%%%%%%%%%% End MISC %%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%% Special %%%%%%%%%%%%%%%%%%%%%
+\usepackage{subfiles} % Best loaded last in the preamble
+% Hyperlink ref, Clickable Everything
+% Be careful, it has to be the last package to be imported
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%%%%%%%%%%%%%%%%%%%%%%%% End Special %%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%% Tableofcontents %%%%%%%%%%%%%
+\setcounter{tocdepth}{1} %TOC(table of contents) depth
+% sections, subsections and chapters are included
+\tableofcontents
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%% Special %%%%%%%%%%%%%%%%%%%%%
+
+\subfile{contents/algebra}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-engine: xetex
+%%% TeX-master: t
+%%% End:
