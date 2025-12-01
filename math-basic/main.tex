@@ -12,9 +12,11 @@
 \usepackage[hang,flushmargin]{footmisc} %footnote no indent
 %%%%%%%%%%%%%%%%%%%%%%%% End Packages %%%%%%%%%%%%%%%%
 
-% Tree diagram
+% Graphics
 \usepackage{tikz}
 \usetikzlibrary{trees}
+
+\usepackage{mdframed} % Boxes
 
 % Drawing
 \usepackage{pgf,pgfplots}
@@ -26,8 +28,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%% MISC %%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\parindent}{0em} % paragragh indent
-\setlength{\parskip}{0.5em}  % paragragh spacing or use \bigskip \medskip \smallskip in content
-\linespread{1.2} % line spacing
+\setlength{\mathindent}{0cm} % No indent for math
+\setlength{\parskip}{0.6em}  % paragragh spacing or use \bigskip \medskip \smallskip in contenty
+\newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
+\linespread{1.5} % line spacing
 \title{MATH} \author{zhb} \date{2025}
 %%%%%%%%%%%%%%%%%%%%%%%% End MISC %%%%%%%%%%%%%%%%%%%%
 
@@ -41,12 +45,13 @@
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%% Tableofcontents %%%%%%%%%%%%%
-\setcounter{tocdepth}{1} %TOC(table of contents) depth
+\setcounter{tocdepth}{2} %TOC(table of contents) depth
 % sections, subsections and chapters are included
 \tableofcontents
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%% Special %%%%%%%%%%%%%%%%%%%%%
 
+\subfile{contents/part1}
 \subfile{contents/algebra}
 
 \end{document}

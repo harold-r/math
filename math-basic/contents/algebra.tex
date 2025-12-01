@@ -3,170 +3,68 @@
 
 \begin{document}
 
-\section{MISC}
+\part{basics}\
 
-$0!$规定为$1$
+\section{反证法(proof by contradiction)}
+英国数学家高德菲·哈罗德·哈代在他的文章《一个数学家的辩白》描述：“欧几里得最喜欢用的反证法，是数学家最精良的武器。它比起棋手所用的任何战术还要好：棋手可能需要牺牲一只兵甚至更多，但数学家却是牺牲整个棋局来获得胜利。”
 
-数域(域：field)：指一个数集，它对加法、减法、乘法和除法（除数不为零）运算是封闭的，并且包含$0$和$1$\\
-换句话说，对数域中任意两个数进行这四种基本运算，其结果仍然属于这个数域。\\
-常见的数域包括有理数域(Q)、实数域(R) 和复数域(C)\\
-一个集合成为数域，需满足以下条件：\\
-1. 包含0和1：数域中必须有加法单位元0和乘法单位元1\\
-2. 封闭性：加法和减法封闭；乘法封闭；除法封闭\\
-非数域例子：自然数集和整数集，不构成数域，因为除法运算不封闭，例如$2/3$不属于自然数或者整数
+反证法常用于"正面证明不容易或不能得出结果"的情况
 
+Procedure:\\
+1. The proposition to be proved is $P$\\
+2. We assume $P$ to be false, i.e., we assume $\neg P$\\
+3. It is shown that $\neg P$ implies falsehood. This is typically accomplished by deriving two mutually contradictory assertions. $Q$ and $\neg Q$ and appealing to the law of noncontradiction\\
+4. Since assuming $p$ to be false leads to a contradiction. It's concluded that $p$ is in fact true
 
-\section{代数基本定理(Fundamental theorem of algebra)}
-Also called "d'Alembert–Gauss theorem"\\
-描述为：任何一个复系数的一元$n$ 次多项式方程($n\geq 1$)，至少有一个复数根。﻿
+Example: $\sqrt{2}$是无理数的证明
 
-有时候这个定理描述为：任何一个非零的一元n次复系数多项式，都正好有$n$个复数根（重根视为多个根）。但实际上，是“至少有一个根的”直接结果，因为把多项式除以它的线性因子可以推出。也就是说，任何一个$n$次多项式，都可以因式分解为$n$个复系数一次多项式的乘积(根据多项式除法\todo{Proof?})。
+假设$\sqrt{2}$是有理数，那么就可以写为$\frac{p}{q}$，其中$p, q$为正整数且互质，那么有： $p=\sqrt{2}\times q$, then $p^2=2\times q^2$, 很显然$p^2$是偶数，而只有偶数的平方才是偶数，所以$p$是偶数。假设$p=2s$，then $p^2=4s^2=2q^2 \Rightarrow q^2=2s^2$， 从而$q$也是偶数，这与互质矛盾，假设不成立，从而得证。
 
-推论：任何一个非零的一元n次复系数多项式，都正好有n个复数根（重根视为多个根）。
+\section{素数、合数}
 
-意义：复数域是代数封闭的；该定理是代数学和近世代数中的一个基础性结论
+素数 vs 质数\\
+直到清末，prime number一直被翻译为素数，素数、非素数、合成数都是日译名。汉语中的“素”有“根本”之义，有可能“素”与“数”读音接近，易混淆，用了“质”。但华罗庚的《堆垒素数》和陈景润研究的“哥德巴赫猜想”也是用的素数。现在的一些中小学教材，统一使用的是质数，但又标明了“质数，又叫素数”
 
-尽管这个定理被命名为“代数基本定理”，但它还没有纯粹的代数证明，许多数学家都相信这种证明不存在。另外，它也不是最基本的代数定理；因为在那个时候，代数基本上就是关于解实系数或复系数多项式方程，所以才被命名为代数基本定理。
+为什么规定1不是素数？\\
+$1$既不是素数也不是合数。加入$1$是素数，那么一个数比如$1\times 2^2 \times 3^3$也可以写为$1^2\times 2^2 \times 3^3$，这样分解就不唯一了
 
-所有的证明都包含了一些数学分析，至少是实数或复数函数的连续性概念。有些证明也用到了可微函数，甚至是解析函数。
+素数：大于1的自然数，如果只有1与自身两个因数，那么这个数就称为素数。如$2, 3, 5, 7, 11$ etc。2是最小的素数，也是素数中唯一的偶数
 
+合数：大于1的自然数，如果除了1与自身以外，还有其他因数，则称此数为合数。如$4, 6, 8$ etc.
 
+根据定义，$1$既不是素数，也不是合数。全体自然数分为：$1$、 素数、合数。
 
-\section{多项式除法、多项式余式定理(Polynomial division, Polynomial remainder theorem)}
+互质(互素, coprime)：两个或两个以上的整数的最大公约数是$1$\\
+如果数域是正整数，那么$1$与所有正整数互质\\
+如果数域是整数，那么$1$ and $-1$与所有整数互质，而且他们是仅有的与$0$互质的整数\\
+两个整数($a,b$)互质，记为：$a \perp b$
 
-\begin{flalign*}
-  \frac{P(x)}{D(x)} = Q(x)+\frac{R(x)}{D(x)} \Rightarrow P(x)=D(x)Q(x)+R(x)&&
-\end{flalign*}
+任何有理数都可以表示为连个互质的整数之比，也就是一个最简分数。根据有理数定义，有理数是指可以表示成两个整数之比的数，而分数的可以通过不断约分最终得到一个分子和分母互质的最简分数
 
-If $D(x)=x-a$, then $P(x)=(x-a)Q(x)+R(x) = (x-a)Q(x)+r$\\
-根据定义，$R(x)$的次数小于$1$, so $R(x)$只能为常数\\
-$\Rightarrow P(a)=(a-a)Q(x)+r=r$\\
-得到\textbf{多项式余式定理}：多项式$P(x)$除以$x-a$所得的余式$=P(a)$
+专门研究数学的人认为素数是最基本的数，因为任何大于1的整数要么是素数，要么是若干素数的积。德国的高斯曾经说过：“数学是科学的皇后，数论是数学的皇冠”。费马曾说过：“全部的数论问题就在于以何种方法来讲一个整数分解质因数”。
 
-dividend = divisor x quotient + reminder
+素数是有限的还是无限的？这被欧几里得证明了，有了欧几里得定理(Euclid's theorem)，是数论中的基本定理。
 
-\subsection{Examples}
-Let $f(x)=x^{3}-12x^{2}-42$, divided by $x-3$, gives the quotient $x^{2}-9x-27$, and the remainder $-123$.\\
-By the polynomial remainder theorem, $f(3)=-123$
+欧几里得定理(Euclid's theorem)：\\
+《几何原本》第九卷中，有以下陈述：存在着比指定的任意多个素数更多的素数。也即：素数的个数是无限的。
 
-寻找多项式的切线？ \todo{?直觉要用微积分，但是这个是啥情况？} \url{https://zh.wikipedia.org/wiki/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E9%99%A4%E6%B3%95}
+素数是无限的.
 
+Proof1(欧几里得，不是反证法？):\\
+1. 假设素数是有限的，那么可以假设素数只有一个有限的集合S，as $\{p_1, p_2, ... p_n\}$\\
+2. 构造一个新的数: $Q=p_1\times p_2\times \cdots p_n+1$\\
+3. 分析$Q$\\
+\forceindent a, $Q$比$S$中的任意一个素数要大，它不在$S$内\\
+\forceindent b, 用集合$S$中的任何一个素数$p_i$去除$Q$, 都会余1\\
+4. 得出矛盾\\
+\forceindent a, 意味着$Q$要么本身就是一个新的素数，它不在我们构造的集合$S$内\\
+\forceindent b, 要么$Q$是一个合数，它可以被一个比$P_n$(我们假设的最大的素数)还要大的素数整除，根据\textbf{算数基本定理}，这意味着存在一个不在$S$内的素数，这个素数比\\
+5. 这与我们最初假设的“素数是有限的”矛盾，因此素数一定有无限多个
 
-\section{因式定理(Factor theorem)}
-The Factor theorem connects polynomial factors with polynomial roots.(关于多项式的因式和零点的定理)
+Proof2(欧几里得)：\\
+考虑正整数$n$的阶乘$n!$可以被$2$到$n$的所有的整数整除，$n!+1$并不能被$2$到$n$的任何自然数所整除，因此$n!+1$有两种可能性：是素数，或者能被大于$n$的素数(素数基本定理)整除，在任何一个case中，都表明至少存在一个比$n$大的素数
 
-一个多项式$f(x)$有一个因式$ax-b$当且仅当 $f(\frac{b}{a})=0$
-
-普遍应用于因式分解，利用长除法，除以零点$(x-a)$
-
-Example:
-
-分解因式：$(x-y)^{3}+(y-z)^{3}+(z-x)^{3}$\\
-$x=y, y=x, x=z$是$0$点，so $k(x-y)(y-z)(x-z)$, let $x=0,y=1,z=2 \Rightarrow k=3$
-
-\section{因式分解}
-\subsection{因式分解定理}
-数域$F$上的每个次数$\ge 1$的多项式$f(x)$都可以分解为数域$F$上一些不可约多项式的乘积，并且是唯一的，即：\\
-$f(x)=p_{x}(x)p_{2}(2)p_{3}(x)\cdots p_{s}(x) = q_{1}(x)q_{2}(x)q_{3}(x)\cdots q_{t}(x)$,其中$p_{i}(x)$和$q_{j}(x)$都是数域$F$上的不可约多项式，那么必有$s=t$，而且可以适当排列因式的次序，使得\\
-$p_{i}(x)=c_{i}q_{i}(x)$
-
-\subsection{分解方法}
-公因式
-
-公式法
-
-分组分解
-
-拆添项
-
-十字交叉
-
-一次因式检验法(有理根定理)
-
-
-\section{算术基本定理}
-
-
-\section{有理根定理(Rational root theorem)}
-Also called rational root test, rational zero theorem, rational zero test or $p/q$ theorem
-
-描述：对于$a_{n}x^{n} + a_{n-1}x^{n-1}+\cdots + a_{1}x+a_{0}=0$, \colorbox{BurntOrange}{系数$a_{i}\in \mathbb{Z}$}, and $a_{0}, a_{n} \neq 0$.\\
-该定理指出，如果存在有理根$x=\frac{p}{q}$, written in lowest term(that is $p$ and $q$ are relatively prime, 互质)，满足：\\
-$p$是$a_{0}$的整数因子，i.e. $p|a_{0}$.整除符号,Tips\footnote{$a|b$： $a$整除$b$，$b$能被$a$整除，也就是$b$除以非零$a$，商是一个整数. i.e. $2|6$}\\
-$q$是$a_{n}$的整数因子，i.e. $q|a_{n}$.
-
-该定理是高斯定理关于多项式分解的一个特例
-
-\subsection{Proof}
-Let $P(x) = a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots +a_{1}x+a_{0}$ with $a_{i} \in \mathbb{Z}$, $a_{0},a_{n} \neq 0$
-
-Suppose $P(p/q) = 0$ for some coprime $p,q \in \mathbb{Z}$:\\
-$P(\frac{p}{q}) = a_{n}(\frac{p}{q})^{n} + a_{n-1}(\frac{p}{q})^{n-1}+\cdots + a_{1}(\frac{p}{q}) + a_{0} = 0$\\
-$\Rightarrow a_{n}p^{n}+ a_{n-1}p^{n-1}q+\cdots +a_{1}pq^{n-1}+ a_{0}q^{n} = 0$\\
-$\Rightarrow p(a_{n}p^{n-1}+a_{n-1}qp^{n-2}+\cdots +a_{1}q^{n-1}) = -a_{0}q^{n} \Rightarrow ()=-a_{0}\frac{q^{n}}{p}$ \\
-$\Rightarrow q(a_{n-1}p^{n-1}+a_{n-2}qp^{n-2}+\cdots +a_{0}q^{n-1}) = -a_{n}p^{n} \Rightarrow ()=-a_{n}\frac{p^{n}}{q}$\\
-我们注意到，括弧内是整数，因为$a_{i}$是整数，所以这是关键
-
-$p,q$互质，$\frac{p}{q} = \pm \frac{a_{0}\text{的因子}}{a_{n}\text{的因子}}$
-
-注意$p, q$为$1$的特殊情况，显而易见$1$永远是第一个选择
-
-关键点：\\
-1. 系数是整数\\
-2. 如果存在有理根，则必符合此定理，否则存在无理根(如$\sqrt{89}$)亦或者复数根
-
-\subsection{Example}
-$x^{3}-7x+6=0$: \\
-有理根有可能是：$\pm \frac{\{1,2,3,6\}}{1}=\pm {1, 2, 3, 6}$，恰好$1, 2, -3$，所以也恰好可以写为：$(x-1)(x-2)(x+3)=0$
-
-$3x^{3}-5x^{2}+5x-2=0$, 如果有有理根，则必在$\pm \frac{1,2}{1,3}=\pm{1,2, \frac{1}{3}, \frac{2}{3}}$中。8个候选根，需要测试8次，最后才知道$x=2/3$是唯一有理根.\\
-很是繁琐不是？所以可以通过评估$P(r)$来测试缩小范围(比如使用秦九韶算法?)。\\
-Firstly, if $x<0$, the $P$ will be negative, so every root is positive\\
-$P(1)=1$, so 1 is not the root. Moreover, if one sets $x=1+t$, so $Q(t)=P(1+t)$, 展开后，三次项是3，一次项是1，implies $Q$ must belongs to ${\pm 1, \pm \frac{1}{3}}$, and $P$ satisfy $x=1+t \in {2,0,4/3,2/3}$. 再次显示必须为正，两个候选项是$2, 2/3$, 将$2$带入，显然不是，最后测试$2/3$\
-
-If $a, b$ and $\frac{a^{2}}{b}+\frac{b^{2}}{a}$ are integers, then both $\frac{a^{2}}{b}$ and $\frac{b^{2}}{a}$ must be integers.\\
-
-% see https://en.wikipedia.org/wiki/Rational_root_theorem
-
-\section{韦达定理(Vieta's formulas)}
-Any general polynomial of degree $n, P(x)=a_{n}x^{n}+ a_{n-1}x^{n-1}+\cdots +a_{1}x+a_{0}$, by the "fundamental theorem of algebra", roots are $x_{1}, x_{2}, x_{3}\cdots$
-\[
-  \left\{
-    \begin{array}{l}
-      x_{1}+x_{2}+x_{3}+\cdots + x_{n-1}+ x_{n} = -\frac{a_{n-1}}{a_{n}}\\
-      (x_{1}x_{2}+x_{1}x_{3}+x_{1}x_{4}+\cdots +x_{1}x_{n})+(x_{2}x_{3}+x_{2}x_{4}+\cdots +x_{2}x_{n})+\cdots + x_{n-1}x_{n} = \frac{a_{n-2}}{a_{n}}\\
-      \vdots\\
-      x_{1}x_{2}x_{3}\cdots x_{n} = (-1)^{n}\frac{a_{0}}{a_{n}}
-    \end{array}
-  \right.
-\]
-
-\subsection{Proof}
-$a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots + a_{1}x + a_{0} = a_{n}(x-x_{1})(x-x_{2})\cdots (x-x_{n}) $\\
-展开后比较系数\\
-\[
-  \left\{
-    \begin{aligned}
-      a_{n-1} &= -a_{n}(x_{1}+x_{2}+\cdots + x_{n-1}+ x_{n})\\
-      a_{n-2} &= a_{n}[(x_{1}x_{2}+x_{1}x_{3}+\cdots +x_{1}x_{n})+ (x_{2}x_{3}+ x_{2}x_{4}+\cdots + x_{2}x_{n})+\cdots + x_{n-1}x_{n}]\\
-      \vdots \\
-      a_{0} &= (-1)^{n}a_{n}x_{1}x_{2}\cdots x_{n}
-    \end{aligned}
-  \right.
-\]
-
-\subsection{韦达定理的逆定理}
-对于一元二次方程
-
-利用圆来研究一元二次方程？  http://202.175.82.54/tplan/2006/intro/R027.pdf
-
-
-\subsection{Examples}
-If $n=2$(quadratic), $ax^{2}+bx+c=0 = a(x-x_{1})(x-x_{2})$展开比较即有，也可以用求根公式
-
-if $n=3$, $x_{1}, x_{2}, x_{3}$是$ax^{3}+bx^{2}+cx+d=0$的三个根, then:\\
-$ax^{3}+bx^{2}+cx+d = a(x-x_{1})(x-x_{2})(x-x_{3})=a(x^{3}-(x_{1}+x_{2}+x_{3})x^{2}+(x_{1}x_{2}+x_{2}x_{3}+x_{1}x_{3})x- x_{1}x_{2}x_{3}=0)$, That is\\
-$x_{1}+x_{2}+x_{3}= -\frac{b}{a}, x_{1}x_{2}+x_{1}x_{3}+x_{2}x_{3}=\frac{c}{a}, x_{1}x_{2}x_{3}=-\frac{d}{a}$
+\textbf{素数定理}, 又称作质数定理, prime number theorem，是素数分布理论的中心定理，是关于素数个数问题的一个命题：\\
 
 
 \section{排列组合(permutation and combination)}
@@ -185,42 +83,6 @@ Combination just likes permutation, but the order doesn't matter
 This formula can be derived from the fact that each k-combination of a set $S$ of $n$ members has permutations so\\
 $P_{n}^{k}=C_{n}^{k}\times k!$ or $C_{n}^{k}=P_{n}^{k}/k!$. The $C_{n}^{k}$ often denoted by $\binom{n}{k}$
 
-\section{二项式定理(Binomial theorem)}
-\[
-  (x+y)^{n}=C_{n}^{0}x^{n}y^{0}+C_{n}^{1}x^{n-1}y^{1}+C_{n}^{2}x^{n-2}y2+\cdots +C_{n}^{n}x^{0}y^{n}
-\]
-
-Examples:
-
-$(x+y)^{0}=1$\\
-$(x+y)^{1}=x+y$\\
-$(x+y)^{2}=x^{2}+2xy+y^{2}$\\
-$(x+y)^{3}=x^{3}+3x^{2}y+3xy^{2}+y^{3}$\\
-$(x+y)^{4}=x^{4}+4x^{3}y+6x^{2}y^{2}+4xy^{3}+y^{4}$
-
-$(x+y)^{3}=xxx+xxy+xyx+xyy+yxx+yxy+yyx+yyy$, total $2^{3}$ terms
-
-Let $x=y=1$, we have $2^{n}=C_{n}^{0}+C_{n}^{1}+\cdots +C_{n}^{n}$
-
-\subsection{Proof}
-
-Method 1:数学归纳法(inductive proof)
-
-Method 2: 组合方法
-
-$(a+b)^{n}=\overbrace{(a+b)(a+b)\cdots (a+b)}^{\text{n terms}}$, $n$个括号相乘，从$n$个选出$k$个括号中的$a$,再从剩余的$n-k$个括号中选出$(n-k)$个$b$，得到一组$a^{k}b^{n-k}$，而这种选法共有$C_{n}^{k}$种，故总共有$C_{n}^{k}$个$a^{k}b^{n-k}$；其他同理
-
-\subsection{More}
-$(1+x)^{-1}$
-
-$(1+x)^{\frac{1}{2}}$
-
-$(1+\frac{1}{n})^{n}$
-
-Multinomial theorem:\\
-$(x_{1}+x_{2}\cdots +x_{m})^{n}$
-
-
 \section{绝对值}
 \subsection{绝对值的意义}
 本质是表示距离，比如数轴上的线段距离，差值的绝对值
@@ -238,16 +100,14 @@ $f(x)= |x+1| + |x| + |x-2|$的最值\\
 $f(x)=|2x-1|+|4x-3|$\\
 $f(x)=||x-1|-3|$
 
-
 \subsection{推广}
-$f(x) = |x-a_{1}| + |x-a_{2}|+ |x-a_{3}| + \cdots + |x-a_{n}| $
+$f(x) = |x-a_1| + |x-a_2|+ |x-a_3| + \cdots + |x-a_{n}| $
 $f(x)=|x+1|+|2x-1|$可以化简为：$f(x)=|x+1|+2|x-\frac{1}{2}|=|x+1|+|x-\frac{1}{2}|+|x-\frac{1}{2}|$
 
 奇点偶段，证明方法：从1到3到5，从2到4到6，以至无穷
 
-
 \section{整除规则(divisibility rule)}
-Let $A$ = $\overline{a_{n}a_{n-1}...a_{2}a_{1}} = a_{n}\times 10^{n-1}+a_{n-1}\times 10^{n-2}...+a_{2}\times 10 + a_{1}$
+Let $A$ = $\overline{a_{n}a_{n-1}...a_2a_1} = a_{n}\times 10^{n-1}+a_{n-1}\times 10^{n-2}...+a_2\times 10 + a_1$
 \subsection{基本判别(rules)}
 
 被2整除：\\
@@ -255,18 +115,18 @@ The last digit is even
 
 被3整除和被9整除:\\
 The sum of digits must be divisible by $3$ or $9$.
-Tips\footnote{$A = a_{n}\times (9+1)^{n-1}+a_{n-1}\times (9+1)^{n-2}...+a_{2}\times (9+1)+a_{1} \\
-~~~   = (a_{n}\times 9^{n-1} + a_{n-1}\times 9^{n-2}+...+a_{2}\times 9)+(a_{n}+a_{n-1}+...+a_{2}+a_{1}) $}
+Tips\footnote{$A = a_{n}\times (9+1)^{n-1}+a_{n-1}\times (9+1)^{n-2}...+a_2\times (9+1)+a_1 \\
+~~~   = (a_{n}\times 9^{n-1} + a_{n-1}\times 9^{n-2}+...+a_2\times 9)+(a_{n}+a_{n-1}+...+a_2+a_1) $}
 
 被4整除：\\
-The last two digits must be divisible by 4. Tips\footnote{$A=\overline{a_{n}a_{n-1}...a_{3}} \times 100 + \overline{a_{2}a_{1}}$}，后者是关键
+The last two digits must be divisible by 4. Tips\footnote{$A=\overline{a_{n}a_{n-1}...a_3} \times 100 + \overline{a_2 a_1}$}，后者是关键
+
 
 被5整除：
 
 被6整除：
 
 被7整除：\\
-
 
 被8整除：\\
 The last three digits must be divisible by 8
@@ -282,23 +142,23 @@ The last three digits must be divisible by 8
 
 \newpage
 
-\subsection{proof} \label{sec:proof}
+\subsection{proofs} \label{sec:proof}
 被7整除\\
-\textbf{方法1}：三位截断：if $A=\overline{b_{1}b_{2}b_{3}a_{1}a_{2}a_{3}}$ 能被7整除，then: $\overline{a_{1}a_{2}a_{3}} - \overline{b_{1}b_{2}b_{3}}$可以被7整除\\
-$A/7 = (\overline{b_{1}b_{2}b_{3}}\times 10^{3} + \overline{a_{1}a_{2}a_{3}})/7
-= 143\times \overline{b_{1}b_{2}b_{3}} + (\overline{a_{1}a_{2}a_{3}} - \overline{b_{1}b_{2}b_{3}})/7
+\textbf{方法1}：三位截断：if $A=\overline{b_1b_2b_3a_1a_2a_3}$ 能被7整除，then: $\overline{a_1a_2a_3} - \overline{b_1b_2b_3}$可以被7整除\\
+$A/7 = (\overline{b_1b_2b_3}\times 10^3 + \overline{a_1a_2a_3})/7
+= 143\times \overline{b_1b_2b_3} + (\overline{a_1a_2a_3} - \overline{b_1b_2b_3})/7
 $
 
 \textbf{方法2}：降位，如五位数变为四位，再变为三位，再两位。\\
-Suppose we have a number $A=\overline{a_{1}a_{2}a_{3}a_{4}b}$, let $A=\overline{ab}$, while $a=\overline{a_{1}a_{2}a_{3}a_{4}}$.\\
+Suppose we have a number $A=\overline{a_1a_2a_3a_4b}$, let $A=\overline{ab}$, while $a=\overline{a_1a_2a_3a_4}$.\\
 if 能化简为判断 $a+mb$能否被7整除，则简化成功：\\
 \[
 \begin{cases}
-  a + mb = 7n_{1}\\
-  10a + b = 7n_{2}
+  a + mb = 7n_1\\
+  10a + b = 7n_2
 \end{cases}
 \Rightarrow
-(10m-1)b = 7(n_{1}-n_{2})
+(10m-1)b = 7(n_1-n_2)
 \]
 \\
 That means $10m-1$必须是7的倍数，此时$m$可以为$5$ or $-2$。那么我们就可以简化为判断$a-2b$ or $a+5b$, $-2$ 和 $5$ 正好相差7.\\
@@ -314,9 +174,14 @@ $4564 \to 456-2\times 4=448 \to 44+8\times 5=7\times 12$
 
 这种方法用计算机编程来判断很方便
 
-
 \newpage
 \subfile{algebra-misc}
+
+\newpage
+\section{todo}
+生日问题
+https://zh.wikipedia.org/wiki/%E7%94%9F%E6%97%A5%E5%95%8F%E9%A1%8C
+
 
 \end{document}
 %%% Local Variables:
