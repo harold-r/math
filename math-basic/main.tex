@@ -4,6 +4,8 @@
 \usepackage{xeCJK}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amssymb, amsthm, mathtools, amsfonts} % math
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert} % for absolute values
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
 \usepackage{graphicx} %figures
 \usepackage[dvipsnames]{xcolor} %dvipsnames loads 68 names colors(CMYK)
 \usepackage{todonotes}
@@ -14,9 +16,12 @@
 
 % Graphics
 \usepackage{tikz}
+\usetikzlibrary{arrows,calc,patterns,positioning,shapes}
+\usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{trees}
 
-\usepackage{mdframed} % Boxes
+\usepackage[framemethod=TikZ]{mdframed} % Boxes, should set tikz to use roundcorner etc...
+\mdfsetup{roundcorner=9pt}              % Settings
 
 % Drawing
 \usepackage{pgf,pgfplots}
@@ -31,7 +36,7 @@
 \setlength{\mathindent}{0cm} % No indent for math
 \setlength{\parskip}{0.6em}  % paragragh spacing or use \bigskip \medskip \smallskip in contenty
 \newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
-\linespread{1.5} % line spacing
+\linespread{1.2} % line spacing
 \title{MATH} \author{zhb} \date{2025}
 %%%%%%%%%%%%%%%%%%%%%%%% End MISC %%%%%%%%%%%%%%%%%%%%
 
@@ -52,7 +57,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%% Special %%%%%%%%%%%%%%%%%%%%%
 
 \subfile{contents/part1}
-\subfile{contents/algebra}
+\subfile{contents/part2}
+\subfile{contents/misc}
 
 \end{document}
 %%% Local Variables:

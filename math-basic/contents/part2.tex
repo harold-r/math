@@ -3,22 +3,31 @@
 
 \begin{document}
 
-\part{basics}\
+\part{Part2 - basics}\
 
-\section{反证法(proof by contradiction)}
-英国数学家高德菲·哈罗德·哈代在他的文章《一个数学家的辩白》描述：“欧几里得最喜欢用的反证法，是数学家最精良的武器。它比起棋手所用的任何战术还要好：棋手可能需要牺牲一只兵甚至更多，但数学家却是牺牲整个棋局来获得胜利。”
+\section{数学符号}
+乘号曾经用过十几种，现在通用的有两种：$\times$ and $\cdot$. 前者是英国数学家William Oughtred在 1631年出版的《数学之论》提出的。莱布尼茨认为$\times$和拉丁字母x很像，赞成用$\cdot$。
 
-反证法常用于"正面证明不容易或不能得出结果"的情况
+平方根号根号曾经用拉丁文"Radix"的首尾两个字母合并起来使用，$\sqrt{\phantom{x}}$是笛卡尔在他的《几何学》中第一次使用的，由拉丁字母"r"变化而来。
 
-Procedure:\\
-1. The proposition to be proved is $P$\\
-2. We assume $P$ to be false, i.e., we assume $\neg P$\\
-3. It is shown that $\neg P$ implies falsehood. This is typically accomplished by deriving two mutually contradictory assertions. $Q$ and $\neg Q$ and appealing to the law of noncontradiction\\
-4. Since assuming $p$ to be false leads to a contradiction. It's concluded that $p$ is in fact true
+\section{环(Ring)、域(Field)}
+自然数(natural numbers)($\mathbb{N}$)：$1,2,3\ldots$ or $0,1,2,3\ldots$\\
+整数(integer)($\mathbb{Z}$):$\ldots, -2, -1, 0, 1, 2, \ldots$\\
+有理数(rational number)($\mathbb{Q}$): 可表示为分数的数\\
+实数(real number)($\mathbb{R}$): 所有有理数和无理数的集合，数轴上的所有点\\
+复数(complex number)($\mathbb{C}$)
 
-Example: $\sqrt{2}$是无理数的证明
+$\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R} \subseteq \mathbb{C}$
 
-假设$\sqrt{2}$是有理数，那么就可以写为$\frac{p}{q}$，其中$p, q$为正整数且互质，那么有： $p=\sqrt{2}\times q$, then $p^2=2\times q^2$, 很显然$p^2$是偶数，而只有偶数的平方才是偶数，所以$p$是偶数。假设$p=2s$，then $p^2=4s^2=2q^2 \Rightarrow q^2=2s^2$， 从而$q$也是偶数，这与互质矛盾，假设不成立，从而得证。
+环的具体定义并没有完全统一。一般定义：\\
+给定一个集合$\mathbb{R}$以及定义在$\mathbb{R}$上的二元运算$+$ and $\times$。如果满足八个性质，则称$(\mathbb{R}, +, \times)$构成了一个环。
+
+交换环：如果一个环$\mathbb{R}$还额外满足乘法的交换律
+
+域是环的一种，区别在于域还要求它的非零元素可以做除法，且域的乘法有交换律。比如：有理数域、实数域、复数域等等。
+
+案例：$(x-2)$是不是$(x-2)(x-3)$和$x^2-4$的最大公因式？那$(\frac{x}{2} -1)$呢？\\
+分析：在整数环中，$(x-2)$是它们的一个公因式，同时也是最大公因式，但$(\frac{x}{2}-1)$就不是，因为$\frac{1}{2}\notin \mathbb{Z}$。但如果在有理数域或者实数域，$(\frac{x}{2}-1)$则是它们的一个公因式，事实上，它们的公因式可以有无数个，可以写为$k(x-2)$，其中$k\neq 0$, and $k\in \mathbb{Q}$ or $k\in \mathbb{R}$。
 
 \section{素数、合数}
 
@@ -51,7 +60,7 @@ $1$既不是素数也不是合数。加入$1$是素数，那么一个数比如$1
 素数是无限的.
 
 Proof1(欧几里得，不是反证法？):\\
-1. 假设素数是有限的，那么可以假设素数只有一个有限的集合S，as $\{p_1, p_2, ... p_n\}$\\
+1. 假设素数是有限的，那么可以假设素数只有一个有限的集合S，as $\{p_1, p_2, \ldots p_n\}$\\
 2. 构造一个新的数: $Q=p_1\times p_2\times \cdots p_n+1$\\
 3. 分析$Q$\\
 \forceindent a, $Q$比$S$中的任意一个素数要大，它不在$S$内\\
@@ -64,7 +73,7 @@ Proof1(欧几里得，不是反证法？):\\
 Proof2(欧几里得)：\\
 考虑正整数$n$的阶乘$n!$可以被$2$到$n$的所有的整数整除，$n!+1$并不能被$2$到$n$的任何自然数所整除，因此$n!+1$有两种可能性：是素数，或者能被大于$n$的素数(素数基本定理)整除，在任何一个case中，都表明至少存在一个比$n$大的素数
 
-\textbf{素数定理}, 又称作质数定理, prime number theorem，是素数分布理论的中心定理，是关于素数个数问题的一个命题：\\
+\textbf{素数定理}, 又称作质数定理, prime number theorem，是素数分布理论的中心定理，是关于素数个数问题的一个命题：\todo{...}
 
 
 \section{排列组合(permutation and combination)}
@@ -72,7 +81,7 @@ Proof2(欧几里得)：\\
 \subsection{排列(permutation)}
 Permutaion(排列、变换、置换，比如古典密码里的置换) or Arrangement，所以数学符合$P$和$A$都可以。
 
-利用乘法原理：$A_{n}^{k}=\overbrace{n(n-1)(n-2)...(n-k+1)}^{\text{k factors}}=\frac{n!}{(n-k)!}$\\
+利用乘法原理：$A_{n}^{k}=\overbrace{n(n-1)(n-2)\ldots (n-k+1)}^{\text{k factors}}=\frac{n!}{(n-k)!}$\\
 Also use:  $P^{n}_{k}$, $P(n,k)$, $_{n}P_{k}$, $^{n}P_{k}$, $P_{n,k}$. Note the slight difference: $P^{n}_{k}$ and $A_{n}^{k}$
 
 重复排列：从$n$个元素中取出$k$个元素，$k$个元素可以重复：$U^{n}_{k}=n^{k}$
@@ -81,7 +90,7 @@ Also use:  $P^{n}_{k}$, $P(n,k)$, $_{n}P_{k}$, $^{n}P_{k}$, $P_{n,k}$. Note the 
 Combination just likes permutation, but the order doesn't matter
 
 This formula can be derived from the fact that each k-combination of a set $S$ of $n$ members has permutations so\\
-$P_{n}^{k}=C_{n}^{k}\times k!$ or $C_{n}^{k}=P_{n}^{k}/k!$. The $C_{n}^{k}$ often denoted by $\binom{n}{k}$
+$A_{n}^{k}=C_{n}^{k}\times k!$ or $A_{n}^{k}=P_{n}^{k}/k!$. The $A_{n}^{k}$ often denoted by $\binom{n}{k}$
 
 \section{绝对值}
 \subsection{绝对值的意义}
@@ -107,7 +116,7 @@ $f(x)=|x+1|+|2x-1|$可以化简为：$f(x)=|x+1|+2|x-\frac{1}{2}|=|x+1|+|x-\frac
 奇点偶段，证明方法：从1到3到5，从2到4到6，以至无穷
 
 \section{整除规则(divisibility rule)}
-Let $A$ = $\overline{a_{n}a_{n-1}...a_2a_1} = a_{n}\times 10^{n-1}+a_{n-1}\times 10^{n-2}...+a_2\times 10 + a_1$
+Let $A$ = $\overline{a_{n}a_{n-1}\ldots a_2a_1} = a_{n}\times 10^{n-1}+a_{n-1}\times 10^{n-2}\ldots +a_2\times 10 + a_1$
 \subsection{基本判别(rules)}
 
 被2整除：\\
@@ -115,11 +124,11 @@ The last digit is even
 
 被3整除和被9整除:\\
 The sum of digits must be divisible by $3$ or $9$.
-Tips\footnote{$A = a_{n}\times (9+1)^{n-1}+a_{n-1}\times (9+1)^{n-2}...+a_2\times (9+1)+a_1 \\
-~~~   = (a_{n}\times 9^{n-1} + a_{n-1}\times 9^{n-2}+...+a_2\times 9)+(a_{n}+a_{n-1}+...+a_2+a_1) $}
+Tips\footnote{$A = a_{n}\times (9+1)^{n-1}+a_{n-1}\times (9+1)^{n-2}\ldots +a_2\times (9+1)+a_1 \\
+~~~   = (a_{n}\times 9^{n-1} + a_{n-1}\times 9^{n-2}+ldots +a_2\times 9)+(a_{n}+a_{n-1}+ldots +a_2+a_1) $}
 
 被4整除：\\
-The last two digits must be divisible by 4. Tips\footnote{$A=\overline{a_{n}a_{n-1}...a_3} \times 100 + \overline{a_2 a_1}$}，后者是关键
+The last two digits must be divisible by 4. Tips\footnote{$A=\overline{a_{n}a_{n-1}ldots a_3} \times 100 + \overline{a_2 a_1}$}，后者是关键
 
 
 被5整除：
@@ -174,8 +183,69 @@ $4564 \to 456-2\times 4=448 \to 44+8\times 5=7\times 12$
 
 这种方法用计算机编程来判断很方便
 
-\newpage
-\subfile{algebra-misc}
+\section{恒等式Identity}
+
+The basic ones like:
+$(a+b)(c+d) = ac + ad + bc + bd$\\
+$(a+b)^2 = a^2+2ab+b^2$\\
+$(a-b)^2 = a^2-2ab+b^2$\\
+$(a+b+c)^2= a^2+b^2+c^2+2ab+2bc+2ac$\\
+$(a-b-c)^2=\cdots$\\
+$(a+b+c+d)^2=a^2+b^2+c^2+d^2+2ab+2ac+2ad+2bc+2bd+2cd$\\
+$a^3-b^3=(a+b)(a^2-ab+b^2=(a-b)^3+3ab(a+b)$\\
+$a^3+b^3=(a-b)(a^2+ab+b^2=(a+b)^3-3ab(a+b)$\\
+$(a+b+c)^3=a^3+b^3+c^3+3(a+b)(b+c)(a+c)$\\
+$a^3+b^3+c^3=(a+b+c)^3+3(a+b+c)(-ab-ac-bc)+3abc$，对称多项式\\
+$a^3+b^3+c^3-3abc=(a+b+c)(a^2+b^2+c^2-ab-bc-ac)$
+
+$(a^2+b^2)(c^2+d^2)=(ac-bd)^2+(ad+bc)^2=(ac+bd)^2+(ab-cd)^2$
+
+\[
+  (x+y)^n= \sum_{k=0}^n\binom{n}{k}x^{n-k}y^k=x^n+C_n^1x^1y^{n-1}+C_n^2x^2y^{n-2}+\cdots + C_n^{n-2}x^{n-2}+C_{n-1}^1x^{n-1}y^1+y^n
+\]
+\begin{gather*}
+  y^n-y^n=(x-y)(x^{n-1}+x^{n-2}y+x^{n-3}y^2+\cdots + x^2y^{n-3}+xy^{n-2}+y^{n-1})\\
+  x^n+y^n=(x+y)(x^{n-1}-x^{n-2}y+x^{n-3}y^2-\cdots +x^2y^{n-3}-xy^{n-2}+y^{n-1}y) \cdots \text{n is odd}
+\end{gather*}
+$x^4+y^4=(x^2+y^2)^2-2(xy)^2$
+
+$x^4+4y^4=x^4+4x^2y^2+4y^2-4x^2y^2$, named as ``Sophie Germain's identity''
+
+$a^4+a^2b^2+b^4=a^4+2a^2b^2+b^4-a^2b^2$
+
+\subsection{等幂和差}
+\begin{gather*}
+  y^n-y^n=(x-y)(x^{n-1}+x^{n-2}y+x^{n-3}y^2+\cdots + x^2y^{n-3}+xy^{n-2}+y^{n-1})\\
+  x^n+y^n=(x+y)(x^{n-1}-x^{n-2}y+x^{n-3}y^2-\cdots +x^2y^{n-3}-xy^{n-2}+y^{n-1}y) \cdots \text{n is odd}
+\end{gather*}
+Proof1:多项式长除法
+
+Proof2:等比数列：$1+q+q^2+\cdots +q^n=\frac{q^{n}-1}{q-1}$, Let $q=\frac{a}{b}$
+
+等幂和差逆定理：\\
+$a^4+a^2b^2+b^4=(a^2+b^2-ab)(a^2+b^2+ab)$
+
+\section{不等式inequalities}
+
+\section{指数与对数}
+指数的定义涉及\textbf{定义上的扩展}，这是数学最常见的思维方式：$a^n$就是$a$自乘$n$次，故$a^0(a\neq 0)$没有定义。虽然理论上没有定义，但是我们可以加以定义，仍希望保持指数的定律，因此$a^0$别无选择，只可能是$1$($a^0=a^{n-n}=a^n/a^n=1, \; n\in \mathbb{Z^+}$)($a^m\cdot a^n=a^{m+n}$ when $n=0, m\in \mathbb{Z^+}$, $a^m\cdot a^0 = a^{m+0}=a^m$).
+
+Let $n=-m$, $a^m\cdot a^n=a^m\cdot a^{-m}=a^0=1 \Rightarrow a^{-m}=1/a^m$
+
+当指数推广到有理数时，为能使$a^{\frac{p}{q}}=a^{\frac{2p}{2q}}, p,q \in \mathbb{Z}$，就限定了$a>0$，当$a<0$情况就变得复杂。
+\[
+  -2=\sqrt[3]{-8}=(-8)^{\frac{1}{3}}=(-8)^{\frac{2}{6}}=[(-8)^2]^{\frac{1}{6}}=64^{\frac{1}{6}}=2
+\]
+So, generally,我们把讨论规范在$a>0$
+
+
+
+\section{三角形}
+
+
+\section{三角函数}
+
+
 
 \newpage
 \section{todo}
