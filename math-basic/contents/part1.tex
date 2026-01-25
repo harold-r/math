@@ -139,16 +139,16 @@ If $(x-a)$ is a factor of $f(x)$, obviously, $f(a)=0$. So, we only need to prove
 Proof1:\\
 First, we begin with $a=0$, We write $f(x)=c_0+c_1x^1+\cdots +c_nx^n$, since $f(a)=0$, so $c_0=0$, $f(x)=x(c_1x+\cdots +c_nx^{n-1})$, Thus... \\
 Then, we prove the theorem for general $a$ by reducing to the $a=0$ case.\\
-We observe that $f(x+a)$ is a polynomial with a root at $x=0$, it follows that $f(x+a)=x\cdot g(x)$ (This is the key step) for certain polynomial $g(x)$(this one is different with the former g(x)).\\
+We observe that $f(x+a)$ is a polynomial with a root at $x=0$, it follows that $f(x+a)=x\cdot g(x)$ (This is the key step) for certain polynomial $g(x)$.\\
 So, $f(x)=f((x-a)+a)=(x-a)g(x-a)$,  thus...
 
 Proof2:\\
 We use the equation: $x^n-y^n$\\
-Since $f(a)=0$, so we can write $f(x)=\sum_{i}^nx^i=c_1x^1+c_2x^2+\cdots +c_nx^n$\\
+Since $f(a)=0$, so we can write $f(x)=\sum_{i=0}^nx^i=c_0+c_1x^1+c_2x^2+\cdots +c_nx^n$\\
 $f(x)=f(x)-f(a)=\sum_i^n(x^i-a^i)$, Observe that every summand had $(x-a)$ as a factor. Thus...
 
 Proof3:\\
-Using Euclidean division of polynomials: Perform a Euclidean division of $f(x)$ by $(x-a)$, $f(x)=(x-a)Q(x)+R(x)$, where $deg(R) < deg(x-a)$. So $R$ is constant. We know that $f(a)=0=R$, so$f(x)=(x-a)Q(x)$
+Using Euclidean division of polynomials: Perform a Euclidean division of $f(x)$ by $(x-a)$, $f(x)=(x-a)Q(x)+R(x)$, where $deg(R) < deg(x-a)$. So $R$ is constant. We know that $f(a)=0=R$, so $f(x)=(x-a)Q(x)$
 
 \section{多项式因式分解唯一定理}
 \begin{mdframed}

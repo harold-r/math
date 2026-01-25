@@ -9,6 +9,9 @@
 \usepackage{graphicx} %figures
 \usepackage[dvipsnames]{xcolor} %dvipsnames loads 68 names colors(CMYK)
 \usepackage{todonotes}
+\usepackage{enumitem}
+\setlist{nosep}                 %remove all vertical spaces in all lists
+
 \graphicspath{{images/}}
 \usepackage[a4paper, top=20mm]{geometry} %page dimension
 \usepackage[hang,flushmargin]{footmisc} %footnote no indent
@@ -37,6 +40,7 @@
 \setlength{\parskip}{0.6em}  % paragragh spacing or use \bigskip \medskip \smallskip in contenty
 \newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
 \linespread{1.2} % line spacing
+
 \title{MATH} \author{zhb} \date{2025}
 %%%%%%%%%%%%%%%%%%%%%%%% End MISC %%%%%%%%%%%%%%%%%%%%
 
@@ -46,6 +50,7 @@
 % Be careful, it has to be the last package to be imported
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 %%%%%%%%%%%%%%%%%%%%%%%% End Special %%%%%%%%%%%%%%%%%
+\usepackage{tablefootnote}
 
 \begin{document}
 
@@ -58,6 +63,7 @@
 
 \subfile{contents/part1}
 \subfile{contents/part2}
+\subfile{contents/part3}
 \subfile{contents/misc}
 
 \end{document}

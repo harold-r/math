@@ -10,7 +10,7 @@
 
 平方根号根号曾经用拉丁文"Radix"的首尾两个字母合并起来使用，$\sqrt{\phantom{x}}$是笛卡尔在他的《几何学》中第一次使用的，由拉丁字母"r"变化而来。
 
-\section{环(Ring)、域(Field)}
+\section{环(Ring)、域(Field)、数系}
 自然数(natural numbers)($\mathbb{N}$)：$1,2,3\ldots$ or $0,1,2,3\ldots$\\
 整数(integer)($\mathbb{Z}$):$\ldots, -2, -1, 0, 1, 2, \ldots$\\
 有理数(rational number)($\mathbb{Q}$): 可表示为分数的数\\
@@ -18,6 +18,27 @@
 复数(complex number)($\mathbb{C}$)
 
 $\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R} \subseteq \mathbb{C}$
+
+最早把自然数公理化的是19世纪的数学家G. Gottlob Frege(算术基础)和G. Peano(皮亚诺公设)，即：
+\vspace{-0.5em}
+\begin{enumerate}
+  \item $0$是自然数
+  \item 对任一自然数$n$，均有唯一的继元$n^{+}$
+  \item $0$不是任何自然数的继元
+  \item 若$m, n$为自然数，若$m\neq n$，则$m^{+}\neq n^+$
+  \item 若$S$是自然数集$N$的一个子集，且$0\in S$, and if $n \in S$, then $n^+\in S$，那么 $S=N$
+\end{enumerate}
+至今还有$0$是不是自然数的讨论。
+
+回顾数系的扩展:\\
+$\mathbb{N} \rightarrow \mathbb{Z}$, 是为了减法(群)，不过却丧失了“首元”(first element: 0)\\
+$\mathbb{Z} \rightarrow \mathbb{Q}$, 是为了除法(域)，但是没了“下一个元”，例如在$\mathbb{Z}$中$1$的下一个元素是$2$,但是在$\mathbb{Q}$中$\frac{1}{2}$的下一个元素没有意义。\\
+$\mathbb{Q} \rightarrow \mathbb{R}$并不是为了$x^2-2=0$有解，而是使得所有的收敛序列均有极限(也即拓扑完备topologically complete)，不过$\mathbb{R}$缺丧失了“可数性”(countability)。\\
+$\mathbb{R} \rightarrow \mathbb{C}$是为了使非常数的多项式皆有根(即：更确切的说是 代数封闭algebraically closed)，然而$\mathbb{C}$中却没了序关系。
+
+例：为什么正数一定可以开方？
+
+封闭性(闭包)(closure)：指在一个集合中，成员经过特定的代数运算，所得的结果仍然属于该集合。如果超出该集合范围，则称该集合对此运算不封闭。例如：自然数对加法、乘法封闭，对减法、除法不封闭。也就是封闭性保证了在特定的数域中计算不会生成“意料之外”的数值。
 
 环的具体定义并没有完全统一。一般定义：\\
 给定一个集合$\mathbb{R}$以及定义在$\mathbb{R}$上的二元运算$+$ and $\times$。如果满足八个性质，则称$(\mathbb{R}, +, \times)$构成了一个环。
@@ -29,6 +50,15 @@ $\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R} \subs
 案例：$(x-2)$是不是$(x-2)(x-3)$和$x^2-4$的最大公因式？那$(\frac{x}{2} -1)$呢？\\
 分析：在整数环中，$(x-2)$是它们的一个公因式，同时也是最大公因式，但$(\frac{x}{2}-1)$就不是，因为$\frac{1}{2}\notin \mathbb{Z}$。但如果在有理数域或者实数域，$(\frac{x}{2}-1)$则是它们的一个公因式，事实上，它们的公因式可以有无数个，可以写为$k(x-2)$，其中$k\neq 0$, and $k\in \mathbb{Q}$ or $k\in \mathbb{R}$。
 
+三次数学危机：\\
+第一次：腰长为$1$的等腰直角三角形的斜边长度无法写成有理数\\
+第二次：微积分引入无穷小而产生的问题\\
+第三次：罗素悖论
+
+\textbf{多项式的定义：}\\
+给定一个环$\mathbb{R}$(通常是交换环，可以是有理数、实数、复数等)以及一个未知数$X$，形同:
+$a_0+a_1X+\cdots +a_{n-1}X^{n-1}+a_nX^n = \sum_{k=0}^na_kX^n$的代数表达式叫做$\mathbb{R}$上的一元多项式, and $ a_i\in \mathbb{R}$. 未知数$X$不代表任何值，但是环$\mathbb{R}$上的所有运算都对它适用。
+多项式的和、积、差仍然是多项式，即多项式组成一个环$\mathbb{R}[X]$，称为$\mathbb{R}$上的(一元)多项式。
 \section{素数、合数}
 
 素数 vs 质数\\
@@ -57,8 +87,6 @@ $1$既不是素数也不是合数。加入$1$是素数，那么一个数比如$1
 欧几里得定理(Euclid's theorem)：\\
 《几何原本》第九卷中，有以下陈述：存在着比指定的任意多个素数更多的素数。也即：素数的个数是无限的。
 
-素数是无限的.
-
 Proof1(欧几里得，不是反证法？):\\
 1. 假设素数是有限的，那么可以假设素数只有一个有限的集合S，as $\{p_1, p_2, \ldots p_n\}$\\
 2. 构造一个新的数: $Q=p_1\times p_2\times \cdots p_n+1$\\
@@ -73,8 +101,75 @@ Proof1(欧几里得，不是反证法？):\\
 Proof2(欧几里得)：\\
 考虑正整数$n$的阶乘$n!$可以被$2$到$n$的所有的整数整除，$n!+1$并不能被$2$到$n$的任何自然数所整除，因此$n!+1$有两种可能性：是素数，或者能被大于$n$的素数(素数基本定理)整除，在任何一个case中，都表明至少存在一个比$n$大的素数
 
-\textbf{素数定理}, 又称作质数定理, prime number theorem，是素数分布理论的中心定理，是关于素数个数问题的一个命题：\todo{...}
+\textbf{素数定理}, 又称作质数定理, prime number theorem，是素数分布理论的中心定理，是关于素数个数问题的一个命题。素数的出现规律一致困惑着数学家，一个个的看，素数在正整数中的出现没什么规律。可是总体的看，素数的个数竟然有规律可循。
 
+\section{指数与对数}
+\subsection{指数}
+指数的定义涉及\textbf{定义上的扩展}，这是数学最常见的思维方式：$a^n$就是$a$自乘$n$次，故$a^0(a\neq 0)$没有定义。虽然理论上没有定义，但是我们可以加以定义，此定义需要满足两个条件：一是表示唯一确定的值，二是保持原有的运算法则(定律)(这里需要满足指数的五大运算法则)。因此$a^0$别无选择，只可能是$1$($a^0=a^{n-n}=a^n/a^n=1, \; n\in \mathbb{Z^+}$)($a^m\cdot a^n=a^{m+n}$ when $n=0, m\in \mathbb{Z^+}$, $a^m\cdot a^0 = a^{m+0}=a^m$)(所有运算法则都需要验证).
+
+同理，负整数的指数幂也是完全类似的：\\
+Let $n=-m$, $a^m\cdot a^n(a\neq 0)=a^m\cdot a^{-m}=a^0=1 \Rightarrow a^{-m}=1/a^m$，对于此定义还需要验证到其他运算法则。
+
+引进负整数指数幂后，科学记数法才能实现：$N=a\times 10^n(1\leq a <10, n\in \mathbb{Z} )$\\
+e.g. $0.00034=3.4\times 10^{-4}$
+
+分数指数幂同理也被定义为：$a^{\frac{m}{n}}=\sqrt[n]{a^m},(a\geq 0, m,n\in \mathbb{Z^+})$。分数指数幂方便我们把开方和乘方互相转化。一般情况下，将根式变形或化为分数指数幂去处理比较方便。但一般分数指数幂一般限定在$a>0$的下，所以并不能完全代替根式的计算。
+
+当指数推广到有理数时，为能使$a^{\frac{p}{q}}=a^{\frac{2p}{2q}}, p,q \in \mathbb{Z}$，就限定了$a>0$，当$a<0$情况就变得复杂。如下：
+\[
+  -2=\sqrt[3]{-8}=(-8)^{\frac{1}{3}}=(-8)^{\frac{2}{6}}=[(-8)^2]^{\frac{1}{6}}=64^{\frac{1}{6}}=2
+\]
+
+So, generally,有理数或者实数下，我们把讨论规范在$a>0$
+
+无理指数的的幂，中学一般不讨论。
+
+\subsection{对数}
+
+\begin{mdframed}
+  \textbf{对数存在定理}:\\
+  若$a$为不等于$1$的整数，则对于任何正实数$N$都有唯一的实数$\alpha$与之对应，使得$a$的$\alpha$次幂等于$N$，即：  $b^{\alpha}=N$
+
+  \textbf{最基础的运算}:\\
+  $\log_b(MN)=\log_bM+\log_bN$ \phantom{xxx}  $\log_b \frac{M}{N} = \log_bM - \log_bN$\\
+  $\log_ba = \frac{\log_{x}a}{\log_{x}b}$(change of base)
+\end{mdframed}
+对数存在定理是研究对数的理论基础。
+
+16世纪末至17世纪初的时候，当时在自然科学领域（特别是天文学）的发展上经常遇到大量精密而又庞大的数值计算，于是数学家们为了寻求化简的计算方法而发明了对数。对数的发明为当时社会的发展起了重要的影响，简化了行星轨道运算问题。正如科学家伽利略（1564-1642）说：“给我时间，空间和对数，我可以创造出一个宇宙”。 又如十八世纪数学家拉普拉斯（ 1749-1827）亦提到：“对数用缩短计算的时间来使天文学家的寿命加倍”。\footnote{\url{https://baike.baidu.com/}}。While, that's true before the invention of computers. 对数的发明就是为了简化运算，把乘除转化为加减。基本步骤就是：取对数、对数计算(查表)、去对数(反查表)。
+
+The inverse of addition is subtraction\\
+The inverse of multiplication is division\\
+The inverse of exponentiation is logarithm.
+
+$y=log_bx$(i.e. $b^y=x$), $b$ is the base, and $b$ is a positive real number(if a is not a positive real number, both exponentiation and logrithm can be defined but may take several values).表达式读做：$y$是以$b$为底$x$的对数，$b$叫做底，$x$叫做真数。
+
+最基础的对数运算是：\\
+$\log_b(MN)=\log_bM + \log_bN$.
+Proof\footnote{根据对数存在定理，Let $M=b^x, N=b^y$\\
+$\log_b(MN)=\log_b(b^xb^y)=\log_b(b^{x+y})=x+y=\log_b b^x+\log_b b^y=\log_aM + \log_bN$}
+
+同理：\\
+$\log_b \frac{M}{N} =\log_bM - \log_bN$\\
+$\log_bM^n =n\log M(\log \overbrace{M\cdots M}^n)$.
+
+\textbf{乘法可以转化为加法，除法可以转化为减法}
+
+换底公式(change of base)：$\log_ba=\frac{\log_{x}a}{\log_{x}b}$, Proof\footnote{$\log_x a= \log_x b^{\log_b a} =\log _b a \cdot \log_x b$, 得证。}
+
+常用对数(常用对数表)(common logarithm)：以$10$为底的对数叫做常用对数，简记为：$\log_{10}N = \lg N$。理解掌握它的关键是科学计数法($\lg(a\times 10^n)=n+\lg a$)。让我们想象一个之前的运算，比如天体运动、航海数据等等，设计到大数字的乘法、幂、除法，乘除可以$\lg$后变为加减，然后再用对数表反求。在没有计算机之前，对数确实是一个伟大的发明。
+
+自然对数(natural logarithm)是以$e$为底的对数，简记为：$\log_eN=\ln N$. 常在微积分中使用。
+
+Logarithmic identities:\\
+\begin{tabular}{l l l }
+  $b^{\log_b x}=x $ &\phantom{xxx} &$ \log_b b^x = x $\\
+  $\log_b a = \frac{\lg a}{\lg b} = \frac{\ln a}{\ln b}  = \frac{1}{\log_{a}b}$ & & $\log_{b^n}a^m=\frac{m}{n}\log_ba$\\
+  $x^{\frac{\log_b{a}}{\log_b x}}=a$ & & $x^{\frac{\log_b(\log_b x)}{\log_b x}}=\log_b x$\\
+  $M^{\log_b N}=N^{\log_b M}$(两边同求$\log_{b}$)
+\end{tabular}
+
+对数的作用不仅仅在于计算机之前的大数的运算，还有其他的意义，比如估算$2^{123456}$是多少位的数
 
 \section{排列组合(permutation and combination)}
 
@@ -92,130 +187,39 @@ Combination just likes permutation, but the order doesn't matter
 This formula can be derived from the fact that each k-combination of a set $S$ of $n$ members has permutations so\\
 $A_{n}^{k}=C_{n}^{k}\times k!$ or $A_{n}^{k}=P_{n}^{k}/k!$. The $A_{n}^{k}$ often denoted by $\binom{n}{k}$
 
-\section{绝对值}
-\subsection{绝对值的意义}
-本质是表示距离，比如数轴上的线段距离，差值的绝对值
-
-第一要务一般是如果去绝对值，从代数上看就是要去讨论
-
-不但要会去绝对值，还要会用绝对值列出题目相应的等式或者不等式，然后去解
-
-又比如$|3-2x| + |x-3|$的最小值，要善于变换，以方便几何上的直观
-
-\subsection{最值}
-$f(x)= |x+1|+ |2-x|$的最值\\
-$f(x) = |x+1| + |2x-1|$的最值，Tips\footnote{$|2x-1| = 2|x-\frac{1}{2}|$}\\
-$f(x)= |x+1| + |x| + |x-2|$的最值\\
-$f(x)=|2x-1|+|4x-3|$\\
-$f(x)=||x-1|-3|$
-
-\subsection{推广}
-$f(x) = |x-a_1| + |x-a_2|+ |x-a_3| + \cdots + |x-a_{n}| $
-$f(x)=|x+1|+|2x-1|$可以化简为：$f(x)=|x+1|+2|x-\frac{1}{2}|=|x+1|+|x-\frac{1}{2}|+|x-\frac{1}{2}|$
-
-奇点偶段，证明方法：从1到3到5，从2到4到6，以至无穷
-
-\section{整除规则(divisibility rule)}
-Let $A$ = $\overline{a_{n}a_{n-1}\ldots a_2a_1} = a_{n}\times 10^{n-1}+a_{n-1}\times 10^{n-2}\ldots +a_2\times 10 + a_1$
-\subsection{基本判别(rules)}
-
-被2整除：\\
-The last digit is even
-
-被3整除和被9整除:\\
-The sum of digits must be divisible by $3$ or $9$.
-Tips\footnote{$A = a_{n}\times (9+1)^{n-1}+a_{n-1}\times (9+1)^{n-2}\ldots +a_2\times (9+1)+a_1 \\
-~~~   = (a_{n}\times 9^{n-1} + a_{n-1}\times 9^{n-2}+ldots +a_2\times 9)+(a_{n}+a_{n-1}+ldots +a_2+a_1) $}
-
-被4整除：\\
-The last two digits must be divisible by 4. Tips\footnote{$A=\overline{a_{n}a_{n-1}ldots a_3} \times 100 + \overline{a_2 a_1}$}，后者是关键
-
-
-被5整除：
-
-被6整除：
-
-被7整除：\\
-
-被8整除：\\
-The last three digits must be divisible by 8
-
-被9整除：
-
-被11整除：\\
-第一位数$-$第二位数$+$第三位数$-$...，最终值如果能被11整除，正负交替，从前往后和从后往前一样，负数也可以判定. Tips\footnote{$10=11\times 1 - 1, 100=11\times 9 + 1, 1000=11\times 91-1$}
-
-被13整除：
-
-被17整除：
-
-\newpage
-
-\subsection{proofs} \label{sec:proof}
-被7整除\\
-\textbf{方法1}：三位截断：if $A=\overline{b_1b_2b_3a_1a_2a_3}$ 能被7整除，then: $\overline{a_1a_2a_3} - \overline{b_1b_2b_3}$可以被7整除\\
-$A/7 = (\overline{b_1b_2b_3}\times 10^3 + \overline{a_1a_2a_3})/7
-= 143\times \overline{b_1b_2b_3} + (\overline{a_1a_2a_3} - \overline{b_1b_2b_3})/7
-$
-
-\textbf{方法2}：降位，如五位数变为四位，再变为三位，再两位。\\
-Suppose we have a number $A=\overline{a_1a_2a_3a_4b}$, let $A=\overline{ab}$, while $a=\overline{a_1a_2a_3a_4}$.\\
-if 能化简为判断 $a+mb$能否被7整除，则简化成功：\\
-\[
-\begin{cases}
-  a + mb = 7n_1\\
-  10a + b = 7n_2
-\end{cases}
-\Rightarrow
-(10m-1)b = 7(n_1-n_2)
-\]
-\\
-That means $10m-1$必须是7的倍数，此时$m$可以为$5$ or $-2$。那么我们就可以简化为判断$a-2b$ or $a+5b$, $-2$ 和 $5$ 正好相差7.\\
-e.g.\\
-$329 \to 32-2\times 9=14 $ \\
-$4564 \to 456-2\times 4=448 \to 44+8\times 5=7\times 12$
-
-推广：\\
-被$11$整除：$(10m-1)|11$, $m=-1$。当然，被$11$整除还有一个更方便的方法，那就是依次加减\\
-被$13$整除： $(10m-1)|13$, $m=4,-7$\\
-被$17$整除：$(10m-1)|17$, $m=-5$\\
-我们可以看到，m是一个呈周期循环，太大了就没有意义了，如果一个三位数，最后化简还是三位数，就没有了意义
-
-这种方法用计算机编程来判断很方便
-
 \section{恒等式Identity}
 
 The basic ones like:
-$(a+b)(c+d) = ac + ad + bc + bd$\\
-$(a+b)^2 = a^2+2ab+b^2$\\
-$(a-b)^2 = a^2-2ab+b^2$\\
-$(a+b+c)^2= a^2+b^2+c^2+2ab+2bc+2ac$\\
-$(a-b-c)^2=\cdots$\\
-$(a+b+c+d)^2=a^2+b^2+c^2+d^2+2ab+2ac+2ad+2bc+2bd+2cd$\\
-$a^3-b^3=(a+b)(a^2-ab+b^2=(a-b)^3+3ab(a+b)$\\
-$a^3+b^3=(a-b)(a^2+ab+b^2=(a+b)^3-3ab(a+b)$\\
-$(a+b+c)^3=a^3+b^3+c^3+3(a+b)(b+c)(a+c)$\\
-$a^3+b^3+c^3=(a+b+c)^3+3(a+b+c)(-ab-ac-bc)+3abc$，对称多项式\\
-$a^3+b^3+c^3-3abc=(a+b+c)(a^2+b^2+c^2-ab-bc-ac)$
-
-$(a^2+b^2)(c^2+d^2)=(ac-bd)^2+(ad+bc)^2=(ac+bd)^2+(ab-cd)^2$
-
-\[
-  (x+y)^n= \sum_{k=0}^n\binom{n}{k}x^{n-k}y^k=x^n+C_n^1x^1y^{n-1}+C_n^2x^2y^{n-2}+\cdots + C_n^{n-2}x^{n-2}+C_{n-1}^1x^{n-1}y^1+y^n
-\]
 \begin{gather*}
-  y^n-y^n=(x-y)(x^{n-1}+x^{n-2}y+x^{n-3}y^2+\cdots + x^2y^{n-3}+xy^{n-2}+y^{n-1})\\
-  x^n+y^n=(x+y)(x^{n-1}-x^{n-2}y+x^{n-3}y^2-\cdots +x^2y^{n-3}-xy^{n-2}+y^{n-1}y) \cdots \text{n is odd}
+  (a+b)(c+d) = ac + ad + bc + bd\\
+  (a+b)^2 = a^2+2ab+b^2\\
+  (a-b)^2 = a^2-2ab+b^2\\
+  ab = (\frac{a+b}{2})^2-(\frac{a-b}{2})^2\;\;\;\text{积化和差}\\
+  (a+b+c)^2= a^2+b^2+c^2+2ab+2bc+2ac\\
+  (a-b-c)^2=\cdots\\
+  (a+b+c)^3=a^3+b^3+c^3+3(a+b)(b+c)(a+c)\\
+  (a+b+c+d)^2=a^2+b^2+c^2+d^2+2ab+2ac+2ad+2bc+2bd+2cd\\
+  \phantom{x}\\
+  a^2-b^2=(a+b)(a-b)\\
+  a^3-b^3=(a+b)(a^2-ab+b^2)=(a-b)^3+3ab(a+b)\\
+  a^3+b^3=(a-b)(a^2+ab+b^2)=(a+b)^3-3ab(a+b)\\
+  a^3+b^3+c^3=(a+b+c)^3+3(a+b+c)(-ab-ac-bc)+3abc \;\text{对称多项式}\\
+  a^3+b^3+c^3-3abc=(a+b+c)(a^2+b^2+c^2-ab-bc-ac)\\
+  \phantom{x}\\
+  x^4+4y^4=x^4+4x^2y^2+4y^2-4x^2y^2  \;\text{Sophie Germain's identity}\\
+  a^4+a^2b^2+b^4=a^4+2a^2b^2+b^4-a^2b^2\\
+  [x^2+y^2+(x+y)^2]^2 = 2[x^4+y^4+(x+y)^4] \;\; \text{Candido's identity}\\
+  (f_n^2+f_{n+1}^2+f_{n+2}^{2})^2=2(f_n^4+f_{n+1}^4+f_{n+2}^4) \;\;\text{Fibonacci number}\\
+   \phantom{x}\\
+  (a^2+b^2)(c^2+d^2)=(ac-bd)^2+(ad+bc)^2=(ac+bd)^2+(ab-cd)^2\\
+  (x+y)^n= \sum_{k=0}^n\binom{n}{k}x^{n-k}y^k=x^n+C_n^1x^1y^{n-1}+C_n^2x^2y^{n-2}+\cdots + C_n^{n-2}x^{n-2}+C_{n-1}^1x^{n-1}y^1+y^n\\
+  x^n-y^n=(x-y)(x^{n-1}+x^{n-2}y+x^{n-3}y^2+\cdots + x^2y^{n-3}+xy^{n-2}+y^{n-1})\\
+  x^n+y^n=(x+y)(x^{n-1}-x^{n-2}y+x^{n-3}y^2-\cdots +x^2y^{n-3}-xy^{n-2}+y^{n-1}y) \cdots \text{n is odd}\\
 \end{gather*}
-$x^4+y^4=(x^2+y^2)^2-2(xy)^2$
-
-$x^4+4y^4=x^4+4x^2y^2+4y^2-4x^2y^2$, named as ``Sophie Germain's identity''
-
-$a^4+a^2b^2+b^4=a^4+2a^2b^2+b^4-a^2b^2$
 
 \subsection{等幂和差}
 \begin{gather*}
-  y^n-y^n=(x-y)(x^{n-1}+x^{n-2}y+x^{n-3}y^2+\cdots + x^2y^{n-3}+xy^{n-2}+y^{n-1})\\
+  x^n-y^n=(x-y)(x^{n-1}+x^{n-2}y+x^{n-3}y^2+\cdots + x^2y^{n-3}+xy^{n-2}+y^{n-1})\\
   x^n+y^n=(x+y)(x^{n-1}-x^{n-2}y+x^{n-3}y^2-\cdots +x^2y^{n-3}-xy^{n-2}+y^{n-1}y) \cdots \text{n is odd}
 \end{gather*}
 Proof1:多项式长除法
@@ -227,23 +231,33 @@ $a^4+a^2b^2+b^4=(a^2+b^2-ab)(a^2+b^2+ab)$
 
 \section{不等式inequalities}
 
-\section{指数与对数}
-指数的定义涉及\textbf{定义上的扩展}，这是数学最常见的思维方式：$a^n$就是$a$自乘$n$次，故$a^0(a\neq 0)$没有定义。虽然理论上没有定义，但是我们可以加以定义，仍希望保持指数的定律，因此$a^0$别无选择，只可能是$1$($a^0=a^{n-n}=a^n/a^n=1, \; n\in \mathbb{Z^+}$)($a^m\cdot a^n=a^{m+n}$ when $n=0, m\in \mathbb{Z^+}$, $a^m\cdot a^0 = a^{m+0}=a^m$).
-
-Let $n=-m$, $a^m\cdot a^n=a^m\cdot a^{-m}=a^0=1 \Rightarrow a^{-m}=1/a^m$
-
-当指数推广到有理数时，为能使$a^{\frac{p}{q}}=a^{\frac{2p}{2q}}, p,q \in \mathbb{Z}$，就限定了$a>0$，当$a<0$情况就变得复杂。
-\[
-  -2=\sqrt[3]{-8}=(-8)^{\frac{1}{3}}=(-8)^{\frac{2}{6}}=[(-8)^2]^{\frac{1}{6}}=64^{\frac{1}{6}}=2
-\]
-So, generally,我们把讨论规范在$a>0$
-
-
-
 \section{三角形}
 
 
 \section{三角函数}
+三角函数源于古希腊和古印度的天文测量和几何学，起初是为了解决圆上弧长与弦长的计算。
+
+集合定义有三种：直角三角形定义、直角坐标系定义、单位圆定义。
+
+与圆周率$\pi$的定义很像，一个角度的正弦值是确定的， 也就是直角三角形的对面比斜边的比。
+
+\section{绝对值}
+
+本质是表示距离，数轴上的两点距离，差值的绝对值。
+
+第一要务一般是如果去绝对值，从代数上看就是要去讨论。不但要会去绝对值，还要会用绝对值列出题目相应的等式或者不等式，然后去解。
+
+\subsection{最值}
+$f(x)= |x-1|+ |3-2x|$的最值\\
+$f(x) = |x+1| + |2x-1|$的最值，Tips\footnote{$|2x-1| = 2|x-\frac{1}{2}|=|x-\frac{1}{2}|+|x-\frac{1}{2}|$}\\
+$f(x)= |x+1| + |x| + |x-2|$的最值\\
+$f(x)=|2x-1|+|4x-3|$\\
+$f(x)=||x-1|-3|$
+
+\subsection{最值推广：奇点偶段}
+$f(x) = |x-a_1| + |x-a_2|+ |x-a_3| + \cdots + |x-a_{n}| $
+
+证明方法：从1到3到5，从2到4到6，以至无穷。
 
 
 
@@ -251,7 +265,6 @@ So, generally,我们把讨论规范在$a>0$
 \section{todo}
 生日问题
 https://zh.wikipedia.org/wiki/%E7%94%9F%E6%97%A5%E5%95%8F%E9%A1%8C
-
 
 \end{document}
 %%% Local Variables:
