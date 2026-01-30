@@ -3,54 +3,6 @@
 
 \begin{document}
 \part{Part3}
-\section{整除规则(divisibility rule)}
-Let $A$ = $\overline{a_{n}a_{n-1}\ldots a_2a_1} = a_{n}\times 10^{n-1}+a_{n-1}\times 10^{n-2}\ldots +a_2\times 10 + a_1$
-\subsection{基本判别(rules)}
-
-被2整除：The last digit is even
-
-被3整除和被9整除: The sum of digits must be divisible by $3$ or $9$.
-Tips\footnote{$A = a_{n}\times (9+1)^{n-1}+a_{n-1}\times (9+1)^{n-2}\ldots +a_2\times (9+1)+a_1 \\
-~~~   = (a_{n}\times 9^{n-1} + a_{n-1}\times 9^{n-2}+ldots +a_2\times 9)+(a_{n}+a_{n-1}+ldots +a_2+a_1) $}
-
-被4整除：The last two digits must be divisible by 4. Tips\footnote{$A=\overline{a_{n}a_{n-1}ldots a_3} \times 100 + \overline{a_2 a_1}$}
-
-被8整除：The last three digits must be divisible by 8
-
-被11整除：\\
-第一位数$-$第二位数$+$第三位数$-$...，最终值如果能被11整除，正负交替，从前往后和从后往前一样，负数也可以判定. Tips\footnote{$10=11\times 1 - 1, 100=11\times 9 + 1, 1000=11\times 91-1$}
-
-\subsection{proofs} \label{sec:proof}
-被7整除：\\
-\textbf{方法1}：三位截断：if $A=\overline{b_1b_2b_3a_1a_2a_3}$ 能被7整除，then: $\overline{a_1a_2a_3} - \overline{b_1b_2b_3}$可以被7整除\\
-$A/7 = (\overline{b_1b_2b_3}\times 10^3 + \overline{a_1a_2a_3})/7
-= 143\times \overline{b_1b_2b_3} + (\overline{a_1a_2a_3} - \overline{b_1b_2b_3})/7
-$
-
-\textbf{方法2}：降位，如五位数变为四位，再变为三位，再两位。\\
-Suppose we have a number $A=\overline{a_1a_2a_3a_4b}$, let $A=\overline{ab}$, while $a=\overline{a_1a_2a_3a_4}$.\\
-if 能化简为判断 $a+mb$能否被7整除，则简化成功：\\
-\[
-\begin{cases}
-  a + mb = 7n_1\\
-  10a + b = 7n_2
-\end{cases}
-\Rightarrow
-(10m-1)b = 7(n_1-n_2)
-\]
-\\
-That means $10m-1$必须是7的倍数，此时$m$可以为$5$ or $-2$。那么我们就可以简化为判断$a-2b$ or $a+5b$, $-2$ 和 $5$ 正好相差7.\\
-e.g.\\
-$329 \to 32-2\times 9=14 $ \\
-$4564 \to 456-2\times 4=448 \to 44+8\times 5=7\times 12$
-
-推广：\\
-被$11$整除：$(10m-1)|11$, $m=-1$。当然，被$11$整除还有一个更方便的方法，那就是依次加减\\
-被$13$整除： $(10m-1)|13$, $m=4,-7$\\
-被$17$整除：$(10m-1)|17$, $m=-5$\\
-我们可以看到，m是一个呈周期循环，太大了就没有意义了，如果一个三位数，最后化简还是三位数，就没有了意义
-
-这种方法用计算机编程来判断很方便
 
 \end{document}
 
