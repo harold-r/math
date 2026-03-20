@@ -2,33 +2,109 @@
 \graphicspath{{\subfix{../images/}}}
 
 \begin{document}
+\newpage
 \part{MISC}
-\section{misc}
-
-坐标的平移\\
+\section{prelude}
+直角梯形，对于勾股定理、三角函数的和差
+\section{坐标平移、缩放、旋转}
 在高考、中考、合格考等考试的手册中，有这些时间点需要规范化语音，比如：提前35分钟入场提示，提前20分钟宣读考场规则，提前15分钟启封试卷袋，提前5分钟发试卷，提前0分钟也就是到点语音“开始答题”，那么我们可以用数轴上的点来表示，$-35, -20, -15, -5, 0$，如果做音频文件，这些点就可以以$-35$为原点，也就是数轴的原点从原来的$0$平移到$-35$，那么我们得到的关键点为：$0,15,20,30,35$。往左移就是加，往右移就是减。
 
 对于圆锥曲线一般方程：$Ax^2+Bxy+Cy^2+Dx+Ey+F=0$(里面的$xy$项是旋转项)，我们总是可以通过平移、旋转，去掉$xy, x, y$项。
 
+\subsection{平移translation}
 
-直角梯形，对于勾股定理、三角函数的和差
+平移大致分为两种，关键在于\textbf{新旧坐标系的确定}：
+
+\textbf{1. 函数的平移：}也就是点或者图像在原坐标系中的平移\\
+此种情况，还是在原有的坐标系内，比如函数$y=x^2$，如果往上一个单位，在原坐标系内$y'=y+1 \rightarrow y=y'-1$，函数图像就变为$y'=x^2+1$。\\
+也就是如果现有的$(x,y)$，移动$h,k$后，注意，现在$h,k$是数值($h$是横向移动，如果是正的就是往右，如果是负的就是往左，$k$是竖向移动，同理)。不是坐标，$(0,0)$移至$(h,k)$也讲得通，注意不是移动原点，坐标系的原点并没有动，这里是讲，相对的位置变化。那么新的坐标$(x', y')$满足$x+h=x', y+k=y'$，假设原函数为$y=f(x)$，那么新的就是$y'-k=f(x'-h)$，最后再换为$(x,y)$即是$y-k=f(x-h)$。
+
+\textbf{2. 坐标系的平移：}坐标原点发生变化，而坐标轴的方向不变\\
+原坐标系的原点$(0,0)$平移到$(h, k)$，$(h,k)$是新坐标系的原点。也就是\\
+$(0,0) \rightarrow (h,k)$, $(x,y) \rightarrow (x', y')$，对比之下，也就是$x+h=x', y+k=y'$，如果这么想当然，恭喜你，你错了。
+
+比如：直线$x+y=2$，将原点移至$(1,1)$，那么新坐标下直线经过原点$x'+y'=0$，原式中应该是$(x'+1)+(y'+1)=2$才对。
+
+那么如何理解呢？两种平移其实是一个相反的过程，函数图像的平移，就是反向移动坐标系，比如$y=x^2$向右移动一个单位变为$y=(x-1)^2$，那么其实如果把原点向左移动一个单位，新坐标系下函数就是$y=(x-1)^2$。知道这个关系的话，就很好的理解了。
+
+起初让我困惑的是，原函数方程是在原作坐标系中，是否是只在原坐标系中才hold。比如$x+y=2$这个等式，是在原坐标系内，变换后的$x', y'$不是一个坐标系，等式是在哪个坐标系内的？该如何理解呢？其实呢，这是一个变量的选定，我们不管是在哪个坐标系，比如旧坐标系$(x,y)$，和新坐标系的$(x',y')$的\textbf{数值是对应的关系}，我们把原方程式看作纯代数，那么就不用管在哪个坐标系内了，纯代数代入就可以了。
+
+\textbf{记忆大法:新加 \; 坡}，也就是移动坐标系，事关重大，连根都变了，想到新加坡($x=x'+h, y=y'+k$)，移动图像就是相反的，也比较直观，要用减法($x=x'-h, y=y'-k$)。
+
+其实，按照图像平移去记忆就ok了，下面的旋转也是。
+
+\subsection{缩放scale}
+核心还是一样的，新旧坐标的数量关系。
+
+\subsection{旋转rotation}
+旋转的变化用极坐标很容易可以化简，当然，直角坐标系作图也可以。这里用极坐标来推导一下。
+
+直角坐标系转化为以原点为极点，$x$轴为极轴的极坐标，对应关系就是$x=\rho \cos \theta, y=\rho \sin \theta$。我们把函数逆时针旋转$\psi$度，这是对应的新的$x', y'$有：
+\[
+  \left\{
+    \begin{aligned}
+      x'=\rho \cos(\theta + \psi)=\rho \cos\theta\cos\psi-\rho \sin\theta\sin\psi=x\cos\psi-y\sin\psi\\
+      y'=\rho \sin(\theta + \psi)=\rho \sin\theta\cos\psi+\rho \cos\theta\sin\psi=y\cos\psi+x\sin\psi
+    \end{aligned}
+  \right.
+\]
+\[
+  \Rightarrow
+  \left\{
+    \begin{aligned}
+      x=x'\cos\psi + y'\sin\psi\\
+      y=y'\cos\psi - x'\sin\psi
+    \end{aligned}
+  \right.
+\]
+注意上面是旋转图像，如果旋转坐标系呢，那就是相反的方向$-\psi$度：
+\[
+  \left\{
+    \begin{aligned}
+      x'=\rho \cos(\theta - \psi)=\rho \cos\theta\cos\psi+\rho \sin\theta\sin\psi=x\cos\psi+y\sin\psi\\
+      y'=\rho \sin(\theta - \psi)=\rho \sin\theta\cos\psi-\rho \cos\theta\sin\psi=y\cos\psi-x\sin\psi
+    \end{aligned}
+  \right.
+\]
+\[
+  \Rightarrow
+  \left\{
+    \begin{aligned}
+      x=x'\cos\psi - y'\sin\psi\\
+      y=y'\cos\psi + x'\sin\psi
+    \end{aligned}
+  \right.
+\]
+
+\subsection{Summary}
+记得有人总结，左加右减、上加下减，往右是$x$正轴，往上是$y$的正轴，却是一个减一个加，把人搞迷糊了不是。例如圆$x^2+y^2=1$的向上一个单位的平移，却如何来用？
+
+所以，要抓住本质，无论是图像的平移旋转，还是坐标系的平移旋转，其实就是就\textbf{原坐标$(x,y)$与新坐标$(x',y')$之间的数量关系}，这个关系是纯数量上的，不依赖于新旧坐标系。图像在同一坐标系的平移很容易记住，而坐标系的平移就是图像平移的反向，只需要理解记住图像平移的等量关系$x'=x+h, \; y'=y+k$，将$x,y$带入原函数式即可($h,k$对于图像的平移就是平移量，对于坐标系对应于原坐标系内$(h,k)$，也就是新坐标系的原点)。平移坐标系的“新加坡”的记忆大法也不需要了不是？不过记忆大法不用多动脑筋，有时候会比较自信、来的快。
+
+\subsection{misc}
+坐标系内有一个线段，那么往右移动三个单位，再往上移动三个单位，那么这两个线段所在的直线的距离是多少呢？是不是直觉上的等腰直角三角形斜边上的高？
 
 \section{因式分解}
 KEY:十字交叉、拆添项、有理根定理、欧几里得算法、单位根因式、待定系数法(通常用于四次五次)、换元法
 
-对于二次多项式，首先要考虑的是十字交叉，然后拆添项。二次以上的，可以用以下的一些技巧。
+对于二次多项式，首先要考虑的是十字交叉，然后拆添项。\\
+二次以上的，可以用以下的一些技巧，比如待定系数法、单位根测试等，待定系数法要巧设参数，以免计算太过复杂，所以，此法通常不是很简单。\\
+对于无有理根的多项式，可用常用无理根因式尝试，如$x^2+1, x^3=\pm 1$等。
 
 \textbf{待定系数法：}例 $x^4+9x^3+16x^2-x-3$\\
 如上例：有理根定理尝试后发现都不行，也就是应该无有理根，那也意味着没有一次的多项式因式，那么可以假设可以分为两个二次的多项式$(x^2+ax-1)(x^2+bx+3)$，最后列方程即可。\\
-对于四次五次型的感觉挺合适的，包括上面的一些四次型。
+对于四次五次型的感觉挺合适的，包括一些四次型。
 
-\textbf{单位根：}满足$z^n=1$的所有复数$z$叫做$n$次单位根\\
+\textbf{单位根(root of unity)：}$z^n=1(n\in \mathbb{Z^+})$的所有复数解\\
 最简单的一种形式是$x^3=1$, $(x-1)(x^2+x+1)=0$，$x^2+x+1$也可叫做单位根因式，很明显if $\omega$是$x^2+x+1$的根, then $\omega^3=1$\\
-其实$x^3=-1 \Rightarrow (x+1)(x^2-x+1)=0$中的$x^2-x+1$也是可以用的，比如$x^4+x^3+x^2+2$,将$x^3=-1$带入正好得$x^2-x+1$。
+$x^2=-1$也可以用，比如$x^5+x^4+x^3-1$\\
+$x^3=-1 \Rightarrow (x+1)(x^2-x+1)=0$中的$x^2-x+1$也是可以用的，比如$x^4+x^3+x^2+2$,将$x^3=-1$带入正好得$x^2-x+1$。
 
-$6x^3-11x^2+x+4$, 根据有理根定理，先尝试$\pm 1$，易知$1$是一个根，那么$(x-1)$就是其中一个因式，又根据欧几里得算法，只要拼凑出$(x-1)$的项，那么剩余的肯定也含有$(x-1)$的项，所以我们从最高次三次着手，$(6x^3-6x^2)-(5x^2-x-4)$，这样不需要长除法，可以迅速解决。同样的$x^3+2x-3$可配成$(x^3-x^2)+(x^2+2x-3)$ or $(x^3-1)+(2x-2)$
+$6x^3-11x^2+x+4$, 两次以上多项式，根据有理根定理，先尝试$\pm 1$，易知$1$是一个根，那么$(x-1)$就是其中一个因式，又根据欧几里得算法，只要拼凑出$(x-1)$的项，那么剩余的肯定也含有$(x-1)$的项，所以我们从最高次三次着手，$(6x^3-6x^2)-(5x^2-x-4)$，这样不需要长除法，可以迅速解决。同样的$x^3+2x-3$可配成$(x^3-x^2)+(x^2+2x-3)$ or $(x^3-1)+(2x-2)$
 
 $x^4-7x^2+1$, 根据有理根定理，尝试$\pm 1$后，发现它没有有理根，那么我们只能拼凑了, 观察看，常数项是平方项，可以从常数项着手，$x^4+2x^2+1-9x^2$。
+
+$4x^3-31x+15$, 什么是数感？这里就可窥知一二，看到$31$和$15$想到了什么呢？嗯，那不就是$30, 15$吗？裂项就是了\footnote{$4x^3-x-30x+15$}。当然，有理根也行得通，可以测试$0,1$，易知其中的一个根应该介于$0,1$之间，可能性就是$\frac{1}{4}, \frac{1}{2}, \frac{3}{4}$。
 
 $x^4-9x^2+64$，如果把$x^2$看作一个变量，那么明显$x^2$无解，有理根定理也不能用了。只能凑了，常数项是平方项，那么我们从常数项着手即可。
 
@@ -48,52 +124,133 @@ $x^2(y-z)+y^2(z-x)+z^2(x-y)$，容易看出是轮换是，当$x=y$时原式为$0
 
 $x^3-3x^2+3x+1-y^3$，以$x$为主变量看，存在孤零零的$1-y^3$常数项，所以$y^3$是突破口，尝试前面应该是个立方才行。
 
+$x^4+2026x^2+2025x+2026$，单位根因式, let $x^3=1$
+
+$x^2+2xy-3y^2+3x+y+2$，按其中一个字母降幂排列，$x^2+(2y+3)y-(3y^2-y-2)=x^2+(2y+3)6-(3y+2)(y-1)$，再十字交叉，两次十字交叉(不是所谓的高级的双十字交叉)。
+
+$x^2-3y^2-8z^2+2xy+2xz+14yz \Rightarrow x^2+(2y+2z)x-(3y-2z)(y-4z)$
+
+$3x^4+4y^4+7x^2y^2+8x^2+11y^2-3 \Rightarrow 3x^4+(7y^2+8)x^2+(4y^4+11y^2-3)$
+
+$x^8+x^6+x^4+x^2+1$，观察多项式，是一个等比数列。tips\footnote{$=(x^{10}-1)/(x^2-1)=(x^5-1)(x^5+1)/(x^2-1)$}
+
 \section{最值}
-\dotfill
 
 \textbf{特征：直角坐标系下，动点与两定点之间的和或者差}
 
 $\sqrt{x^2+4} + \sqrt{(x-8)^2+16}$\\
 1.利用直角坐标系点与点之间的距离和, $(x-0)^2+(0-(-2))^2 $and $(x-8)^2+(0-4)^2$\\
-2.构造直角三角形(但是往往与定义域不符，$\sqrt{x^2+4} + \sqrt{(8-x)^2+16}$)
+2.构造直角三角形(可能定义域不符，$\sqrt{x^2+4} + \sqrt{(8-x)^2+16}$)
 
-此类也可以变形为：已知$x+y=12$，求$\sqrt{x^2+4}+\sqrt{y^2+9}$的最值
+一般动点限定在$x$轴上，$(x, 0)$
+
+已知$x+y=12$，求$\sqrt{x^2+4}+\sqrt{y^2+9}$的最小值
+
+已知$x+y+z=8, x,y,z>0$，求$\sqrt{x^2+1}+\sqrt{y^2+4}+\sqrt{z^2+9}$的最小值，tips\footnote{构造三个直角三角形，实质是闵可夫斯基不等式}
 
 $\sqrt{x^2+4} - \sqrt{(x-8)^2+16}$，三角形两边差
 
 但是如果$x$的系数不同呢？比如：$\sqrt{2x^2+4} \pm \sqrt{(x-8)^2+16}$\\
 根据Google AI的分析结果来看，初高中范围内没有办法，需要求驻点。
 
-\dotfill
+\subsection{柯西}
+一般两种情况：\\
+1. 各项平方的和，凑上系数后是个定值\\
+2. 凑上系数后的乘积是个定值
 
-\textbf{柯西不等式：两个方向，积或者平方和,注意探讨等号}
+\textbf{一般凑常系数，看一次项还是平方项，凑左或者凑右，对比柯西不等式}
 
-$x_1y_1+x_2y_2+x_3y_3 \le \sqrt{x_1^2+x_2^2+x_3^2} \sqrt{y_1^2+y_2^2+y_3^2}$ or\\
+$x_1y_1+x_2y_2+x_3y_3 \le \sqrt{x_1^2+x_2^2+x_3^2} \sqrt{y_1^2+y_2^2+y_3^2}$ \\
 $(x_1y_1+x_2y_2+x_3y_3)^2 \le (x_1^2+x_2^2+x_3^2)(y_1^2+y_2^2+y_3^2)$
 
-$\sqrt{x-1} + 2\sqrt{3-x}$, tips\footnote{$\sqrt{x-1} + 2\sqrt{3-x} \le \sqrt{1^2+2^2}\sqrt{x-1+3-x}$,等号需要讨论.}
+已知$x^2+y^2=3$, 求$(2x+3y)_{\text{max}}$。tips\footnote{$(x^2+y^2)(2^2+3^2) \ge (2x+3y)^2$,但是如果需要求最小值呢?显然数形结合更合适}
 
+$x,y>0, x+4y=1$, $(\sqrt{x}+\sqrt{y})_{\text{max}}$, tips\footnote{$\sqrt{x}+\frac{1}{2}\sqrt{4y}$}
+
+$(\sqrt{x-1} + 2\sqrt{3-x})_{\text{max}}$, tips\footnote{$\sqrt{x-1} + 2\sqrt{3-x} \le \sqrt{1^2+2^2}\sqrt{x-1+3-x}$,等号需要讨论.}
+
+$x,y,z >0$, $\frac{x+y+z}{\sqrt{x^2+2y^2+4z^2}}$的最大值, tips\footnote{$(x^2+\sqrt{2}^2 y^2+4z^2)(1+\frac{1}{\sqrt{2}^2} +\frac{1}{2^{2}})\ge (x+y+z))$}
+
+
+$(\sqrt{x}+\sqrt{27+x} +\sqrt{13-x})_{\text{max}}$, tips\footnote{$\sqrt{13-x} = \frac{1}{\sqrt{2}}\sqrt{26-2x}$}
 
 $x,y,z>0$ and $x+y+z=1$，求$\frac{1}{x}+\frac{9}{y}+\frac{25}{z}$的最小值, tips\footnote{$(\sqrt{x}+\sqrt{y}^2+\sqrt{z}^2)(\frac{1}{\sqrt{x}^2}+\frac{3^2}{\sqrt{y}^2}+\frac{5^2}{\sqrt{z}^2})$}
 
-$x,y,z >0$, $\frac{x+y+z}{\sqrt{x^2+2y^2+4z^2}}$的最大值, tips\footnote{$(x^2+\sqrt{2}^2 y^2+4z^2)(1+\frac{1}{\sqrt{2}^2} +\frac{1}{2^{2}} \ge (x+y+z))$}
+\subsection{misc}
 
-求证：$\sqrt{4x+4} + \sqrt{2x-3} +\sqrt{15-3x} < \sqrt{78}$, tips\footnote{柯西后,讨论等号不成立}
+\[\frac{\sqrt{x^{4}+x^{2}+1} - \sqrt{x^{4}+1}}{x}\]求最大值。设计到整体思想、代换思想、分子分母有理化思想。tips\footnote{1讨论正负，2把分母$x$除进去，3分子有理化}
 
-$\sqrt{x}+\sqrt{27+x} +\sqrt{13-x}$, tips\footnote{使用柯西需要凑, $\sqrt{13-x} = \frac{1}{\sqrt{2}}\sqrt{26-2x}$}
+\hrulefill
 
-已知$x^2+y^2=3$, 求$2x+3y$的最大值, tips\footnote{$(x^2+y^2)(2^2+3^2) \ge (2x+3y)^2$,但是如果需要求最小值呢?显然数形结合更合适}
+$x,y > 0$, and $x+3y=x^{3}y^{2}$, min of $\frac{3}{x} + \frac{2}{y}$, tips\footnote{等式两边除以$1/y^2$,求出$1/y$带入}
 
-\dotfill
+\hrulefill
 
-$\frac{\sqrt{x^{4}+x^{2}+1} - \sqrt{x^{4}+1}}{x}$的max. tips\footnote{1讨论正负，2换元，3分子有理化}
 
-\dotfill
+\newpage
+\section{根式方程、根式化简、指数方程}
+根式方程的思路就是去根号，简单的通过平方或者立方即可。换元也是一个很重要的思路(将根式换为普通的多项式方程，一元换二元，二元再换为一元得解)。最后不要忘记验证。
 
-$x,y > 0$, and $x+3y=x^{3}y^{2}$, min of $\frac{3}{x} + \frac{2}{y}$, tips\footnote{把$1/y$带入}
+$\sqrt{-16x^3}$
 
-\dotfill
+$\sqrt{4-2\sqrt{3}}$根式化简，tips\footnote{$(\sqrt{3}-1)^2$}
 
+$\sqrt{4\sqrt{3}-6}$根式化简, tips\footnote{和$7-4\sqrt{3}=(2-\sqrt{3})^2$不一样，只能考虑提取根号，$\sqrt{3}(4-2\sqrt{3})=\sqrt{3}(2-\sqrt{3})^2$}
+
+$\sqrt{x^2+9}+\sqrt{x^2-9}=5+\sqrt{7}$, tips\footnote{Let$m=x^2+9, n=x^2-9, \Rightarrow m-n, m+n \Rightarrow m,n$}.
+
+$\sqrt[3]{24+x} + \sqrt[3]{24-x}=2$, tips\footnote{$m+n=2, m^3+n^3=24 \Rightarrow m+n=2, mn=1/3$，\text{根据韦达,m,n为}$t^2-6t+\frac{1}{3}=0$的两个根}
+
+$\sqrt[4]{x} + \sqrt[4]{82-x}=4$, tips\footnote{Let $m=\sqrt[4]{x}, n=\sqrt[4]{82-x} \Rightarrow m+n=4, m^4+n^4=82$，需要求出$mn$,\\
+  while $m^2+n^2=(m+n)^2-2mn$, $(m^2+n^2)^2=m^4+n^4-2m^2n^2$，可得关于$mn$的方程}
+
+$\sqrt{x+19} + \sqrt[3]{x+95}=12$, tips\footnote{Let $m=\sqrt{x+19}, n=\sqrt[3]{x+95} \Rightarrow m+n=12, n^3-m^2=76 \Rightarrow n^3-(12-n)^2=76$}.
+
+$2\sqrt{3}x^3-7x^2+3=0$, tips\footnote{let $x=\sqrt{3}a$，用有理根定理, 当然也可以直接猜有个根是$\sqrt{3}$，然后因式分解}.
+
+$x+y-2\sqrt{x-1}-2\sqrt{y-5}-4=0$, tips\footnote{两个未知数一个方程，很明显，凑成平方和为零才可以}
+
+$9^x=\sqrt{12x}$, tips\footnote{}
+
+\section{misc}
+
+$x^3-8=0$，求$x$, tips\footnote{三次方程三个根}
+
+$x^2+x=13+\sqrt{13}$，求$x$, tips\footnote{二次方程应该有两个根才对，所以不要漏根，因式分解之}.
+
+$x^4-5x^3+8x^2-5x+1=0$，求$x+ \frac{1}{x}$. tips\footnote{原等式除以$x^2$}.
+
+$x^2-5x+7=0$，求$(x-2)^{90}+(3-x)^{90}$的值，tips\footnote{Let$m=x-2, n=3-x, \Rightarrow mn=1, m+n=1 \Rightarrow m^5+n^5 \Rightarrow m^{10}+n^{10}$}.
+
+$(x+5)(x+7)=2024$，求$x$, tips\footnote{Let $t=x+6$}
+
+$(x+1)(x+2)(x+3)=210$，求$x$, tips\footnote{为降低运算量，let$t=x+2$}
+
+$(x^2-7x+11)^{x^2-13x+42}=1$, hint\footnote{case1:$1^y=1$, case2:$y^0=1$, case3:$(-1)^{2k}=1$, when using log, 缩小了定义域}
+
+$x=(1+\sqrt{5})/2$，求$(x^3+x+1)/x^5$的值, tips\footnote{$\sqrt{5}=2x-1 \Rightarrow 4x^2-4x+1=5 \Rightarrow x^2-x-1=0 \Rightarrow x^2=x+1$，升次降次}
+
+$\sqrt[3]{8+3\sqrt{21}}+\sqrt[3]{8-3\sqrt{21}}$的值, hint\footnote{Let $a=8+3\sqrt{21}, b=8-3\sqrt{21}$ and let the equation $=x$, so\\
+  $x^3=(\sqrt[3]{a}+\sqrt[3]{b})^3=a+b+3\sqrt[3]{ab}x=16-15x \Rightarrow x^3+15x-16=0$}
+
+$(x+\frac{4}{x}-4)^4$的常数项, hint\footnote{$(\frac{x^2-4x+4}{x})^4$}\\
+$(1+x)+(1+x)^2+\cdots+(1+x)^{50}$展开式中$x^3$的系数. hint\footnote{1. 等比 2.$C_3^3+C_4^3=C_5^4$}
+
+Pythagoras Pie Puzzle:\\
+Giant pie is divided to 100 guests, Guest 1 get 1\%, Guest 2 get 2\% of what left, and so on and on. Who get the largest piece of pie?
+\footnote{
+Patterns:\\
+\[\begin{array}{cll}
+    \mbox{} & \mbox{Get} & \mbox{Left}\\
+    \mbox{Guest 1}& \frac{1}{100} & \frac{99}{100}\\
+    \mbox{Guest 2}& \frac{99}{100}\frac{2}{100}&\frac{99}{100}\frac{98}{100}\\
+    \mbox{Guest 3}& \frac{99}{100}\frac{98}{100}\frac{3}{100}&\frac{99}{100}\frac{98}{100}\frac{97}{100}\\
+    \mbox{Guest k}& \frac{99\cdot 98\cdot (99-k+2)}{100^k}\frac{k}{100}&
+  \end{array}\]
+Let $\frac{G_{k+1}}{G_k} > 1$（如果得到的不是连续的数值呢？）, the final answer is guest 10
+}
+
+$x^2+x=38$，求$m-\frac{8}{m+6}$，tips\footnote{求根公式求出$x$带入显然很拙，而且还有二次，不妨先化简，$m-\frac{8}{m+6}=(m^2+6m-8)/(m+6)$，将$m^2=38-m$带入，正好可以约去}
 
 \end{document}
 %%% Local Variables:

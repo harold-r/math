@@ -2,22 +2,8 @@
 \begin{document}
 
 \section{MISC}
-\dotfill
-
-$a^3-b^3$ 因式分解， hint\footnote{转化为立方体体积, $=(a-b)(a^2+ab+b^2)$}\\
-然后，令$b=-z \Rightarrow a^3+z^3$
-
 
 \dotfill
-
-$(x^2-7x+11)^{x^2-13x+42}=1$ hint\footnote{case1:$1^y=1$, case2:$y^0=1$, case3:$(-1)^{2k}=1$, when using log, 缩小了定义域}
-
-\dotfill
-
-$\sqrt[3]{8+3\sqrt{21}}+\sqrt[3]{8-3\sqrt{21}}$, hint\footnote{let $a=8+3\sqrt{21}, b=8-3\sqrt{21}$ and let the equation $=x$, so $x^3=(\sqrt[3]{a}+\sqrt[3]{b})^3=a+b+3\sqrt[3]{ab}x=16-15x \Rightarrow x^3+15x-16=0$ , and obviously $x=1$ is a solution , so $(x-1)(x^2+x+16)=0$ , but $x^3=c$ has three solutions, and ...}
-
-\dotfill
-
 $615+x^2=2^y$ over the integers.  hint\footnote{find patterns. x 0 1 2 3 4 5 6 7 8 9, the last digit pattern of $615+x^2$ is 5 6 9 4 1 0 1 4 9 6, where the $2^y$ pattern is 2 4 8 6..., while 4, 6 are sufficient, what's most important is that we find y is even, so y can be set as 2n, $615=2^y-x^2=3\times 5 \times 41=1\times 615=3\times 205=5\times 123=15 \times 41$, To solve the equations, use $(2^n+x)+(2^n-x)=2^{n+1}$, better not list all}
 
 \dotfill
@@ -65,42 +51,7 @@ Case2: 倒下
 
 \dotfill
 
-Pythagoras Pie Puzzle:\\
-Giant pie is divided to 100 guests, Guest 1 get 1\%, Guest 2 get 2\% of what left, and so on and on. Who get the largest piece of pie?
-\footnote{
-Patterns:\\
-\[\begin{array}{cll}
-    \mbox{} & \mbox{Get} & \mbox{Left}\\
-    \mbox{Guest 1}& \frac{1}{100} & \frac{99}{100}\\
-    \mbox{Guest 2}& \frac{99}{100}\frac{2}{100}&\frac{99}{100}\frac{98}{100}\\
-    \mbox{Guest 3}& \frac{99}{100}\frac{98}{100}\frac{3}{100}&\frac{99}{100}\frac{98}{100}\frac{97}{100}\\
-    \mbox{Guest k}& \frac{99\cdot 98\cdot (99-k+2)}{100^k}\frac{k}{100}&
-  \end{array}\]
-Let $\frac{G_{k+1}}{G_k} > 1$（如果得到的不是连续的数值呢？）, the final answer is guest 10
-}
 
-
-\dotfill
-
-二项式：$(a+b)^n=C_n^0a^nb^0+\cdots C_n^ra^{n-r}b^r\cdots+C_n^na^0b^n$, but how to prove?\\
-Let $a=b=1 \Rightarrow 2^n=C_n^0+C_n^1+\cdots+C_n^n$\\
-Let $a=1, b=-1 \Rightarrow C_n^0-C_n^1+C_n^2-\cdots=0 \Rightarrow C_n^0+C_n^2+C_n^4+\cdots=C_n^1+C_n^3+\cdots=2^n/2$
-
-二项式系数最大值：中间一项或者两项(how to prove?)
-
-e.g.\\
-$(x+\frac{4}{x}-4)^4$的常数项, hint\footnote{$(\frac{x^2-4x+4}{x})^4$}\\
-$(1+x)+(1+x)^2+\cdots+(1+x)^{50}$展开式中$x^3$的系数. hint\footnote{1. 等比 2.$C_3^3+C_4^3=C_5^4$}
-
-\dotfill
-
-zero to the zero power\\
-
-$x^0=1, x\neq 0$, since $x^y/x^y=x^0 $\\
-$0^x=0, x\neq 0$
-but, what's $0^0$? while, there's no agreement, The most common possibilities are 1 or undefined
-
-\dotfill
 
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm,scale=0.9]
 \draw [line width=1pt] (1,1)-- (5,4);
