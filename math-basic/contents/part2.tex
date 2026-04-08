@@ -393,19 +393,13 @@ $(x_1^2-x_2^2)(y_1^2-y_2^2) \le (x_1y_1-x_2y_2)^2$
 \end{mdframed}
 
 \newpage
-\section{三角形}
-
-
-\newpage
 \section{三角函数(trigonometric functions)}
-三角函数源于古希腊和古印度的天文测量和几何学，起初是为了解决圆上弧长与弦长的计算。
+三角函数源于古希腊和古印度的天文测量和几何学，起初是为了解决圆上弧长与弦长的计算。跟对数一样，可以将复杂的乘除、幂次运算转化为加减，核心就是积化和差公式。比如手工计算$0.258819\times 0.984808$，通过查三角函数表可知：$0.258819\approx \sin15^{\circ}, 0.984808\approx \cos 10^{\circ}$，于是原式$=\sin15^{\circ}\times\cos10^{\circ}=(\sin25^{\circ}+\sin5^{\circ})/2=(0.422618+0.087156)/2=0.254887$。再举个简单例子，比如要测量一颗大树的高度，有很多方法，比如阴影比例法，利用影子的相似(树影和人影)，专业测量需要用测角仪或者激光测高仪，知道水平距离和仰角利用三角函数即可算出。
 
 定义有三种：直角三角形定义、直角坐标系定义、单位圆定义。直角三角形里只有锐角，所以只有锐角的三角函数。与圆周率$\pi$的定义很像，一个角度的正弦值是确定的， 也就是直角三角形的对面比斜边的比。
 
 基本的三角函数不等式如对称、移位、周期等就不一一列举，通过单位圆很容易理解。
 \begin{gather*}
-  \sin^2\theta+\cos^2\theta=1\\
-  \phantom{xxx}\\
   \sin(\alpha \pm \beta) = \sin\alpha\cos\beta \pm \cos\alpha\sin\beta\\
   \cos(\alpha \pm \beta) = \cos\alpha\cos\beta \mp \sin\alpha\sin\beta\\
   \tan(\alpha \pm \beta) = \frac{\tan\alpha \pm \tan\beta}{1 \mp \tan\alpha\tan\beta}\\
@@ -417,7 +411,8 @@ $(x_1^2-x_2^2)(y_1^2-y_2^2) \le (x_1y_1-x_2y_2)^2$
   \cos^2\theta = \frac{1+\cos2\theta}{2} \;\;\;\;\; \cos \frac{\theta}{2}=\pm \sqrt{\frac{1+\cos \theta}{2}} \\
   \tan^2\theta = \frac{1-\cos2\theta}{1+\cos2\theta} \;\;\;\;\; \tan \frac{\theta}{2}=\pm \sqrt{\frac{1-\cos\theta}{1+\cos\theta}}=\frac{1-\cos \theta}{\sin \theta}=\frac{\sin \theta}{1+\cos \theta} \\
   \sin\alpha\cos\beta = \frac{\sin(\alpha+\beta)+\sin(\alpha-\beta)}{2}\\
-  \sin\alpha + \sin\beta = 2\sin \frac{\alpha+\beta}{2}\cos \frac{\alpha-\beta}{2}
+  \sin\alpha + \sin\beta = 2\sin \frac{\alpha+\beta}{2}\cos \frac{\alpha-\beta}{2}\\
+  \textbf{万能公式:}\sin\alpha=\frac{2t}{1+t^{2}}, \; \cos\alpha=\frac{1-t^2}{1+t^2}, \; \tan\alpha=\frac{2t}{1-t^2}, \; t=\tan \frac{\alpha}{2}
 \end{gather*}
 
 公式诸多，没必要一一记忆，记住最简单的推导即可，那就是\bm{$\cos(\alpha-\beta)$}，构造单位圆两点$(\cos\alpha, \sin\alpha),\;(\cos\beta, \sin\beta)$，
@@ -426,9 +421,9 @@ $\sqrt{(\cos\alpha-\cos\beta)^2+(\sin\alpha-\sin\beta)^2}^2=1^2+1^2-2\cos(\alpha
 也可以用向量的点积：\\
 $(\cos\alpha, \sin\alpha)\cdot (\cos\beta, \sin\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta=1\cdot 1 \cdot \cos(\alpha-\beta)$
 
-当我们知道$\cos(\alpha+\beta)$后，可得$\sin^2(\alpha+\beta)=1-\cos^2(\alpha+\beta)=(\sin\alpha\cos\beta+\cos\alpha\sin\beta)^2$。但是如何最后得到：
-$\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta$呢？哈哈，看来从这里推导会有开方后的正负判断问题，这个问题的根源是什么呢？有一个很直观的例子就是比如要求方程$x=1$(这很反直观，直接就是解了不是，但是就把它看做一个方程)，平方后$x^2=1$，后者会产生增根。那么，我们可以尝试用$\pi/2$诱导公式:\\
-$\sin(\alpha+\beta)=\cos((\frac{\pi}{2}-\alpha)-\beta)=\cos(\frac{\pi}{2}-\alpha)\cos\beta+\sin(\frac{\pi}{2}-\alpha)\sin\beta$
+当我们知道$\cos(\alpha-\beta)$后，可得$\sin^2(\alpha-\beta)=1-\cos^2(\alpha-\beta)=(\sin\alpha\cos\beta-\cos\alpha\sin\beta)^2$。但是如何最后得到：
+$\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta$呢？哈哈，看来从这里推导会有开方后的正负判断问题，这个问题的根源是什么呢？有一个很直观的例子就是比如要求方程$x=1$(这很反直观，直接就是解了不是？但是就把它看做一个方程)，平方后$x^2=1$，后者会产生增根。那么，我们可以尝试用$\pi/2$诱导公式:\\
+$\sin(\alpha-\beta)=\cos((\frac{\pi}{2}-\alpha)+\beta)=\cos(\frac{\pi}{2}-\alpha)\cos\beta-\sin(\frac{\pi}{2}-\alpha)\sin\beta$
 
 积化和差是通过角的和差不等式相加减推导，如$\sin(\alpha+\beta)+\sin(\alpha-\beta)=2\sin\alpha\cos\beta$\\
 和差化积类似，利用$\alpha=(\alpha+\beta)/2+(\alpha-\beta)/2, \beta=(\alpha+\beta)/2-(\alpha-\beta)/2$推导。\\

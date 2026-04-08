@@ -1,9 +1,242 @@
+
 \documentclass[../main.tex]{subfiles}
 \graphicspath{{\subfix{../images/}}}
 
 \begin{document}
 \part{Part3几何}
 
+\section{init}
+到一个定点距离为定值的点的轨迹是 圆
+
+到两个定点距离相等的点的轨迹是 直线(垂直平分线)
+
+到两个定点距离之比为定值($\ne 1$)的点的轨迹是圆，也就是阿波罗尼奥斯圆，简称阿氏圆
+
+到两个定点距离之和为定值的点的轨迹是 椭圆
+
+到两个定点距离之差为定值的点的轨迹是 双曲线
+
+到定点与定直线距离相等的点的轨迹是 抛物线
+
+\newpage
+\section{三角形}
+
+\subsection{四心}
+内心(内切圆)：角平分线
+
+外心(外接圆)：垂直平分线
+
+垂心： 垂线
+
+重心： 中线
+
+\subsection{角平分线、内心、角平分线定理}
+\begin{minipage}{0.5\textwidth}
+  \center
+  \begin{tikzpicture}[rotate=-20]
+    \tkzDefPoints{0/0/B, 2/0/C, 1.7/1.7/A}
+
+    \tkzDefLine[bisector](B,A,C)  \tkzGetPoint{a}
+    \tkzInterLL(B,C)(A,a) \tkzGetPoint{D}
+
+    \tkzDefLine[parallel=through C](A,D) \tkzGetPoint{c'}
+    \tkzInterLL(C,c')(B,A) \tkzGetPoint{C'}
+
+    \tkzMarkAngles[scale=0.8, dashed](B,A,D D,A,C A,C',C C',C,A)
+    \tkzFillAngles[scale=0.8, fill=red!20,opacity=.5](B,A,D D,A,C)
+    \tkzLabelAngles[pos=1, red, scale=0.8](B,A,D A,C',C){$\alpha$}
+    \tkzLabelAngles[pos=1, red, scale=0.8](D,A,C C',C,A){$\beta$}
+
+    \tkzDrawSegments(B,C A,C B,A)
+    \tkzDrawSegments[dashed](A,D C,C' A,C')
+    \tkzDrawPoints(A,B,C,D)
+    \tkzLabelPoints(B,C,D)
+    \tkzLabelPoints[above left](A, C')
+  \end{tikzpicture}
+
+  内角平分线定理及其逆定理
+  \begin{align*}
+   \hspace{2em} & & \angle \alpha=\angle \beta \Longleftrightarrow \frac{AB}{AC} = \frac{BD}{DC}& &
+  \end{align*}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+  \center
+  \begin{tikzpicture}
+    \tkzDefPoints{0/0/B, 2/0/C, 2.8/2/A}
+
+    \tkzDefLine[bisector out](B,A,C)  \tkzGetPoint{a'}
+    \tkzInterLL(B,C)(A,a') \tkzGetPoint{E}
+
+    \tkzDefPointOnLine[pos=1.5](B,A)  \tkzGetPoint{A'}
+
+    \tkzDefLine[parallel=through C](A,E) \tkzGetPoint{c'}
+    \tkzInterLL(C,c')(B,A) \tkzGetPoint{C'}
+
+    \tkzMarkAngles[scale=0.6, dashed](C,A,E E,A,A' A,C,C' C,C',A)
+    \tkzFillAngles[scale=0.6, fill=red!20,opacity=.5](C,A,E E,A,A')
+    \tkzLabelAngles[pos=0.7, red, scale=0.8](C,A,E A,C,C'){$\gamma$}
+    \tkzLabelAngles[pos=0.7, red, scale=0.8](E,A,A' C,C',A){$\delta$}
+
+    \tkzDrawSegments(B,C A,C B,A)
+    \tkzDrawSegments[dashed](A,E C,E A,A' C,C')
+    \tkzDrawPoints(A,B,C,E)
+    \tkzLabelPoints(B,C,E)
+    \tkzLabelPoints[above left](A, C')
+  \end{tikzpicture}
+
+  外角平分线定理及其逆定理
+  \begin{align*}
+    \hspace{2em}& & \angle \gamma=\angle \delta \Longleftrightarrow \frac{AB}{AC} = \frac{BE}{CE} & &
+  \end{align*}
+\end{minipage}
+
+上面两图是从$C$作内角、外角平分线构造。内角平分线定理，也可以用面积相等来证明。\\
+$S_{\triangle ADB}:S_{\triangle ADC}=\frac{1}{2}AB\cdot AD\sin \alpha:\frac{1}{2}AD\cdot AC\sin \beta=\frac{1}{2}BD\cdot h:\frac{1}{2}CD\cdot h$
+
+\textbf{阿波罗尼奥斯圆(Apollonius Circle 阿氏圆)}，角平分线性质有广泛的应用，其中一个关系相当紧密的应用就是阿氏圆，也就是平面上到两定点距离之比为定值(不等于$1$)的点的轨迹是一个圆，它的代数证明很简单，几何证明需要借助角平分线定理。圆的内分点和外分点为阿氏圆的直径。下图：
+
+\begin{minipage}{1.0\textwidth}
+  \center
+  \begin{tikzpicture}
+    \tkzDefPoints{0/0/B, 2/0/C, 2.8/2/A}
+
+    \tkzDefLine[bisector out](B,A,C)  \tkzGetPoint{a'}
+    \tkzInterLL(B,C)(A,a') \tkzGetPoint{E}
+
+    \tkzDefPointOnLine[pos=1.2](B,A)  \tkzGetPoint{A'}
+
+    \tkzMarkAngles[scale=0.6, dashed](C,A,E)
+    \tkzFillAngles[scale=0.6, fill=red!20,opacity=.5](C,A,E E,A,A)
+    \tkzLabelAngles[pos=0.7, red, scale=0.8](C,A,E E,A,A'){$\gamma$}
+
+    \tkzDefLine[bisector](B,A,C)  \tkzGetPoint{a}
+    \tkzInterLL(B,C)(A,a) \tkzGetPoint{D}
+
+    \tkzMarkAngles[scale=0.8, dashed](B,A,D D,A,C)
+    \tkzFillAngles[scale=0.8, fill=red!20,opacity=.5](B,A,D D,A,C)
+    \tkzLabelAngles[pos=1, red, scale=0.8](B,A,D D,A,C){$\alpha$}
+
+    \tkzDefCircle[circum](A,D,E) \tkzGetPoint{O}
+    \tkzDrawCircle[dashed, thick](O,A)
+
+    \tkzDrawSegments(B,C A,C B,A)
+    \tkzDrawSegments[dashed](A,E C,E A,A' A,D)
+    \tkzDrawPoints(A,B,C,D,E,O)
+    \tkzLabelPoints(B,C,D,E,O)
+    \tkzLabelPoints[above left](A)
+
+  \end{tikzpicture}
+\end{minipage}
+
+例：同用上图，满足条件$BC=3, \; AB=2AC$的三角形的面积的最大值。\\
+因为底边是个定值，面积最大只需要高最大即可，其余两边长的比例是定值，所以定点$A$在一个阿氏圆上，只需要求出半径即可。
+$CD=1, \;BD=2$这个是内角平分线，再用一次外角平分线，$BE:CE=2:1 \Rightarrow (2r+BD):(2r-CD)=2:1$，可算出$r$。此题如果用代数方法，比如余弦定理或者海伦公式会很麻烦。
+
+总体来说，阿氏圆有点抽象。已知底边长和两侧边之比，那么底边上的内分点$D$和外分点$E$就可以确定，那么这个点的轨迹连接$D,E$都可以形成直角(如上图，圆上任一点，连接$AD,AE$)，很明显$DE$是一个圆的直径。隐含有一对相似三角形: $S_{\triangle COA} \sim S_{\triangle AOB} \Leftrightarrow CO:AO=CA:AB=OA:OB \Leftrightarrow CO:r=CA:AB=r:OB$.
+
+初中几何中的阿氏圆问题，一般是圆外两点到圆上的距离之和，如：$PA+\frac{1}{2}PB$，那么把系数小于$1$的定点$B$转化为圆内，这个定点$B'$在$A$到圆心的线段上。感觉用阿氏圆比较抽象，用相似三角形较为容易理解，但是，系数已知，圆已知，圆外的定点已知，所以题目一般是巧合的题目($r:OB$，比例已知)，是往阿氏圆上凑的题目。
+
+\textbf{内心:} inscribed内切的、雕刻的. Name was inscribed on the trophy
+
+\begin{center}
+  \begin{tikzpicture}
+    \tkzDefPoints{1.2/2.1/A, 0/0/B, 3/0/C}
+
+    \tkzDefCircle[in](A,B,C)   \tkzGetPoints{O}{x}
+    \tkzDrawCircles(O,x)
+    \tkzDefPointsBy[projection=onto A--B](O){D}
+    \tkzDefPointsBy[projection=onto A--C](O){E}
+    \tkzDefPointsBy[projection=onto B--C](O){F}
+    \tkzMarkRightAngle[scale=0.6](O,D,A)
+    \tkzMarkRightAngle[scale=0.6](O,E,A)
+    \tkzMarkRightAngle[scale=0.6](O,F,B)
+    \tkzMarkSegments[mark=|, size=2pt](O,D O,E O,F)
+
+    \tkzDrawSegments(A,B A,C B,C O,A O,B O,C)
+    \tkzDrawSegments[dashed](O,D O,E O,F)
+    \tkzDrawPoints(O)
+    \tkzLabelPoints[above](A)
+    \tkzLabelPoints[left](B)
+    \tkzLabelPoints[right](C,O)
+  \end{tikzpicture}
+\end{center}
+
+\subsection{中线、重心定理、中位线定理}
+\begin{minipage}{0.33\textwidth}
+  \center
+  \begin{tikzpicture}
+    \tkzDefPoints{0/0/B, 3/0/C, 1.2/2.8/A}
+    \tkzDefPointOnLine[pos=0.5](A,B)  \tkzGetPoint{F}
+    \tkzDefPointOnLine[pos=0.5](B,C)  \tkzGetPoint{D}
+    \tkzDefPointOnLine[pos=0.5](A,C)  \tkzGetPoint{E}
+    \tkzInterLL(A,D)(B,E) \tkzGetPoint{G}
+
+    \tkzDrawSegments(B,C A,C B,A G,A G,B G,C)
+    \tkzDrawPoints[red,size=4](G)
+    \tkzLabelPoints[above left](A)
+    \tkzLabelPoints[left](B)
+    \tkzLabelPoints[right](C,G)
+    \tkzLabelPoints(D)
+  \end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
+  \center
+  \begin{tikzpicture}
+    \tkzDefPoints{0/0/B, 3/0/C, 1.2/2.8/A}
+    \tkzDefPointOnLine[pos=0.5](A,B)  \tkzGetPoint{F}
+    \tkzDefPointOnLine[pos=0.5](B,C)  \tkzGetPoint{D}
+    \tkzDefPointOnLine[pos=0.5](A,C)  \tkzGetPoint{E}
+    \tkzInterLL(A,D)(B,E) \tkzGetPoint{G}
+
+    \tkzDrawSegments(B,C A,C B,A C,F B,E A,D)
+    \tkzDrawPoints[red,size=4](G)
+    \tkzLabelPoints[above left](A)
+    \tkzLabelPoints[left](B)
+    \tkzLabelPoints[right](C,G)
+    \tkzLabelPoints(D)
+  \end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
+  \center
+  \begin{tikzpicture}
+    \tkzDefPoints{0/0/B, 3/0/C, 1/2.8/A}
+    \tkzDefPointOnLine[pos=0.5](A,B)  \tkzGetPoint{F}
+    \tkzDefPointOnLine[pos=0.5](A,C)  \tkzGetPoint{E}
+    \tkzDefPointOnLine[pos=0.5](B,C)  \tkzGetPoint{D'}
+    \tkzInterLL(C,F)(B,E) \tkzGetPoint{G}
+
+    \tkzDrawSegments(B,C A,C B,A C,F B,E)
+    \tkzDefPointOnLine[pos=2](A,G)  \tkzGetPoint{H}
+
+    \tkzDrawSegments[dashed](B,H H,C)
+    \tkzDrawSegments[thick, dashed, red](A,G)
+    \tkzDrawSegments[thick, dashed, blue](G,H)
+    \tkzMarkSegments[mark=||](A,G G,H)
+    \tkzDrawPoints(G)
+    \tkzLabelPoints[above left](A,G)
+    \tkzLabelPoints[left](B,F)
+    \tkzLabelPoints[right](C,E)
+    \tkzLabelPoints(H,D')
+  \end{tikzpicture}
+\end{minipage}
+
+\textbf{重心定理：}三条中线相交于一点，此点到顶点的距离是它到对边中点距离的2倍($AG=2GD$)
+
+\textbf{中位线定理：} $AB^2+AC^2=2(AD^2+BD^2)$，由两个余弦定理相加很容易得出
+
+\textbf{面积特征：} $S_{\triangle AGB} = S_{\triangle AGC} = S_{\triangle BGC}=\frac{1}{3}S_{\triangle ABC}$
+
+\textbf{坐标表示：}Let $A(x_1,y_1), \;B(x_2, y_2), \; C(x_3, y_3)$, then $\displaystyle G(\frac{x_1+x_2+x_3}{3}, \frac{y_1+y_2+y_3}{3})$,
+Proof\footnote{$\vv{AG}=2\vv{GD}=\vv{GC}+\vv{GB} \Rightarrow (x-x_1, y-y_1)=(x_2-x+x_3-x, y_2-y+y_3-y)$}
+
+\textbf{向量特征：}$\vv{OG} = \displaystyle \frac{1}{3}(\vv{OA}+\vv{OB}+\vv{OC})$，$O$是原点
+
+\textbf{向量特征}：$\vv{GA} + \vv{GB} + \vv{GC}=0$
+
+\textbf{物理意义：}对于质量均匀的薄片，重心为三中线的交点，重心是三角形的物理平衡点(质心)
+
+\textbf{性质：}重心到三个顶点的距离的平方和最小。直接用距离公式平方相加。
+\newpage
 \section{直线}
 直线$L$的一般方程为：$Ax+By+C=0$
 \subsection{点到直线的距离}
@@ -17,9 +250,9 @@
 
 \subsection{平行线之间的距离}
 假设两条直线分别为$Ax+By+C_1=0, \; Ax+By+C_2=0$，假设$P(x_0,y_0)$在第一条在直线上，那么$P$到另外一条直线上的距离就是:$\displaystyle  d=\frac{|Ax_0+By_0+C_2|}{\sqrt{A^2+B^2}}$,
-while $Ax_0+By_0+C_1=0 \Rightarrow Ax_0+By_0=-C_1$代入，得：
-\[\displaystyle  d=\frac{|C_1-C_2|}{\sqrt{A^2+B^2}}\]
+while $Ax_0+By_0+C_1=0 \Rightarrow Ax_0+By_0=-C_1$代入，得：$\displaystyle d=\frac{|C_1-C_2|}{\sqrt{A^2+B^2}}$
 
+\newpage
 \section{一元二次方程}
 
 $ax^2+bx+c=0$, 两个根$x_1, x_2$, $\Delta = b^2-4ac$, 对称轴$-\frac{b}{2a}$
@@ -31,6 +264,7 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
 
 通过变型可得$ax^2=-bx-c$，一个二次型等于一个一次型，emmm...?
 
+\subsection{例子}
 例： $x^2-2ax+b=0$有两个根$x_1, x_2$, $y^2+2ax+b=0$有两个根$y_1, y_2$, and $a, b \in \mathbb{Z}^+, x_1y_2-x_2y_1=104$，求$b$的最小值。
 
 已知$a,b$满足$a^2-15a-5=0, b^2-15b-5=0$，求$a/b+b/a$, tips\footnote{$a,b$显然是$x^2-15x-5=0$的两个根}
@@ -41,9 +275,336 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
   思路2：Let$x^3-x^2=t$，升次降次到已知的多项式，$x^3=x^2+t, x^4=x^3+tx=x^2+tx+t, x^5=(1+t)x^2+tx+t \Rightarrow (1+t)x^2+(1+t)x+(1+t)=0$
 }
 
+\newpage
+\section{几何模型}
+\subsection{费马点(Fermat point)}
+三角形内(包括边线)一点，到三个顶点的和最小。
+
+\begin{minipage}{0.3\textwidth}
+  \center
+  \begin{tikzpicture}
+    \tkzDefPoints{0/0/B,3/0/C,2/2.5/A, 1.5/1/P}
+    \tkzDrawSegments(A,B B,C A,C P,A P,B P,C)
+    \tkzLabelPoints[scale=0.8](B,C,P)
+    \tkzLabelPoints[above, scale=0.8](A)
+  \end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+  \begin{tikzpicture}
+    \tkzDefPoints{0/0/B,3/0/C,2/2.5/A, 1.5/1/P}
+    \tkzDrawSegments(A,B B,C A,C P,A P,B P,C)
+
+    \tkzDefPointBy[rotation=center B angle 60](A) \tkzGetPoint{A'}
+    \tkzDefPointBy[rotation=center B angle 60](P) \tkzGetPoint{P'}
+    \tkzDrawSegments[dashed](P',B P',A' A',B A,A' P,P')
+
+    \tkzFillPolygon[color=orange!30, opacity=0.3](A,B,P)
+    \tkzFillPolygon[color=orange!30, opacity=0.3](A',B,P')
+    \tkzMarkSegments[mark=||, size=2pt](P',B P,P' P,B)
+
+    \tkzMarkAngles[scale=0.6, ->](P,B,P')
+    \tkzFillAngles[scale=0.6, fill=red!20,opacity=.5](P,B,P')
+    \tkzLabelAngle[pos=0.9, red, scale=0.6](P,B,P'){$60^{\circ}$}
+
+    \tkzLabelPoints[scale=0.8](B,C,P)
+    \tkzLabelPoints[above, scale=0.8](A)
+    \tkzLabelPoints[above right, scale=0.8](P')
+    \tkzLabelPoints[left, scale=0.8](A')
+  \end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\center
+  \begin{tikzpicture}[scale=0.6]
+    \tkzDefPoints{0/0/B,3/0/C,2/2.5/A}
+    % \tkzDrawPoints(A,B,C)
+    \tkzDrawSegments(A,B B,C A,C)
+
+    \tkzDefPointBy[rotation=center B angle 60](A) \tkzGetPoint{C'}
+    \tkzDefPointBy[rotation=center B angle -60](C) \tkzGetPoint{A'}
+    \tkzDefPointBy[rotation=center C angle -60](A) \tkzGetPoint{B'}
+    \tkzDrawSegments[dashed](B,C' A,C' B,A' C,A' C,B' B',A C,C' A,A' B,B')
+
+    \tkzInterLL(A,A')(B,B') \tkzGetPoint{P}
+
+    \tkzLabelPoints[scale=0.8](A')
+    \tkzLabelPoints[above, scale=0.8](A)
+    \tkzLabelPoints[left, scale=0.8](B, C')
+    \tkzLabelPoints[right, scale=0.8](C, B', P)
+  \end{tikzpicture}
+\end{minipage}
+
+三角形三个边分别向外作等边三角形，顶点与对边的连线相交的点就是所有点。其实，三角形要看是否有角度大于$120^{\circ}$，当有一个角不小于$120^{\circ}$时，那么此时费马点就是此顶点。也可以看到，费马点在内部时，费马点和任意点形成的夹角都是$120^{\circ}$。顶角超过$120^{\circ}$，旋转后的$A'C$已越过$A$。
+
+物理学解释：平面上所给的三个给定点钻出洞来，再设有三条绳子系在一起，每条绳子各穿过一个洞口，而绳子的末端都绑有一个固定重量m的重物。假设摩擦力可以忽略，那么绳子会被拉紧，而绳结最后会停在平面一点的上方。
+
+\textbf{加权费马点}，也就是带系数的距离和，比如$PA+\sqrt{2}PB+PC$，或者$PC+\frac{\sqrt{3}}{2}PB+\frac{1}{2}PA$
+
+\begin{minipage}{0.33\textwidth}
+  \center
+  \begin{tikzpicture}
+    \tkzDefPoints{0/0/B,3/0/C,2/2.5/A, 1.5/1/P}
+    \tkzDrawSegments(A,B B,C A,C P,A P,B P,C)
+
+    \tkzDefPointBy[rotation=center B angle 90](A) \tkzGetPoint{A'}
+    \tkzDefPointBy[rotation=center B angle 90](P) \tkzGetPoint{P'}
+    \tkzDrawSegments[dashed](P',B P',A' A',B A,A' P,P')
+
+    \tkzFillPolygon[color=orange!30, opacity=0.3](A,B,P)
+    \tkzFillPolygon[color=orange!30, opacity=0.3](A',B,P')
+
+    \tkzMarkAngles[scale=0.6, ->](P,B,P')
+    \tkzFillAngles[scale=0.6, fill=red!20,opacity=.5](P,B,P')
+    % \tkzLabelAngle[pos=0.9, red, scale=0.6](P,B,P'){$60^{\circ}$}
+
+    \tkzLabelPoints[scale=0.8](B,C,P)
+    \tkzLabelPoints[above, scale=0.8](A)
+    \tkzLabelPoints[above right, scale=0.8](P')
+    \tkzLabelPoints[left, scale=0.8](A')
+  \end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
+  \center
+  \begin{tikzpicture}
+    \tkzDefPoints{0/0/B,3/0/C,2/2.5/A, 1.5/1/P}
+    \tkzDrawSegments(A,B B,C A,C P,A P,B P,C)
+
+    \tkzDefPointBy[rotation=center B angle 60](A) \tkzGetPoint{A'}
+    \tkzDefPointBy[rotation=center B angle 60](P) \tkzGetPoint{P'}
+    \tkzDrawSegments[dashed](P',B P',A' A',B)
+
+    \tkzFillPolygon[color=orange!30, opacity=0.3](A,B,P)
+    \tkzFillPolygon[color=orange!30, opacity=0.3](A',B,P')
+
+    \tkzMarkAngles[scale=0.6, ->](P,B,P')
+    \tkzFillAngles[scale=0.6, fill=red!20,opacity=.5](P,B,P')
+
+    \tkzDefPointOnLine[pos=0.5](B,A')  \tkzGetPoint{D}
+    \tkzDefPointOnLine[pos=0.5](B,P')  \tkzGetPoint{E}
+    \tkzDrawSegments[dashed](D,E E,P)
+
+    \tkzLabelPoints[scale=0.8](B,C,P)
+    \tkzLabelPoints[above, scale=0.8](A)
+    \tkzLabelPoints[above right, scale=0.8](P', E)
+    \tkzLabelPoints[left, scale=0.8](A', D)
+  \end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
+  \center
+  \begin{tikzpicture}
+    \tkzDefPoints{0/0/B,3/0/C,2/2.5/A}
+    \tkzDrawSegments(A,B B,C A,C)
+
+    \tkzDefPointBy[rotation=center B angle 60](A) \tkzGetPoint{A'}
+    \tkzDrawSegments[dashed](A',B)
+
+
+    \tkzMarkAngles[scale=0.6, ->](A,B,A')
+    \tkzFillAngles[scale=0.6, fill=red!20,opacity=.5](A,B,A')
+
+    \tkzDefPointOnLine[pos=0.5](B,A')  \tkzGetPoint{D}
+    \tkzDefPointsBy[projection=onto C--D](B){E}
+    \tkzDefPointOnLine[pos=2](B,E)  \tkzGetPoint{P'}
+
+    \tkzDefPointBy[rotation=center B angle -60](P') \tkzGetPoint{P}
+    \tkzDrawSegments[dashed](B,P)
+
+
+    \tkzDrawSegments[dashed](D,C B,P')
+
+    \tkzLabelPoints[scale=0.8](B,C)
+    \tkzLabelPoints[above, scale=0.8](A, P', P, E)
+    % \tkzLabelPoints[above right, scale=0.8](P', E)
+    \tkzLabelPoints[left, scale=0.8](A', D)
+  \end{tikzpicture}
+\end{minipage}
+
+对于有两个不是$1$系数的情况，刚开始的时候，我的思路是：旋转后的$PP'$的范围是$(0,2PB)$，而$PA$可以任意系数，延长或者截取$P'A'$即可。可是本质上的点到点的距离直线段最短，$P$是不定点，延长或截取$P'A'$后的点也是不定点，所以直接cut。这个定点只能在固定的边线$A'B$上取。所以，加权费马点的核心是，先找到系数为$1$的边不动，一个系数用平行线，另一个系数用旋转，如上图，$PA$的系数用平行线作出，$PE$是另一个给系数，中间旋转的角度$\angle PBE$是计算出来的(三条边的长度确定)。其实，有时候很反直观，那又如何确定这个点呢？
+
+要确定点就需要反推。例如上又图，旋转的角度是固定的，连接$CD$，那这个$P$点肯定在之上，$\angle BEC$是固定的，这里是垂直，所以能找到$E$点，延长找到$P'$点，反旋转后找到P点。
+
+思考：$10PA+2PB+2PC$，如果往外作平行线会不会定点过高，然后两个定点的连线会越过三角形？是不是最好往小了缩放？
+
+\subsection{探照灯模型- 定角定高}
+
+\begin{minipage}[c]{0.33\textwidth}
+  \center
+  \begin{tikzpicture}
+    \tkzDefPoints{0/0/A,3/0/B, 2.1/3/C}
+    \tkzDrawPoints(A,B,C)
+    \tkzLabelPoints[scale=0.8](A,B)
+    \tkzLabelPoints[scale=0.8,right](C)
+    \tkzDrawSegments(A,C B,C)
+    \tkzDrawLines[red, thick](A,B)
+
+    \tkzMarkAngles[scale=0.8](A,C,B)
+    \tkzFillAngles[scale=0.8, fill=red!20,opacity=.5](A,C,B)
+    \tkzLabelAngle[pos=0.9, red](A,C,B){$\theta$}
+
+    \tkzDefPointsBy[projection=onto A--B](C){D}
+    \tkzDrawSegment[thick, red](C,D)
+    \tkzLabelSegment[right, midway, red](C,D){h}
+    \tkzMarkRightAngle(A,D,C)
+    \tkzLabelPoints(D)
+  \end{tikzpicture}
+\end{minipage}
+\begin{minipage}[c]{0.33\textwidth}
+  \center
+  \begin{tikzpicture}
+    \tkzDefPoints{0/0/A,3/0/B, 2.1/3/C}
+    \tkzDrawPoints(A,B,C)
+    \tkzLabelPoints[scale=0.8](A,B)
+    \tkzLabelPoints[scale=0.8,right](C)
+    \tkzDrawSegments(A,C B,C)
+    \tkzDrawLines[red, thick](A,B)
+
+    \tkzDefCircle[circum](A,B,C) \tkzGetPoint{O}
+    \tkzDrawCircle[dashed, thick](O,A)
+
+    % \tkzDrawPoints(O)
+    \tkzLabelPoints[scale=0.6, above left](O)
+
+    \tkzDrawSegments[dashed](O,A O,B O,C)
+
+    \tkzMarkAngles[scale=0.8](A,C,B)
+    \tkzFillAngles[scale=0.8, fill=red!20,opacity=.5](A,C,B)
+    \tkzLabelAngle[pos=0.9, red](A,C,B){$\theta$}
+
+    \tkzDefPointsBy[projection=onto A--B](C){D}
+    \tkzDrawSegment[thick, red](C,D)
+    \tkzLabelSegment[right, midway, red](C,D){h}
+    \tkzMarkRightAngle(A,D,C)
+
+    \tkzDefPointsBy[projection=onto A--B](O){E}
+    \tkzDrawSegment[dashed](O,E)
+    \tkzMarkRightAngle[scale=0.8](A,E,O)
+    \tkzLabelPoints[scale=0.8](D,E)
+
+    \tkzMarkAngles[scale=0.4](A,O,E)
+    \tkzMarkAngles[scale=0.45](E,O,B)
+    \tkzFillAngles[scale=0.7, fill=red!20,opacity=.5](A,O,E)
+    \tkzFillAngles[scale=0.8, fill=red!20,opacity=.5](E,O,B)
+    \tkzLabelAngle[pos=0.7](A,O,E){$\theta$}
+    \tkzLabelAngle[pos=0.7](E,O,B){$\theta$}
+  \end{tikzpicture}
+\end{minipage}
+\begin{minipage}[c]{0.33\textwidth}
+  \center
+  \begin{tikzpicture}[scale=1.1]
+    \tkzDefPoints{0/0/A,3/0/B, 2.1/0.8/C}
+    \tkzDrawPoints(A,B,C)
+    \tkzLabelPoints[scale=0.8](A,B)
+    \tkzLabelPoints[scale=0.8,right](C)
+    \tkzDrawSegments(A,C B,C)
+    \tkzDrawLines[red, thick](A,B)
+
+    \tkzDefCircle[circum](A,B,C) \tkzGetPoint{O}
+    \tkzDrawCircle[dashed, thick](O,A)
+
+    % \tkzDrawPoints(O)
+    \tkzLabelPoints[scale=0.6, below](O)
+
+    \tkzDrawSegments[dashed](O,A O,B O,C)
+
+    \tkzMarkAngles[scale=0.6](A,C,B)
+    \tkzFillAngles[scale=0.6, fill=red!20,opacity=.5](A,C,B)
+
+    \tkzDefPointsBy[projection=onto A--B](C){D}
+    \tkzDrawSegment[thick, red](C,D)
+    \tkzLabelSegment[right, midway, red](C,D){h}
+    \tkzMarkRightAngle[scale=0.8](A,D,C)
+
+    \tkzDefPointsBy[projection=onto A--B](O){E}
+    \tkzDrawSegment[dashed](O,E)
+    \tkzMarkRightAngle[scale=0.8](A,E,O)
+    \tkzLabelPoints[scale=0.8](D)
+    \tkzLabelPoints[scale=0.8, above](E)
+
+    \tkzMarkAngles[scale=0.6](E,O,A)
+    \tkzFillAngles[scale=0.6, fill=red!20,opacity=.5](E,O,A)
+    \tkzLabelAngle[pos=0.4, red, scale=0.8](E,O,A){$90^{\circ}-\frac{\theta}{2}$}
+
+    \tkzDrawPoints(O)
+  \end{tikzpicture}
+\end{minipage}
+
+定点到定直线的距离是定值，顶角是定值, 求三角形底边最小值(三角形面积最小)。
+
+$AB=2r\sin\theta$，只需找出最小外接圆半径即可， while $h\le r+r\cos\theta \Rightarrow r \ge h/(1+\cos\theta)$ or $h+r\cos(90^{\circ}-\theta/2) \le r \Rightarrow r\ge h/(1-\sin \frac{\theta}{2})$。最小值的情况下，都是$0C \perp AB$，也就是$OC$平分定角，也就是$CA=CB$，$\triangle CAB$是等腰三角形。
+
+现在我们换一种思路，用代数的方法，Let $\angle ACD=\angle\alpha$，有$AB=h\tan\alpha+h\tan(\theta-\alpha)$，可以转化为$f(\alpha)=h\left[\tan\alpha+\tan(\theta-\alpha)\right]$的最值问题，求导$f'(\alpha)=h \frac{1}{\cos^{2}\alpha}-h \frac{1}{\cos^2(\theta-\alpha)}=0 \;\Rightarrow\cos^2\alpha=\cos^2(\theta-\alpha)$。默认的条件是$0<\alpha<\theta<\pi$，分类讨论，$\cos\alpha=\cos(\theta-\alpha)\Rightarrow \cos\alpha - \cos(\theta-\alpha)=0$，利用和差化积得$2\sin(\theta/2)\sin(\frac{2\alpha-\theta}{2})=0 \Rightarrow 2\alpha=\theta$；或者$\cos\alpha=-\cos(\theta-\alpha)$，不符合。\todo{???}利用求导求最值还需要比较端点和驻点。
+
+\section{MISC}
+\hrulefill
+
+\begin{minipage}{0.3\textwidth}
+  \begin{tikzpicture}[scale=1.2]
+    \tkzDefPoints{0/1/A, 0/0/B, 3/0/C}
+    \tkzDefPointBy[rotation=center A angle 45](C) \tkzGetPoint{C'}
+    \tkzDefPointOnLine[pos=0.5](A,C')  \tkzGetPoint{D}
+
+    \tkzDrawSegments(A,B A,C B,C A,D B,D C,D)
+    \tkzLabelPoints[above](A)
+    \tkzLabelPoints[right](D)
+    \tkzLabelPoints[](B,C)
+
+    \tkzMarkAngles[scale=0.5](C,A,D)
+    \tkzLabelAngle[pos=0.6](C,A,D){$45^{\circ}$}
+    \begin{scope}[dim style/.style={dashed,sloped,teal}]
+      \tkzDrawSegment[dim={\pgfmathprintnumber 3,-6pt,}](A,B)
+    \end{scope}
+
+  \end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+$AB=3, \; \angle ABC=90^{\circ}, \; \angle CAD=45^{\circ}, \; S_{\triangle ACD}=6$
+
+求$BD_{max}$
+\end{minipage}
+
+几何求极值的问题，个人偏向于选取一个关键变量，可以确定其他参数，角度也好，边长也罢。这里我们设$\angle BAC=\alpha$，$\alpha$固定后，$AC$可以用$\alpha$表示，
+由于给出了面积，那么$AD$也可以用$\alpha$表示，$BD$就可以用余弦定理表示为含有$\alpha$的函数。
+
+$AC=\frac{3}{\cos \alpha}, \;\because S_{\triangle ACD}=6, \; \therefore \frac{1}{2}AC\times AD\sin \frac{\pi}{4}=6 \;\;\Rightarrow AD=4\sqrt{2}\cos \alpha$，根据余弦定理
+$BD^2=3^2+AD^2-2\times 3\times AD\cos(\alpha+\pi/4)=32\cos^2\alpha+9-24\sqrt{2}\cos\alpha\cos(\alpha+\pi/4)=9+8\cos^2\alpha+24\cos\alpha\sin\alpha=4\cos2\alpha+12\sin2\alpha+13=4(\cos2\alpha+3\sin2\alpha)+13$，柯西知$BD^2\le 4\times\sqrt{(1^2+3^2)}\sqrt{(\cos^22\alpha+\sin^22\alpha)}+13=13+4\sqrt{10}$，取等的时候$1:3=\cos2\alpha:\sin2\alpha$，可以取到。按惯例，$BD$根号里面还有根号，可以进一步化简为$2\sqrt{2}+\sqrt{5}$。
+
+关于选取变量，也可以选取$BC$长度。也有人建立直角坐标系去解。
+
+\hrulefill
+
+\begin{minipage}{0.4\textwidth}
+  \begin{tikzpicture}[scale=0.6]
+    \tkzDefPoints{0/0/D, 0/3/A, -6/0/B, 4/0/C, -2/2/E}
+
+    \tkzDrawSegments(A,B B,C A,C A,D C,E)
+    \tkzLabelPoints(B,C,D,E)
+    \tkzLabelPoints[above right](A)
+
+    \tkzMarkAngles[scale=0.8](C,E,A)
+    \tkzLabelAngle[pos=1.4, red, scale=0.8](C,E,A){$45^{\circ}$}
+
+    \tkzMarkAngles[size=1.2, mark=|](A,C,E)
+    \tkzMarkAngles[size=1.2, mark=|](E,C,B)
+
+    \begin{scope}[dim style/.style={dashed,sloped,teal}]
+      \tkzDrawSegment[dim={\pgfmathprintnumber 6,-6pt,}](B,D)
+    \end{scope}
+    \begin{scope}[dim style/.style={dashed,sloped,teal}]
+      \tkzDrawSegment[dim={\pgfmathprintnumber 4,-6pt,}](D,C)
+    \end{scope}
+    \tkzMarkRightAngle[](B,D,A)
+  \end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+$BD=6, \; DC=4, \; AD \perp BC,\\ \angle AEC=45^{\circ}, \; CE \text{平分}\angle ACB$
+
+求$BE$的长度。
+\end{minipage}
+
+思路：Let $\angle ACE=\alpha$, 一旦确定$\alpha$后，$\angle B, \angle A, AD$几乎所有都能能定，所以$\alpha$应该是个关键，最后$\triangle BEC$利用正弦定理可以求出$BE$。$AD:BD=\tan(45^{\circ}-\alpha), AD:DC=\tan2\alpha \Rightarrow \tan2\alpha:\tan(45^{\circ}-\alpha)=3:2 \Rightarrow \tan\alpha=1/3, 3$，很明显$\alpha$小于$45^{\circ}$，所以$\tan \alpha=1/3$.
+
+\hrulefill
 
 \end{document}
-
 %%% Local Variables:
 %%% mode: LaTeX
 %%% TeX-master: "../main"
