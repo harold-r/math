@@ -21,6 +21,37 @@
 \newpage
 \section{三角形}
 
+\textbf{大边对大角、大角对大边}，是定理吗？其实这个命题出现在欧几里得《几何原本》第一卷Proposition 18(In any triangle the greater side subtends the greater angle)、19(In any triangle the greater angle is subtended by the greater  side)，
+欧几里得先证明了大边对大角(取等腰)，然后用大边用大角的结论，反证了大角对大边，哎呀，用了反证法，欧几里得的最爱。
+
+\textbf{Proposition 06:} 等角对等边
+
+\textbf{Proposition 16:} 外角大于任一内对角
+
+\textbf{Proposition 20:} 任意三角形中，任意两边之和大于第三边
+
+\begin{minipage}{0.7\textwidth}
+  \textbf{Proposition 21：} 若从三角形一边的两个端点作两条直线交于三角形内，则这样作出的两条直线之和小于三角形其余两边之和，但夹角更大。如右图：
+  $BD+CD < AB+AC, \; \angle BDC> \angle BAC$.\\
+  作辅助线$BD$延长线交$AC$与$E$，用极限的思想思考，$D$无限接近于$A$，这时候$DE$无限接近于$0$，$DE$就是突破口。\\
+  $AB+AE>BD+DE; \; CE+DE>CD$得证。$\angle BDC>\angle BEC>\angle BAC$得证。
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+  \center
+  \begin{tikzpicture}
+    \tkzDefPoints{1/2.5/A, 0/0/B, 3/0/C, 1.1/1/D}
+    \tkzInterLL(B,D)(A,C) \tkzGetPoint{E}
+
+    \tkzDrawSegments(A,B A,C B,C D,C B,D)
+    \tkzDrawSegments[dashed](D,E)
+    \tkzLabelPoints[above](A)
+    \tkzLabelPoints[left](B)
+    \tkzLabelPoints[right](C)
+    \tkzLabelPoints[above left](D)
+    \tkzLabelPoints[above right](E)
+  \end{tikzpicture}
+\end{minipage}
+
 \subsection{四心}
 内心(内切圆)：角平分线
 
@@ -30,7 +61,7 @@
 
 重心： 中线
 
-\subsection{角平分线、内心、角平分线定理}
+\subsection{角平分线、角平分线定理、内心}
 \begin{minipage}{0.5\textwidth}
   \center
   \begin{tikzpicture}[rotate=-20]
@@ -49,7 +80,6 @@
 
     \tkzDrawSegments(B,C A,C B,A)
     \tkzDrawSegments[dashed](A,D C,C' A,C')
-    \tkzDrawPoints(A,B,C,D)
     \tkzLabelPoints(B,C,D)
     \tkzLabelPoints[above left](A, C')
   \end{tikzpicture}
@@ -79,7 +109,6 @@
 
     \tkzDrawSegments(B,C A,C B,A)
     \tkzDrawSegments[dashed](A,E C,E A,A' C,C')
-    \tkzDrawPoints(A,B,C,E)
     \tkzLabelPoints(B,C,E)
     \tkzLabelPoints[above left](A, C')
   \end{tikzpicture}
@@ -121,7 +150,7 @@ $S_{\triangle ADB}:S_{\triangle ADC}=\frac{1}{2}AB\cdot AD\sin \alpha:\frac{1}{2
 
     \tkzDrawSegments(B,C A,C B,A)
     \tkzDrawSegments[dashed](A,E C,E A,A' A,D)
-    \tkzDrawPoints(A,B,C,D,E,O)
+    \tkzDrawPoints(D,E,O)
     \tkzLabelPoints(B,C,D,E,O)
     \tkzLabelPoints[above left](A)
 
@@ -136,30 +165,33 @@ $CD=1, \;BD=2$这个是内角平分线，再用一次外角平分线，$BE:CE=2:
 
 初中几何中的阿氏圆问题，一般是圆外两点到圆上的距离之和，如：$PA+\frac{1}{2}PB$，那么把系数小于$1$的定点$B$转化为圆内，这个定点$B'$在$A$到圆心的线段上。感觉用阿氏圆比较抽象，用相似三角形较为容易理解，但是，系数已知，圆已知，圆外的定点已知，所以题目一般是巧合的题目($r:OB$，比例已知)，是往阿氏圆上凑的题目。
 
-\textbf{内心:} inscribed内切的、雕刻的. Name was inscribed on the trophy
+\begin{minipage}{0.5\textwidth}
+  \textbf{内心:} \\inscribed内切的、雕刻的. \\ Name was inscribed on the trophy
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+  \begin{center}
+    \begin{tikzpicture}
+      \tkzDefPoints{1.2/2.1/A, 0/0/B, 3/0/C}
 
-\begin{center}
-  \begin{tikzpicture}
-    \tkzDefPoints{1.2/2.1/A, 0/0/B, 3/0/C}
+      \tkzDefCircle[in](A,B,C)   \tkzGetPoints{O}{x}
+      \tkzDrawCircles(O,x)
+      \tkzDefPointsBy[projection=onto A--B](O){D}
+      \tkzDefPointsBy[projection=onto A--C](O){E}
+      \tkzDefPointsBy[projection=onto B--C](O){F}
+      \tkzMarkRightAngle[scale=0.6](O,D,A)
+      \tkzMarkRightAngle[scale=0.6](O,E,A)
+      \tkzMarkRightAngle[scale=0.6](O,F,B)
+      \tkzMarkSegments[mark=|, size=2pt](O,D O,E O,F)
 
-    \tkzDefCircle[in](A,B,C)   \tkzGetPoints{O}{x}
-    \tkzDrawCircles(O,x)
-    \tkzDefPointsBy[projection=onto A--B](O){D}
-    \tkzDefPointsBy[projection=onto A--C](O){E}
-    \tkzDefPointsBy[projection=onto B--C](O){F}
-    \tkzMarkRightAngle[scale=0.6](O,D,A)
-    \tkzMarkRightAngle[scale=0.6](O,E,A)
-    \tkzMarkRightAngle[scale=0.6](O,F,B)
-    \tkzMarkSegments[mark=|, size=2pt](O,D O,E O,F)
-
-    \tkzDrawSegments(A,B A,C B,C O,A O,B O,C)
-    \tkzDrawSegments[dashed](O,D O,E O,F)
-    \tkzDrawPoints(O)
-    \tkzLabelPoints[above](A)
-    \tkzLabelPoints[left](B)
-    \tkzLabelPoints[right](C,O)
-  \end{tikzpicture}
-\end{center}
+      \tkzDrawSegments(A,B A,C B,C O,A O,B O,C)
+      \tkzDrawSegments[dashed](O,D O,E O,F)
+      \tkzDrawPoints(O)
+      \tkzLabelPoints[above](A)
+      \tkzLabelPoints[left](B)
+      \tkzLabelPoints[right](C,O)
+    \end{tikzpicture}
+  \end{center}
+\end{minipage}
 
 \subsection{中线、重心定理、中位线定理}
 \begin{minipage}{0.33\textwidth}
@@ -176,7 +208,6 @@ $CD=1, \;BD=2$这个是内角平分线，再用一次外角平分线，$BE:CE=2:
     \tkzLabelPoints[above left](A)
     \tkzLabelPoints[left](B)
     \tkzLabelPoints[right](C,G)
-    \tkzLabelPoints(D)
   \end{tikzpicture}
 \end{minipage}
 \begin{minipage}{0.33\textwidth}
@@ -244,9 +275,9 @@ Proof\footnote{$\vv{AG}=2\vv{GD}=\vv{GC}+\vv{GB} \Rightarrow (x-x_1, y-y_1)=(x_2
 
 证明方法很多，这里用平移坐标系的方式来证明。
 
-我们将新坐标系的原点平移至点$P$，那么$x=x'+x_0, \; y=y'+y_0$，代入，新坐标系内图像的方程就是$A(x'+x_0)+B(y'+y_0)+C=0 \Rightarrow Ax'+By'+Ax_0+By_0+C=0$，也就是新坐标系的方程$Ax+By+Ax_0+By_0+C=0$，与两个轴的交点和原点正好构成一个直角三角形，原点到斜边的距离就是所求，两个直角边分别为$|Ax_0+By_0+C|/|A|, \; |Ax_0+By_0+C|/|B|$, 根据面积相等，距离就是斜边上的高$=$两个直角边的乘积除以斜边长，令$t=|Ax_0+By_0+C|$，简化并代入求解既是。
+我们将新坐标系的原点平移至点$P$，那么$x=x'+x_0, \; y=y'+y_0$，代入，新坐标系内图像的方程就是$A(x'+x_0)+B(y'+y_0)+C=0 \Rightarrow Ax'+By'+Ax_0+By_0+C=0$，与两个轴的交点和原点正好构成一个直角三角形，原点到斜边的距离就是所求，两个直角边分别为$|Ax_0+By_0+C|/|A|, \; |Ax_0+By_0+C|/|B|$, 根据面积相等，距离就是斜边上的高$=$两个直角边的乘积除以斜边长，令$t=|Ax_0+By_0+C|$，简化并代入求解既是。
 
-其实，如果点$P$在直线上，那么距离一定是$0$(分子)，分母可以用直角三角形来记忆，用这两个点理解记忆还是不错的(虽然第二个点有点牵强)。其实直线的法向量是$(A,B)$，分母就是法向量的长度。关于记忆，用一个简单的例子来辅助也是不错的，比如原点到直线$x+y=1$的距离。
+如何记忆，如果点$P$在直线上，那么距离一定是$0$(分子)，分母可以用直角三角形来记忆，用这两个点理解记忆还是不错的(虽然第二个点有点牵强)。其实直线的法向量是$(A,B)$，分母就是法向量的长度。关于记忆，用一个简单的例子来辅助也是不错的，比如原点到直线$x+y=1$的距离。
 
 \subsection{平行线之间的距离}
 假设两条直线分别为$Ax+By+C_1=0, \; Ax+By+C_2=0$，假设$P(x_0,y_0)$在第一条在直线上，那么$P$到另外一条直线上的距离就是:$\displaystyle  d=\frac{|Ax_0+By_0+C_2|}{\sqrt{A^2+B^2}}$,
@@ -285,8 +316,8 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
   \begin{tikzpicture}
     \tkzDefPoints{0/0/B,3/0/C,2/2.5/A, 1.5/1/P}
     \tkzDrawSegments(A,B B,C A,C P,A P,B P,C)
-    \tkzLabelPoints[scale=0.8](B,C,P)
-    \tkzLabelPoints[above, scale=0.8](A)
+    \tkzLabelPoints(B,C,P)
+    \tkzLabelPoints[above](A)
   \end{tikzpicture}
 \end{minipage}
 \begin{minipage}{0.3\textwidth}
@@ -306,10 +337,10 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
     \tkzFillAngles[scale=0.6, fill=red!20,opacity=.5](P,B,P')
     \tkzLabelAngle[pos=0.9, red, scale=0.6](P,B,P'){$60^{\circ}$}
 
-    \tkzLabelPoints[scale=0.8](B,C,P)
-    \tkzLabelPoints[above, scale=0.8](A)
-    \tkzLabelPoints[above right, scale=0.8](P')
-    \tkzLabelPoints[left, scale=0.8](A')
+    \tkzLabelPoints(B,C,P)
+    \tkzLabelPoints[above](A)
+    \tkzLabelPoints[above right](P')
+    \tkzLabelPoints[left](A')
   \end{tikzpicture}
 \end{minipage}
 \begin{minipage}{0.4\textwidth}
@@ -326,10 +357,10 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
 
     \tkzInterLL(A,A')(B,B') \tkzGetPoint{P}
 
-    \tkzLabelPoints[scale=0.8](A')
-    \tkzLabelPoints[above, scale=0.8](A)
-    \tkzLabelPoints[left, scale=0.8](B, C')
-    \tkzLabelPoints[right, scale=0.8](C, B', P)
+    \tkzLabelPoints(A')
+    \tkzLabelPoints[above](A)
+    \tkzLabelPoints[left](B, C')
+    \tkzLabelPoints[right](C, B', P)
   \end{tikzpicture}
 \end{minipage}
 
@@ -339,7 +370,7 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
 
 \textbf{加权费马点}，也就是带系数的距离和，比如$PA+\sqrt{2}PB+PC$，或者$PC+\frac{\sqrt{3}}{2}PB+\frac{1}{2}PA$
 
-\begin{minipage}{0.33\textwidth}
+\begin{minipage}{0.4\textwidth}
   \center
   \begin{tikzpicture}
     \tkzDefPoints{0/0/B,3/0/C,2/2.5/A, 1.5/1/P}
@@ -356,13 +387,13 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
     \tkzFillAngles[scale=0.6, fill=red!20,opacity=.5](P,B,P')
     % \tkzLabelAngle[pos=0.9, red, scale=0.6](P,B,P'){$60^{\circ}$}
 
-    \tkzLabelPoints[scale=0.8](B,C,P)
-    \tkzLabelPoints[above, scale=0.8](A)
-    \tkzLabelPoints[above right, scale=0.8](P')
-    \tkzLabelPoints[left, scale=0.8](A')
+    \tkzLabelPoints(B,C,P)
+    \tkzLabelPoints[above](A)
+    \tkzLabelPoints[above right](P')
+    \tkzLabelPoints[left](A')
   \end{tikzpicture}
 \end{minipage}
-\begin{minipage}{0.33\textwidth}
+\begin{minipage}{0.3\textwidth}
   \center
   \begin{tikzpicture}
     \tkzDefPoints{0/0/B,3/0/C,2/2.5/A, 1.5/1/P}
@@ -382,13 +413,13 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
     \tkzDefPointOnLine[pos=0.5](B,P')  \tkzGetPoint{E}
     \tkzDrawSegments[dashed](D,E E,P)
 
-    \tkzLabelPoints[scale=0.8](B,C,P)
-    \tkzLabelPoints[above, scale=0.8](A)
-    \tkzLabelPoints[above right, scale=0.8](P', E)
-    \tkzLabelPoints[left, scale=0.8](A', D)
+    \tkzLabelPoints(B,C,P)
+    \tkzLabelPoints[above](A)
+    \tkzLabelPoints[above right](P', E)
+    \tkzLabelPoints[left](A', D)
   \end{tikzpicture}
 \end{minipage}
-\begin{minipage}{0.33\textwidth}
+\begin{minipage}{0.3\textwidth}
   \center
   \begin{tikzpicture}
     \tkzDefPoints{0/0/B,3/0/C,2/2.5/A}
@@ -396,7 +427,6 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
 
     \tkzDefPointBy[rotation=center B angle 60](A) \tkzGetPoint{A'}
     \tkzDrawSegments[dashed](A',B)
-
 
     \tkzMarkAngles[scale=0.6, ->](A,B,A')
     \tkzFillAngles[scale=0.6, fill=red!20,opacity=.5](A,B,A')
@@ -408,13 +438,11 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
     \tkzDefPointBy[rotation=center B angle -60](P') \tkzGetPoint{P}
     \tkzDrawSegments[dashed](B,P)
 
-
     \tkzDrawSegments[dashed](D,C B,P')
 
-    \tkzLabelPoints[scale=0.8](B,C)
-    \tkzLabelPoints[above, scale=0.8](A, P', P, E)
-    % \tkzLabelPoints[above right, scale=0.8](P', E)
-    \tkzLabelPoints[left, scale=0.8](A', D)
+    \tkzLabelPoints(B,C)
+    \tkzLabelPoints[above](A, P', P, E)
+    \tkzLabelPoints[left](A', D)
   \end{tikzpicture}
 \end{minipage}
 
@@ -431,8 +459,6 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
   \begin{tikzpicture}
     \tkzDefPoints{0/0/A,3/0/B, 2.1/3/C}
     \tkzDrawPoints(A,B,C)
-    \tkzLabelPoints[scale=0.8](A,B)
-    \tkzLabelPoints[scale=0.8,right](C)
     \tkzDrawSegments(A,C B,C)
     \tkzDrawLines[red, thick](A,B)
 
@@ -444,7 +470,8 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
     \tkzDrawSegment[thick, red](C,D)
     \tkzLabelSegment[right, midway, red](C,D){h}
     \tkzMarkRightAngle(A,D,C)
-    \tkzLabelPoints(D)
+    \tkzLabelPoints(A,B,D)
+    \tkzLabelPoints[right](C)
   \end{tikzpicture}
 \end{minipage}
 \begin{minipage}[c]{0.33\textwidth}
@@ -452,16 +479,11 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
   \begin{tikzpicture}
     \tkzDefPoints{0/0/A,3/0/B, 2.1/3/C}
     \tkzDrawPoints(A,B,C)
-    \tkzLabelPoints[scale=0.8](A,B)
-    \tkzLabelPoints[scale=0.8,right](C)
     \tkzDrawSegments(A,C B,C)
     \tkzDrawLines[red, thick](A,B)
 
     \tkzDefCircle[circum](A,B,C) \tkzGetPoint{O}
     \tkzDrawCircle[dashed, thick](O,A)
-
-    % \tkzDrawPoints(O)
-    \tkzLabelPoints[scale=0.6, above left](O)
 
     \tkzDrawSegments[dashed](O,A O,B O,C)
 
@@ -477,7 +499,6 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
     \tkzDefPointsBy[projection=onto A--B](O){E}
     \tkzDrawSegment[dashed](O,E)
     \tkzMarkRightAngle[scale=0.8](A,E,O)
-    \tkzLabelPoints[scale=0.8](D,E)
 
     \tkzMarkAngles[scale=0.4](A,O,E)
     \tkzMarkAngles[scale=0.45](E,O,B)
@@ -485,15 +506,18 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
     \tkzFillAngles[scale=0.8, fill=red!20,opacity=.5](E,O,B)
     \tkzLabelAngle[pos=0.7](A,O,E){$\theta$}
     \tkzLabelAngle[pos=0.7](E,O,B){$\theta$}
+
+    \tkzLabelPoints(A,B,D,E)
+    \tkzLabelPoints[above left](O)
+    \tkzLabelPoints[right](C)
   \end{tikzpicture}
 \end{minipage}
 \begin{minipage}[c]{0.33\textwidth}
   \center
-  \begin{tikzpicture}[scale=1.1]
+  \begin{tikzpicture}
     \tkzDefPoints{0/0/A,3/0/B, 2.1/0.8/C}
     \tkzDrawPoints(A,B,C)
-    \tkzLabelPoints[scale=0.8](A,B)
-    \tkzLabelPoints[scale=0.8,right](C)
+
     \tkzDrawSegments(A,C B,C)
     \tkzDrawLines[red, thick](A,B)
 
@@ -501,7 +525,7 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
     \tkzDrawCircle[dashed, thick](O,A)
 
     % \tkzDrawPoints(O)
-    \tkzLabelPoints[scale=0.6, below](O)
+    \tkzLabelPoints(O)
 
     \tkzDrawSegments[dashed](O,A O,B O,C)
 
@@ -516,14 +540,15 @@ $x_1x_2=12=(4-n)(4+n)$，很容易算出偏移量。
     \tkzDefPointsBy[projection=onto A--B](O){E}
     \tkzDrawSegment[dashed](O,E)
     \tkzMarkRightAngle[scale=0.8](A,E,O)
-    \tkzLabelPoints[scale=0.8](D)
-    \tkzLabelPoints[scale=0.8, above](E)
 
     \tkzMarkAngles[scale=0.6](E,O,A)
     \tkzFillAngles[scale=0.6, fill=red!20,opacity=.5](E,O,A)
     \tkzLabelAngle[pos=0.4, red, scale=0.8](E,O,A){$90^{\circ}-\frac{\theta}{2}$}
-
     \tkzDrawPoints(O)
+
+    \tkzLabelPoints(A,B,D)
+    \tkzLabelPoints[right](C)
+    \tkzLabelPoints[above](E)
   \end{tikzpicture}
 \end{minipage}
 
@@ -534,6 +559,10 @@ $AB=2r\sin\theta$，只需找出最小外接圆半径即可， while $h\le r+r\c
 现在我们换一种思路，用代数的方法，Let $\angle ACD=\angle\alpha$，有$AB=h\tan\alpha+h\tan(\theta-\alpha)$，可以转化为$f(\alpha)=h\left[\tan\alpha+\tan(\theta-\alpha)\right]$的最值问题，求导$f'(\alpha)=h \frac{1}{\cos^{2}\alpha}-h \frac{1}{\cos^2(\theta-\alpha)}=0 \;\Rightarrow\cos^2\alpha=\cos^2(\theta-\alpha)$。默认的条件是$0<\alpha<\theta<\pi$，分类讨论，$\cos\alpha=\cos(\theta-\alpha)\Rightarrow \cos\alpha - \cos(\theta-\alpha)=0$，利用和差化积得$2\sin(\theta/2)\sin(\frac{2\alpha-\theta}{2})=0 \Rightarrow 2\alpha=\theta$；或者$\cos\alpha=-\cos(\theta-\alpha)$，不符合。\todo{???}利用求导求最值还需要比较端点和驻点。
 
 \section{MISC}
+\hrulefill
+
+
+
 \hrulefill
 
 \begin{minipage}{0.3\textwidth}
