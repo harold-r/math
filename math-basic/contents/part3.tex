@@ -1,0 +1,498 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+\newpage
+\part{Part3 - Basics}\
+
+\section{数学符号}
+乘号曾经用过十几种，现在通用的有两种：$\times$ and $\cdot$. 前者是英国数学家William Oughtred在 1631年出版的《数学之论》提出的。莱布尼茨认为$\times$和拉丁字母x很像，赞成用$\cdot$。
+
+平方根号根号曾经用拉丁文"Radix"的首尾两个字母合并起来使用，$\sqrt{\phantom{x}}$是笛卡尔在他的《几何学》中第一次使用的，由拉丁字母"r"变化而来。
+
+\section{环(Ring)、域(Field)、数系}
+自然数(natural numbers)($\mathbb{N}$)：$1,2,3\ldots$ or $0,1,2,3\ldots$\\
+整数(integer)($\mathbb{Z}$):$\ldots, -2, -1, 0, 1, 2, \ldots$\\
+有理数(rational number)($\mathbb{Q}$): 可表示为分数的数\\
+实数(real number)($\mathbb{R}$): 所有有理数和无理数的集合，数轴上的所有点\\
+复数(complex number)($\mathbb{C}$)
+
+$\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R} \subseteq \mathbb{C}$
+
+最早把自然数公理化的是19世纪的数学家G. Gottlob Frege(算术基础)和G. Peano(皮亚诺公设)，即：
+\vspace{-0.5em}
+\begin{enumerate}
+  \item $0$是自然数
+  \item 对任一自然数$n$，均有唯一的继元$n^{+}$
+  \item $0$不是任何自然数的继元
+  \item 若$m, n$为自然数，若$m\neq n$，则$m^{+}\neq n^+$
+  \item 若$S$是自然数集$N$的一个子集，且$0\in S$, and if $n \in S$, then $n^+\in S$，那么 $S=N$
+\end{enumerate}
+至今还有$0$是不是自然数的讨论。
+
+回顾数系的扩展:\\
+$\mathbb{N} \rightarrow \mathbb{Z}$, 是为了减法(群)，不过却丧失了“首元”(first element: 0)\\
+$\mathbb{Z} \rightarrow \mathbb{Q}$, 是为了除法(域)，但是没了“下一个元”，例如在$\mathbb{Z}$中$1$的下一个元素是$2$,但是在$\mathbb{Q}$中$\frac{1}{2}$的下一个元素没有意义。\\
+$\mathbb{Q} \rightarrow \mathbb{R}$并不是为了$x^2-2=0$有解，而是使得所有的收敛序列均有极限(也即拓扑完备topologically complete)，不过$\mathbb{R}$缺丧失了“可数性”(countability)。\\
+$\mathbb{R} \rightarrow \mathbb{C}$是为了使非常数的多项式皆有根(即：更确切的说是 代数封闭algebraically closed)，然而$\mathbb{C}$中却没了序关系。
+
+例：为什么正数一定可以开方？
+
+封闭性(闭包)(closure)：指在一个集合中，成员经过特定的代数运算，所得的结果仍然属于该集合。如果超出该集合范围，则称该集合对此运算不封闭。例如：自然数对加法、乘法封闭，对减法、除法不封闭。也就是封闭性保证了在特定的数域中计算不会生成“意料之外”的数值。
+
+环的具体定义并没有完全统一。一般定义：\\
+给定一个集合$\mathbb{R}$以及定义在$\mathbb{R}$上的二元运算$+$ and $\times$。如果满足八个性质，则称$(\mathbb{R}, +, \times)$构成了一个环。
+
+交换环：如果一个环$\mathbb{R}$还额外满足乘法的交换律
+
+域是环的一种，区别在于域还要求它的非零元素可以做除法，且域的乘法有交换律。比如：有理数域、实数域、复数域等等。
+
+案例：$(x-2)$是不是$(x-2)(x-3)$和$x^2-4$的最大公因式？那$(\frac{x}{2} -1)$呢？\\
+分析：在整数环中，$(x-2)$是它们的一个公因式，同时也是最大公因式，但$(\frac{x}{2}-1)$就不是，因为$\frac{1}{2}\notin \mathbb{Z}$。但如果在有理数域或者实数域，$(\frac{x}{2}-1)$则是它们的一个公因式，事实上，它们的公因式可以有无数个，可以写为$k(x-2)$，其中$k\neq 0$, and $k\in \mathbb{Q}$ or $k\in \mathbb{R}$。
+
+三次数学危机：\\
+第一次：腰长为$1$的等腰直角三角形的斜边长度无法写成有理数\\
+第二次：微积分引入无穷小而产生的问题\\
+第三次：罗素悖论
+
+复数与向量：\\
+两者在几何上可以一一对应。复数集合满足向量空间的所有公理。复数在代数上是域，拥有比向量空间更丰富的结构（乘法），而向量（空间）主要关注加法和标量乘法。复数在实数域是二维空间，而向量可以有任意维度。
+
+\textbf{多项式的定义：}\\
+给定一个环$\mathbb{R}$(通常是交换环，可以是有理数、实数、复数等)以及一个未知数$X$，形同:
+$a_0+a_1X+\cdots +a_{n-1}X^{n-1}+a_nX^n = \sum_{k=0}^na_kX^n$的代数表达式叫做$\mathbb{R}$上的一元多项式, and $ a_i\in \mathbb{R}$. 未知数$X$不代表任何值，但是环$\mathbb{R}$上的所有运算都对它适用。
+多项式的和、积、差仍然是多项式，即多项式组成一个环$\mathbb{R}[X]$，称为$\mathbb{R}$上的(一元)多项式。
+
+\newpage
+\section{素数、合数}
+素数 vs 质数\\
+直到清末，prime number一直被翻译为素数，素数、非素数、合成数都是日译名。汉语中的“素”有“根本”之义，有可能“素”与“数”读音接近，易混淆，用了“质”。但华罗庚的《堆垒素数》和陈景润研究的“哥德巴赫猜想”也是用的素数。现在的一些中小学教材，统一使用的是质数，但又标明了“质数，又叫素数”
+
+为什么规定1不是素数？\\
+$1$既不是素数也不是合数。加入$1$是素数，那么一个数比如$1\times 2^2 \times 3^3$也可以写为$1^2\times 2^2 \times 3^3$，这样分解就不唯一了
+
+素数：大于1的自然数，如果只有1与自身两个因数，那么这个数就称为素数。如$2, 3, 5, 7, 11$ etc。2是最小的素数，也是素数中唯一的偶数
+
+合数：大于1的自然数，如果除了1与自身以外还有其他因数，则称此数为合数。如$4, 6, 8$.
+
+根据定义，$1$既不是素数，也不是合数。全体自然数分为：$1$、 素数、合数。
+
+互质(互素, coprime)：两个或两个以上的整数的最大公约数是$1$\\
+如果数域是正整数，那么$1$与所有正整数互质\\
+如果数域是整数，那么$1$ and $-1$与所有整数互质，而且他们是仅有的与$0$互质的整数\\
+两个整数($a,b$)互质，记为：$a \perp b$
+
+任何有理数都可以表示为连个互质的整数之比，也就是一个最简分数。根据有理数定义，有理数是指可以表示成两个整数之比的数，而分数的可以通过不断约分最终得到一个分子和分母互质的最简分数
+
+专门研究数学的人认为素数是最基本的数，因为任何大于1的整数要么是素数，要么是若干素数的积。德国的高斯曾经说过：“数学是科学的皇后，数论是数学的皇冠”。费马曾说过：“全部的数论问题就在于以何种方法来讲一个整数分解质因数”。
+
+素数是有限的还是无限的？这被欧几里得证明了，有了欧几里得定理(Euclid's theorem)，是数论中的基本定理。
+
+欧几里得定理(Euclid's theorem)：\\
+《几何原本》第九卷中，有以下陈述：存在着比指定的任意多个素数更多的素数。也即：素数的个数是无限的。
+
+Proof1(欧几里得，不是反证法？):\\
+1. 假设素数是有限的，那么可以假设素数只有一个有限的集合S，as $\{p_1, p_2, \ldots p_n\}$\\
+2. 构造一个新的数: $Q=p_1\times p_2\times \cdots p_n+1$\\
+3. 分析$Q$\\
+\forceindent a, $Q$比$S$中的任意一个素数要大，它不在$S$内\\
+\forceindent b, 用集合$S$中的任何一个素数$p_i$去除$Q$, 都会余1\\
+4. 得出矛盾\\
+\forceindent a, 意味着$Q$要么本身就是一个新的素数，它不在我们构造的集合$S$内\\
+\forceindent b, 要么$Q$是一个合数，它可以被一个比$P_n$(我们假设的最大的素数)还要大的素数整除，根据\textbf{算数基本定理}，这意味着存在一个不在$S$内的素数，这个素数比\\
+5. 这与我们最初假设的“素数是有限的”矛盾，因此素数一定有无限多个
+
+Proof2(欧几里得)：\\
+考虑正整数$n$的阶乘$n!$可以被$2$到$n$的所有的整数整除，$n!+1$并不能被$2$到$n$的任何自然数所整除，因此$n!+1$有两种可能性：是素数，或者能被大于$n$的素数(素数基本定理)整除，在任何一个case中，都表明至少存在一个比$n$大的素数
+
+\textbf{素数定理}, 又称作质数定理, prime number theorem，是素数分布理论的中心定理，是关于素数个数问题的一个命题。素数的出现规律一致困惑着数学家，一个个的看，素数在正整数中的出现没什么规律。可是总体的看，素数的个数竟然有规律可循。
+
+\newpage
+\section{向量(vector)}
+
+线性代数的根本、基本是向量\\
+The fundamental for linear algebra is the vector\\
+Two fundamental vector operations: additon and scalar multiplication
+
+basic vectors: $\hat{\imath}$ and $\hat{\jmath}$
+
+向量指具有大小和方向的量，用$\vec{a}$表示
+
+"Span" is the set of all linear combinations: $a\vec{v}+b\vec{w}$
+
+向量正统的表示为 $\bigl[ \begin{smallmatrix}  x\\y \end{smallmatrix} \bigr]$，有时候(x,y), $(x,y)^{T}$, $[x,y]^T$
+
+vector in $\mathbb{R}^2$ coordinate is $\bigl[ \begin{smallmatrix} x\\y \end{smallmatrix} \bigr]$
+
+vector in $\mathbb{R}^3$ coordinate is $ \bigl[ \begin{smallmatrix} x\\y\\z \end{smallmatrix} \bigr]$ and so on and on
+
+When we say $\vec a$ 可以任意位置，座标系内也可以任意位置，但如果用tuple表示(tuple就是坐标)，那么必须是从原点开始的。
+
+向量的加法，三角形法则、平行四边形法则\\
+向量的减法，加上一个相反的向量(其实两个都用三角形法则更容易理解)
+
+内积(inner product, dot product点积, scalar product)的结果是一个scalar，也就是标量，没有了方向。
+
+外积(external product, cross product, vector product, outer product)
+
+\subsection{范数Norm}
+||x|| 范数:Norm, scalar，|x| 绝对值，是实数集上的范数，一维向量||x|| = |x|
+
+A vector norm is a function that measures the size or magnitude of a vector by qualifying its length from the origin. Its properties are:\\
+- Non-negativity\\
+- Definiteness: It is zero if and only if the vector is zero, i.e., zero vector.\\
+- Triangle inequality($||x+y||\le ||x||+||y||$)\\
+- Homogeneity: For any real scalar $a$, $||ax||=a||x||$
+
+所以，有很多范数的定义，如$L^1, L^2, L\infty, L^p$ norms，最常用的就是欧几里得范数也就是$L^2$范数：$||x||= \sqrt{x_1^2+x_2^2+x_3^2+...+x_n^2} (x=(x_1,x_2\ldots x_n)^{T})$
+
+欧几空间里，在二维空间中$||x||=\sqrt{x_1^2+x_2^2}$，在三维空间$||x||=\sqrt{x_1^2+x_2^2+x_3^2}$，三维以上就没有几何的直观体现了
+
+\subsection{内积}
+在欧氏空间中引入笛卡尔坐标系，有两种定义：代数定义和几何定义
+
+Let $\vec a=\left[a_1,a_2,\cdots a_n\right], \; \vec b=\left[b_1,b_2, \cdots b_n\right]$\\
+\textbf{代数定义：}$\vec a \cdot \vec b = \sum_{i=1}^na_ib_i=a_1b_1+a_2b_2+\cdots a_nb_n$\\
+\textbf{几何定义:}$\vec a \cdot \vec b=||\vec a|| \, ||\vec b|| \cos \theta$
+
+根据代数定义或者几何定义都有：\bm{$\vec v \cdot \vec v=|\vec v|^2$}，这个也是两种定义等价的证明的关键。
+
+两种定义的\textbf{等价性}：给出一种定义可以推出另一种定义
+
+1. 从代数定义到几何定义：\\
+以$\vec a, \vec b, \vec c=\vec a -\vec b$为边构造一个三角形，其中$\theta$为$\vec a, \vec b$的夹角，根据余弦定理：\\
+\[
+  \left \{
+    \begin{array}{l}
+      ||c||^2=||a||^2+||b||^2-2||a|| \, ||b|| \cos \theta\\
+      \vec c^2=(\vec a - \vec b)^2=\vec a \cdot \vec a + \vec b \cdot \vec b - 2\vec a \cdot \vec b
+    \end{array}
+  \right.
+\]
+
+2. 从几何定义到代数定义：详见 https://zh.wikipedia.org/wiki/%E7%82%B9%E7%A7%AF
+
+下面我们用另一种思路来证明：\\
+还是如上构造三角形，假设是向量是三维的，其实对于任意维度的向量都是一样的，$\vec a(a_x, a_y, a_z), \vec b(b_x, b_y, b_z), \vec c(c_x, c_y, c_z)$，由余弦定理:\\
+$|c|^2=|a|^2+|b|^2-2ab\cos \theta $\\
+$\Rightarrow (a_x-b_x)^2+(a_y-b_y)^2+(a_z-b_z)^2=(a_x^2+a_y^2+a_z^2)+(b_x^2+b_y^2+b_z^2)-2|a| |b|\cos \theta$\\
+展开消项之后：
+$-2a_xb_x-2a_yb_y-2a_zb_z=-2|a||b|\cos \theta$，得证。
+
+\textbf{内积的性质：}\\
+满足交换律、对向量加法满足分配律，但是不满足结合律\\
+$(\vec a \cdot \vec b)\cdot \vec c$ 和 $\vec a \cdot (\vec b \cdot \vec c)$，点积的结果是个标量，很明显
+
+\textbf{那么向量的点积的意义是什么呢？}点积的主要用于计算向量的几何夹角、物理做功、计算机图形学(物体朝向、光照强度等)等，夹角可以衡量两个向量的方向相似度。The most important meaning of the vector dot product is measuring how much two vectors align or project onto one another.
+
+\subsection{Cross Product(叉积)}
+$\vec{a} \times \vec{b} = \|a\|\|b\| \sin(\theta)n$, n is normal \underline{\textbf{unit}} vector\\
+几何意义：平行四边形的面积\\
+右手定则 $\vec{a} \times \vec{b} = -(\vec{a} \times \vec{b})$\\
+If $ U = (u_1,u_2,u_3), V = (v_1,v_2,v_3)$, (i,j,k)为基向量\\
+$
+U \times V =
+\begin{vmatrix}
+  i & j & k\\
+  u_1 & u_2 & u_3\\
+  v_1 & v_2 & v_3
+\end{vmatrix}
+=
+\begin{vmatrix}
+  i & u_1 & v_1\\
+  j & u_2 & v_2\\
+  k & u_3 & v_3
+\end{vmatrix}
+=
+i\bigl[\begin{smallmatrix} u_2&u_3\\v_2&v_3 \end{smallmatrix} \bigr]-
+j\bigl[\begin{smallmatrix} u_1&u_3\\v_1&v_3 \end{smallmatrix} \bigr]+
+k\bigl[\begin{smallmatrix} u_1&u_2\\v_1&v_2 \end{smallmatrix} \bigr]
+$
+
+\subsection{向量关系}
+{
+  \setlength{\mathindent}{0em}
+  \[
+\begin{array}{ll}
+  \text{向量平行} \;\; \vec{a}=\lambda\vec{b}&\Leftrightarrow \frac{x_1}{x_2}=\frac{y_1}{y_{2}}=\frac{z_1}{z_2} = \lambda \\
+  \text{向量垂直} \;\; \vec{a}\cdot\vec{b}=0&\Leftrightarrow x_1x_2+y_1y_2+z_1z_2=0
+\end{array}
+\]
+}
+\newpage
+\section{指数与对数}
+\subsection{指数}
+指数的定义涉及\textbf{定义上的扩展}，这是数学最常见的思维方式：$a^n$就是$a$自乘$n$次，故$a^0(a\neq 0)$没有定义。虽然理论上没有定义，但是我们可以加以定义，此定义需要满足两个条件：一是表示唯一确定的值，二是保持原有的运算法则(定律)(这里需要满足指数的五大运算法则)。因此$a^0$别无选择，只可能是$1$($a^0=a^{n-n}=a^n/a^n=1, \; n\in \mathbb{Z^+}$)($a^m\cdot a^n=a^{m+n}$ when $n=0, m\in \mathbb{Z^+}$, $a^m\cdot a^0 = a^{m+0}=a^m$)(所有运算法则都需要验证).
+
+同理，负整数的指数幂也是完全类似的：\\
+Let $n=-m$, $a^m\cdot a^n(a\neq 0)=a^m\cdot a^{-m}=a^0=1 \Rightarrow a^{-m}=1/a^m$，对于此定义还需要验证到其他运算法则。
+
+引进负整数指数幂后，科学记数法才能实现：$N=a\times 10^n(1\leq a <10, n\in \mathbb{Z} )$\\
+e.g. $0.00034=3.4\times 10^{-4}$
+
+分数指数幂同理也被定义为：$a^{\frac{m}{n}}=\sqrt[n]{a^m},(a\geq 0, m,n\in \mathbb{Z^+})$。分数指数幂方便我们把开方和乘方互相转化。一般情况下，将根式变形或化为分数指数幂去处理比较方便。但一般分数指数幂一般限定在$a>0$的下，所以并不能完全代替根式的计算。
+
+当指数推广到有理数时，为能使$a^{\frac{p}{q}}=a^{\frac{2p}{2q}}, p,q \in \mathbb{Z}$，就限定了$a>0$，当$a<0$情况就变得复杂。如下：
+\[
+  -2=\sqrt[3]{-8}=(-8)^{\frac{1}{3}}=(-8)^{\frac{2}{6}}=[(-8)^2]^{\frac{1}{6}}=64^{\frac{1}{6}}=2
+\]
+
+So, generally,有理数或者实数下，我们把讨论规范在$a>0$
+
+无理指数的的幂，中学一般不讨论。
+
+$0^0$?, zero to the zero power. While we know that $a^0=1, a\ne 0$($a^x/a^x=a^0=1$), but $0^0$ is undefined, the biggest chance is that $0^0=0$.
+
+\subsection{对数}
+
+\begin{mdframed}
+  \textbf{对数存在定理}:\\
+  若$a$为不等于$1$的整数，则对于任何正实数$N$都有唯一的实数$\alpha$与之对应，使得$a$的$\alpha$次幂等于$N$，即：  $b^{\alpha}=N$
+\end{mdframed}
+对数存在定理是研究对数的理论基础。不像函数$y=x^2$，同一个$y$可以对应两个$x$，对数是一一对应关系。
+
+\textbf{最基础的运算}:
+\[ \log_b(MN)=\log_bM+\log_bN \phantom{xx}\log_b \frac{M}{N} = \log_bM - \log_bN \phantom{xx} \log_ba = \frac{\log_{x}a}{\log_{x}b}\;\text{(换底公式)} \]
+16世纪末至17世纪初的时候，当时在自然科学领域（特别是天文学）的发展上经常遇到大量精密而又庞大的数值计算，于是数学家们为了寻求化简的计算方法而发明了对数。对数的发明为当时社会的发展起了重要的影响，简化了行星轨道运算问题。正如科学家伽利略（1564-1642）说：“给我时间，空间和对数，我可以创造出一个宇宙”。 又如十八世纪数学家拉普拉斯（ 1749-1827）亦提到：“对数用缩短计算的时间来使天文学家的寿命加倍”。\footnote{\url{https://baike.baidu.com/}}。While, that's true before the invention of computers. 对数的发明就是为了简化运算，把乘除转化为加减。基本步骤就是：取对数、对数计算(查表)、去对数(反查表)。
+
+The inverse of addition is subtraction\\
+The inverse of multiplication is division\\
+The inverse of exponentiation is logarithm.
+
+$y=log_bx$(i.e. $b^y=x$), $b$ is the base, and $b$ is a positive real number(if a is not a positive real number, both exponentiation and logrithm can be defined but may take several values).表达式读做：$y$是以$b$为底$x$的对数，$b$叫做底，$x$叫做真数。
+
+最基础的对数运算是：\\
+$\log_b(MN)=\log_bM + \log_bN$.
+Proof\footnote{根据对数存在定理，Let $M=b^x, N=b^y$\\
+$\log_b(MN)=\log_b(b^xb^y)=\log_b(b^{x+y})=x+y=\log_b b^x+\log_b b^y=\log_aM + \log_bN$}
+
+同理：\\
+$\log_b \frac{M}{N} =\log_bM - \log_bN$ \;\;\;\;\;\; $\log_bM^n =n\log M(\log \overbrace{M\cdots M}^n)$.
+
+\textbf{乘法可以转化为加法，除法可以转化为减法}
+
+换底公式(change of base)：$\log_ba=\frac{\log_{x}a}{\log_{x}b}$, Proof\footnote{$\log_x a= \log_x b^{\log_b a} =\log _b a \cdot \log_x b$, 得证。}
+
+常用对数(常用对数表)(common logarithm)：以$10$为底的对数叫做常用对数，简记为：$\log_{10}N = \lg N$。理解它的关键是科学计数法($\lg(a\times 10^n)=n+\lg a$)。让我们想象一个之前的运算，比如天体运动、航海数据等等，设计到大数字的乘法、幂、除法，乘除可以$\lg$后变为加减，然后再用对数表反求。在没有计算机之前，对数确实是一个伟大的发明。
+
+自然对数(natural logarithm)是以$e$为底，简记为：$\log_eN=\ln N$. 常在微积分中使用。
+\[
+  \begin{array}{ll}
+    b^{\log_b x}=x  &\log_b b^x = x \\
+    \log_b a = \frac{\lg a}{\lg b} = \frac{\ln a}{\ln b}  = \frac{1}{\log_{a}b} & \log_{b^n}a^m=\frac{m}{n}\log_ba\\
+    x^{\frac{\log_b{a}}{\log_b x}}=a & x^{\frac{\log_b(\log_b x)}{\log_b x}}=\log_b x\\
+    M^{\log_b N}=N^{\log_b M}\mbox{两边同求}\log_{b}&
+  \end{array}
+\]
+
+对数的作用不仅仅在于计算机之前的大数运算，还有其他，比如估算$2^{123456}$是多少位的数。
+
+\textbf{SUMMARY：}\\
+可以用对数的由来去理解并掌握对数的核心，比如一个很大的天文数字，假设是$3.1415\times 10^8 \times 4.2412\times 10^9$，取自然对数后，就是$8+9+\lg 3.1415+\lg4.2412$，可以通过查表，最后求出和，然后再反求对数。核心运算就是$\lg(3\times 10^8)=\lg3+8\lg10=\lg3+8$。对应的就是乘法转化为加法：$\log_b(MN)=\log_bM+\log_bN$。
+
+\newpage
+\section{排列组合(permutation and combination)}
+
+\subsection{排列(permutation)}
+Permutaion(排列、变换、置换，比如古典密码里的置换) or Arrangement，所以数学符合$P$和$A$都可以。
+
+利用乘法原理：$A_{n}^{k}=\overbrace{n(n-1)(n-2)\ldots (n-k+1)}^{\text{k factors}}=\frac{n!}{(n-k)!}$\\
+Also use:  $P^{n}_{k}$, $P(n,k)$, $_{n}P_{k}$, $^{n}P_{k}$, $P_{n,k}$. Note the slight difference: $P^{n}_{k}$ and $A_{n}^{k}$
+
+重复排列：从$n$个元素中取出$k$个元素，$k$个元素可以重复：$U^{n}_{k}=n^{k}$
+
+\subsection{组合(combination)}
+Combination just likes permutation, but the order doesn't matter
+
+This formula can be derived from the fact that each k-combination of a set $S$ of $n$ members has permutations so\\
+$A_{n}^{k}=C_{n}^{k}\times k!$ or $A_{n}^{k}=P_{n}^{k}/k!$. The $A_{n}^{k}$ often denoted by $\binom{n}{k}$
+
+\newpage
+\section{恒等式Identity}
+\vspace{-1em}
+\begin{gather*}
+  (a+b)(c+d) = ac + ad + bc + bd\\
+  (a+b)^2 = a^2+2ab+b^2\\
+  (a-b)^2 = a^2-2ab+b^2\\
+  ab = (\frac{a+b}{2})^2-(\frac{a-b}{2})^2\;\;\;\text{积化和差}\\
+  (a+b+c)^2= a^2+b^2+c^2+2ab+2bc+2ac\\
+  a^2+b^2+c^2-ab-bc-ac=\frac{1}{2}[(a-b)^2+(b-c)^2+(a-c)^2]\\
+  a^2+b^2+c^2+ab+bc+ac=\frac{1}{2}[(a+b)^2+(b+c)^2+(a+c)^2]\\
+  (a-b-c)^2=\cdots\\
+  (a+b+c)^3=a^3+b^3+c^3+3(a+b)(b+c)(a+c)\\
+  (a+b+c+d)^2=a^2+b^2+c^2+d^2+2ab+2ac+2ad+2bc+2bd+2cd\\
+  \phantom{x}\\
+  a^2-b^2=(a+b)(a-b)\\
+  a^3-b^3=(a+b)(a^2-ab+b^2)=(a-b)^3+3ab(a+b)\\
+  a^3+b^3=(a-b)(a^2+ab+b^2)=(a+b)^3-3ab(a+b)\\
+  a^3+b^3+c^3=(a+b+c)^3+3(a+b+c)(-ab-ac-bc)+3abc \;\text{对称多项式}\\
+  a^3+b^3+c^3-3abc=(a+b+c)(a^2+b^2+c^2-ab-bc-ac)\\
+  \phantom{x}\\
+  x^4+4y^4=x^4+4x^2y^2+4y^2-4x^2y^2  \;\;\;\text{Sophie Germain's identity}\\
+  a^4+a^2b^2+b^4=a^4+2a^2b^2+b^4-a^2b^2\\
+  \text{上述两个可以简称为444，四次的基本上都是他们的变形，比如：}\\
+  x^4+4, \;\; x^4+y^4, \;\;x^4+\frac{1}{4}, \;\;x^4+x^2+1, x^4+4x^2+16\\
+  [x^2+y^2+(x+y)^2]^2 = 2[x^4+y^4+(x+y)^4] \;\; \text{Candido's identity}\\
+  (f_n^2+f_{n+1}^2+f_{n+2}^{2})^2=2(f_n^4+f_{n+1}^4+f_{n+2}^4) \;\;\text{Fibonacci number}\\
+   \phantom{x}\\
+  (a^2+b^2)(c^2+d^2)=(ac-bd)^2+(ad+bc)^2=(ac+bd)^2+(ab-cd)^2\\
+  (x+y)^n= \sum_{k=0}^n\binom{n}{k}x^{n-k}y^k=x^n+C_n^1x^1y^{n-1}+C_n^2x^2y^{n-2}+\cdots + C_n^{n-2}x^{n-2}+C_{n-1}^1x^{n-1}y^1+y^n\\
+  x^n-y^n=(x-y)(x^{n-1}+x^{n-2}y+x^{n-3}y^2+\cdots + x^2y^{n-3}+xy^{n-2}+y^{n-1})\\
+  x^n+y^n=(x+y)(x^{n-1}-x^{n-2}y+x^{n-3}y^2-\cdots +x^2y^{n-3}-xy^{n-2}+y^{n-1}y) \cdots \text{n is odd}\\
+\end{gather*}
+
+\subsection{等幂和差}
+\begin{gather*}
+  x^n-y^n=(x-y)(x^{n-1}+x^{n-2}y+x^{n-3}y^2+\cdots + x^2y^{n-3}+xy^{n-2}+y^{n-1})\\
+  x^n+y^n=(x+y)(x^{n-1}-x^{n-2}y+x^{n-3}y^2-\cdots +x^2y^{n-3}-xy^{n-2}+y^{n-1}y) \cdots \text{n is odd}
+\end{gather*}
+Proof1:多项式长除法
+
+Proof2:等比数列：$1+q+q^2+\cdots +q^n=\frac{q^{n}-1}{q-1}$, Let $q=\frac{a}{b}$
+
+等幂和差逆定理：$a^4+a^2b^2+b^4=(a^2+b^2-ab)(a^2+b^2+ab)$
+
+\newpage
+\section{不等式inequalities}
+求证$\displaystyle \frac{x^2-6x+5}{x^2+2x+1} \ge -\frac{1}{3},\; (x\ne -1)$。
+tips\footnote{比较大小，直接减}
+
+比较$a、b$大小，本质上是减法，只需要证明$a-b$和$0$的关系，亦或者$a/b$和$1$的关系($\frac{a}{b}-1=\frac{a-b}{b}$，本质上也是减法)。
+
+\subsection{柯西不等式(Cauchy–Schwarz inequality)}
+\begin{mdframed}
+  \textbf{STATEMENT}:
+  对有限实数序列$\{x_i, y_i\in \mathbb{R}\}_{i=1}^{n}$，有
+  \[
+   \big (\sum_{i=1}^nx_iy_i\big)^2 \le \big(\sum_{i=1}^nx_i^2\big)\big(\sum_{i=1}^ny_i^2\big) \text{\;\;\;That is:}
+  \]
+  \[(x_1^2+x_2^2+\cdots + x_n^2)(y_1^2+y_2^2+\cdots +y_n^2) \ge (x_1y_1+x_2y_2+\cdots x_ny_n)^2\]
+  等式成立时存在实数$\lambda \in \mathbb{R}$，对于任意正整数$i\in \mathbb{N}$有$y_i=\lambda x_i$
+\end{mdframed}
+对于复数或者向量的大小关系，自然的选择就是其长度，也就是模，对于任意复数$z=x+iy$，其长度是$|z|=\sqrt{x^2+y^2}$,这是平方的意义，可作为模的平方。
+
+余弦定理：考虑三角形$\triangle ABC$, 三边的向量分别是$\vec{a} = \vv{AB}, \; \vec{b} = \vv{AC}, \; \vec{c}=\vv{CB}=\vec{a}-\vec{b}$,将余弦定理替换成向量可以表示为：
+\[
+  |\vec{a}^2| + |\vec{b}^2| -|\vec{a}^2- \vec{b}^2| = 2|\vec{a}||\vec{b}|\cos \theta \Rightarrow \vec{a} \cdot \vec{b}=|\vec{a}||\vec{b}|\cos \theta \le |\vec{a}||\vec{b}|
+\]
+告诉我们，两个向量的内积永远小于这两个向量长度的乘积
+
+所以用\textbf{向量内积去记忆}柯西不等式：$\vec{a} \cdot \vec{b} = |\vec{a}| |\vec{b}| \cos \theta$, 其中$\vec{a}=(x_1,x_2,\cdots), \vec{b}=(y_1,y_2,\cdots)$，取等的时候，向量是平行的
+
+Proof(实数域):\\
+构造$f(t)=(x_1t+y_i)^2+\cdots (x_nt+y_n)^2$, That is\\
+$f(t)=(x_1^2+x_2^2+\cdots +x_n^2)t^2+2(x_1y_1+x_2y_2+\cdots x_ny_n)+(y_1^2+y_2^2+\cdots y_n^2)$\\
+关于$t$的一元二次方程$f(t)=0$，对于任意实数$t \in \mathbb{R}$都有$f(t)\ge 0$，根据一元二次方程公式解有\\
+$\Delta= 4(x_1y_1+x_2y_2+\cdots +x_ny_n)^2-4(x_1^2+x_2^2+\cdots x_n^2)(y_1^2+y_2^2+ \cdots y_n^2) \le 0 $，得证。\\
+另一方面：$\Delta =0$时，正好是有重根的情况，这时$x_1t+y_1=\cdots =x_nt+y_n=0$，得证。
+
+\subsection{反向柯西不等式？}
+$(x_1^2-x_2^2)(y_1^2-y_2^2) \le (x_1y_1-x_2y_2)^2$
+
+\subsection{卡尔松不等式(Carleman's inequality)}
+\begin{mdframed}
+  \textbf{STATEMENT}:\\
+\end{mdframed}
+
+\newpage
+\section{三角函数(trigonometric functions)}
+三角函数源于古希腊和古印度的天文测量和几何学，起初是为了解决圆上弧长与弦长的计算。跟对数一样，可以将复杂的乘除、幂次运算转化为加减，核心就是积化和差公式。比如手工计算$0.258819\times 0.984808$，通过查三角函数表可知：$0.258819\approx \sin15^{\circ}, 0.984808\approx \cos 10^{\circ}$，于是原式$=\sin15^{\circ}\times\cos10^{\circ}=(\sin25^{\circ}+\sin5^{\circ})/2=(0.422618+0.087156)/2=0.254887$。再举个简单例子，比如要测量一颗大树的高度，有很多方法，比如阴影比例法，利用影子的相似(树影和人影)，专业测量需要用测角仪或者激光测高仪，知道水平距离和仰角利用三角函数即可算出。
+
+定义有三种：直角三角形定义、直角坐标系定义、单位圆定义。直角三角形里只有锐角，所以只有锐角的三角函数。与圆周率$\pi$的定义很像，一个角度的正弦值是确定的， 也就是直角三角形的对面比斜边的比。
+
+基本的三角函数不等式如对称、移位、周期等就不一一列举，通过单位圆很容易理解。
+\begin{gather*}
+  \sin(\alpha \pm \beta) = \sin\alpha\cos\beta \pm \cos\alpha\sin\beta\\
+  \cos(\alpha \pm \beta) = \cos\alpha\cos\beta \mp \sin\alpha\sin\beta\\
+  \tan(\alpha \pm \beta) = \frac{\tan\alpha \pm \tan\beta}{1 \mp \tan\alpha\tan\beta}\\
+  \phantom{xxx}\\
+  \sin2\alpha = 2\sin\alpha\cos\alpha=\frac{2\tan \theta}{1+\tan^2\theta}\\
+  \cos2\alpha = \cos^2\alpha - \sin^2\alpha=2\cos^2\alpha-1=1-2\sin^2\alpha=\frac{1-\tan^2\theta}{1+\tan^2\theta}\\
+  \tan2\alpha = \frac{2\tan\alpha}{1-\tan^2\alpha}=\frac{1}{1-\tan\theta} - \frac{1}{1+\tan\theta}\\
+  \sin^2\theta = \frac{1-\cos2\theta}{2} \;\;\;\;\; \sin \frac{\theta}{2}=\pm \sqrt{\frac{1-\cos \theta}{2}}  \\
+  \cos^2\theta = \frac{1+\cos2\theta}{2} \;\;\;\;\; \cos \frac{\theta}{2}=\pm \sqrt{\frac{1+\cos \theta}{2}} \\
+  \tan^2\theta = \frac{1-\cos2\theta}{1+\cos2\theta} \;\;\;\;\; \tan \frac{\theta}{2}=\pm \sqrt{\frac{1-\cos\theta}{1+\cos\theta}}=\frac{1-\cos \theta}{\sin \theta}=\frac{\sin \theta}{1+\cos \theta} \\
+  \sin\alpha\cos\beta = \frac{\sin(\alpha+\beta)+\sin(\alpha-\beta)}{2}\\
+  \sin\alpha + \sin\beta = 2\sin \frac{\alpha+\beta}{2}\cos \frac{\alpha-\beta}{2}\\
+  \textbf{万能公式:}\sin\alpha=\frac{2t}{1+t^{2}}, \; \cos\alpha=\frac{1-t^2}{1+t^2}, \; \tan\alpha=\frac{2t}{1-t^2}, \; t=\tan \frac{\alpha}{2}
+\end{gather*}
+
+公式诸多，没必要一一记忆，记住最简单的推导即可，那就是\bm{$\cos(\alpha-\beta)$}，构造单位圆两点$(\cos\alpha, \sin\alpha),\;(\cos\beta, \sin\beta)$，
+我们可以用余弦定理：\\
+$\sqrt{(\cos\alpha-\cos\beta)^2+(\sin\alpha-\sin\beta)^2}^2=1^2+1^2-2\cos(\alpha-\beta)$\\
+也可以用向量的点积：\\
+$(\cos\alpha, \sin\alpha)\cdot (\cos\beta, \sin\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta=1\cdot 1 \cdot \cos(\alpha-\beta)$
+
+当我们知道$\cos(\alpha-\beta)$后，可得$\sin^2(\alpha-\beta)=1-\cos^2(\alpha-\beta)=(\sin\alpha\cos\beta-\cos\alpha\sin\beta)^2$。但是如何最后得到：
+$\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta$呢？哈哈，看来从这里推导会有开方后的正负判断问题，这个问题的根源是什么呢？有一个很直观的例子就是比如要求方程$x=1$(这很反直观，直接就是解了不是？但是就把它看做一个方程)，平方后$x^2=1$，后者会产生增根。那么，我们可以尝试用$\pi/2$诱导公式:\\
+$\sin(\alpha-\beta)=\cos((\frac{\pi}{2}-\alpha)+\beta)=\cos(\frac{\pi}{2}-\alpha)\cos\beta-\sin(\frac{\pi}{2}-\alpha)\sin\beta$
+
+积化和差是通过角的和差不等式相加减推导，如$\sin(\alpha+\beta)+\sin(\alpha-\beta)=2\sin\alpha\cos\beta$\\
+和差化积类似，利用$\alpha=(\alpha+\beta)/2+(\alpha-\beta)/2, \beta=(\alpha+\beta)/2-(\alpha-\beta)/2$推导。\\
+幂简约公式，是通过$\cos2\alpha = \cos^2\alpha - \sin^2\alpha=2\cos^2\alpha-1=1-2\sin^2\alpha$推导。
+
+\textbf{总结：无论积化和差，还是和差化积、降幂、多倍角，核心就是角的和差等式，而这个公式也不需要死记硬背，结合推导的过程记忆效果会更好。
+  其实好多有$\cos$的地方都是相反的，比如$\cos$的导数是$-\sin$，$\cos$角的和差后面的中间符号是相反的。}
+
+\begin{minipage}{1\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \def\A{40}   \def\B{30}  \def\Total{\A+\B}
+
+    \coordinate (A) at (0,0);
+    \coordinate (B) at ({5*cos(\A)*cos(\B)},0);
+    \coordinate (C) at ({5*cos(\A)*cos(\B)}, {5*sin(\A+\B)});
+    \coordinate (D) at (0,5*sin(\Total);
+    \coordinate (E) at (\Total:5);
+    \coordinate (F) at (\A:{5*cos(\B)});
+
+    \tkzDrawPolygon(A,B,C,D)
+    \tkzDrawSegments[red](A,F E,F)
+    \tkzDrawSegments[ultra thick, red](A,E)
+    \fill[red!15] (A)--(E)--(F)--cycle;
+
+    \node[below, scale=0.7] at ($(A)!0.5!(B)$) {$\cos\alpha \cos\beta$};
+    \node[right, rotate=90, anchor=north, scale=0.7] at ($(B)!0.5!(F)$) {$\sin\alpha \cos\beta$};
+    \node[right, rotate=90, anchor=north, scale=0.7] at ($(F)!0.5!(C)$) {$\cos\alpha \sin\beta$};
+    \node[above, scale=0.6] at ($(D)!0.5!(E)$) {$\cos(\alpha+\beta)$};
+    \node[above, scale=0.6] at ($(E)!0.5!(C)$) {$\sin\alpha \sin\beta$};
+    \node[left, rotate=90, anchor=south, scale=0.7]  at ($(A)!0.5!(D)$) {$\sin(\alpha+\beta)$};
+    \tkzLabelSegment[below, sloped, midway, scale=1.2](A,E){1};
+    \tkzLabelSegment[above, sloped, midway, scale=0.8](A,F){$\cos\beta$};
+    \tkzLabelSegment[below, sloped, midway, scale=0.8](E,F){$\sin\beta$};
+
+    \tkzMarkRightAngle[size=0.2](A,F,E);
+    \tkzMarkAngles[scale=0.6, arc=l,color=blue](B,A,F C,F,E);
+    \tkzMarkAngles[scale=0.7, arc=ll,color=blue](F,A,E);
+    \tkzMarkAngles[scale=0.5, arc=lll](D,E,A);
+    \tkzLabelAngles[pos=0.6, scale=0.8](B,A,F C,F,E){$\alpha$};
+    \tkzLabelAngles[pos=0.9, scale=0.8](F,A,E){$\beta$};
+    \tkzLabelAngles[pos=0.9, scale=0.8](D,E,A){$\alpha+\beta$};
+  \end{tikzpicture}
+\end{minipage}
+
+\newpage
+\section{绝对值}
+
+本质是表示距离，数轴上的两点距离，差值的绝对值。
+
+第一要务一般是如果去绝对值，从代数上看就是要去讨论。不但要会去绝对值，还要会用绝对值列出题目相应的等式或者不等式，然后去解。
+
+\subsection{最值}
+$|x-1|+ |3-2x|$的最值\\
+$|x+1| + |2x-1|$的最值，Tips\footnote{$|2x-1| = 2|x-\frac{1}{2}|=|x-\frac{1}{2}|+|x-\frac{1}{2}|$}\\
+$|x+1| + |x| + |x-2|$的最值\\
+$|2x-1|+|4x-3|$\\
+$||x-1|-3|$\\
+$|\frac{1}{3}x+1|+|2x-4|$的最小值, tips\footnote{$\frac{1}{3}(|x+3|+6|x-2|)$}
+
+\subsection{最值推广：奇点偶段}
+$f(x) = |x-a_1| + |x-a_2|+ |x-a_3| + \cdots + |x-a_{n}| $
+
+证明方法：从1到3到5，从2到4到6，以至无穷。
+
+\end{document}
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "../main"
+%%% End:

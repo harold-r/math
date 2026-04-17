@@ -1,0 +1,90 @@
+\documentclass[12pt,fleqn]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%% Packges %%%%%%%%%%%%%%%%%%%%%
+\usepackage{xeCJK}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm, mathtools, amsfonts} % math
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert} % for absolute values
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+\usepackage{graphicx} %figures
+\usepackage[dvipsnames]{xcolor} %dvipsnames loads 68 names colors(CMYK)
+\usepackage{todonotes}
+\usepackage{bm}                 %bold math
+\usepackage{enumitem}
+\setlist{nosep}                 %remove all vertical spaces in all lists
+\usepackage[a]{esvect}          %vector arrow, [a] is arrow style, then use \vv{}
+
+\graphicspath{{images/}}
+\usepackage[a4paper, top=10mm, bottom=20mm, left=20mm, right=20mm]{geometry} %page dimension
+\usepackage[hang,flushmargin]{footmisc} %footnote no indent
+\interfootnotelinepenalty=10000
+%%%%%%%%%%%%%%%%%%%%%%%% End Packages %%%%%%%%%%%%%%%%
+
+% Graphics
+\usepackage{tikz}
+\usetikzlibrary{arrows,calc,patterns,positioning,shapes,angles,quotes}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{trees}
+
+\usepackage[framemethod=TikZ]{mdframed} % Boxes, should set tikz to use roundcorner etc...
+\mdfsetup{roundcorner=9pt, skipbelow=0pt}              % Settings
+
+% Drawing
+\usepackage{pgf,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
+
+\usepackage{tkz-euclide}
+\tkzSetUpLabel[below, font=\scriptsize, color=teal] % Set the label size
+\tkzSetUpLine[color=teal, line width=.5pt] % Set the line
+\tkzSetUpColors[background=white,text=black]
+\tkzSetUpPoint[size=2,color=teal]
+\tkzSetUpCompass[color=orange, line width=.4pt,delta=10]
+\tkzSetUpArc[color=gray,line width=.4pt]
+\tkzSetUpCircle[color=teal, line width=.5pt]  % Set circle style globally
+
+%%%%%%%%%%%%%%%%%%%%%%%% MISC %%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0em} % paragragh indent
+\setlength{\mathindent}{2em} % No indent for math
+\setlength{\parskip}{0.5em}  % paragragh spacing or use \bigskip \medskip \smallskip in contenty
+\newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
+\linespread{1.2} % line spacing
+\usepackage{fancyhdr}
+\pagestyle{plain}
+\fancyhf{} % Clear headers/footers
+
+\title{MATH} \author{zhb} \date{2025}
+%%%%%%%%%%%%%%%%%%%%%%%% End MISC %%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%% Special %%%%%%%%%%%%%%%%%%%%%
+\usepackage{subfiles} % Best loaded last in the preamble
+% Hyperlink ref, Clickable Everything
+% Be careful, it has to be the last package to be imported
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%%%%%%%%%%%%%%%%%%%%%%%% End Special %%%%%%%%%%%%%%%%%
+\usepackage{tablefootnote}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%% Tableofcontents %%%%%%%%%%%%%
+\setcounter{tocdepth}{2} %TOC(table of contents) depth
+% sections, subsections and chapters are included
+\tableofcontents
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%% Special %%%%%%%%%%%%%%%%%%%%%
+
+\subfile{contents/part1、2}
+\subfile{contents/part3}
+\subfile{contents/part4}
+\subfile{contents/misc}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-engine: xetex
+%%% TeX-master: t
+%%% End:

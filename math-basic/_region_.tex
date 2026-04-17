@@ -1,0 +1,61 @@
+\message{ !name(../main.tex)}\documentclass[12pt,fleqn]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%% Packges %%%%%%%%%%%%%%%%%%%%%
+\usepackage{xeCJK}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm, mathtools, amsfonts} % math
+\usepackage{graphicx} %figures
+\usepackage{todonotes}
+\graphicspath{{images/}}
+\usepackage[a4paper, top=20mm]{geometry} %page dimension
+\usepackage[hang,flushmargin]{footmisc} %footnote no indent
+%%%%%%%%%%%%%%%%%%%%%%%% End Packages %%%%%%%%%%%%%%%%
+
+% Tree diagram
+\usepackage{tikz}
+\usetikzlibrary{trees}
+
+% Drawing
+\usepackage{pgf,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
+
+%%%%%%%%%%%%%%%%%%%%%%%% MISC %%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0em} % paragragh indent
+\setlength{\parskip}{0.5em}  % paragragh spacing or use \bigskip \medskip \smallskip in content
+\linespread{1.2} % line spacing
+\title{MATH} \author{zhb} \date{2025}
+%%%%%%%%%%%%%%%%%%%%%%%% End MISC %%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%% Special %%%%%%%%%%%%%%%%%%%%%
+\usepackage{subfiles} % Best loaded last in the preamble
+% Hyperlink ref, Clickable Everything
+% Be careful, it has to be the last package to be imported
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%%%%%%%%%%%%%%%%%%%%%%%% End Special %%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\message{ !name(contents/algebra-misc.tex) !offset(-39) }
+
+\section{MISC}
+
+\dotfill
+
+$\frac{\sqrt{x^{4}+x^{2}+1} - \sqrt{x^{4}+1}}{x}$的max. tips\footnote{分子有理化}
+
+\dotfill
+
+
+
+\end{document}
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "../main"
+%%% TeX-engine: xetex
+%%% End:
+
+\message{ !name(../main.tex) !offset(-61) }
