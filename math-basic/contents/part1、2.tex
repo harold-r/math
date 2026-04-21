@@ -262,7 +262,7 @@ $(x+y)^3=xxx+xxy+xyx+xyy+yxx+yxy+yyx+yyy$, total $2^3$ terms
 
 Let $x=y=1$, then $C_{n}^{0}+C_{n}^1+\cdots +C_{n}^{n}=2^n$
 
-Let $x=1, y=-1$, then $C_n^0-C_n^1+C_n^2-C_n^3+\cdots=2^n \Rightarrow C_n^0+C_n^2+C_n^4+\cdots = C_n^1+C_n^3+C_n^5\cdots = 2^n/2$
+Let $x=1, y=-1$, then $C_n^0-C_n^1+C_n^2-C_n^3+\cdots=2^n \Rightarrow C_n^0+C_n^2+\cdots = C_n^1+C_n^3+\cdots = 2^n/2$
 
 展开后，系数最大的是哪一项呢？tips\footnote{中间一项或者两项}
 
@@ -398,7 +398,7 @@ Example: $\sqrt{2}$是无理数的证明
 托勒密定理及其逆定理可以用上图证明，构造相似三角形$\triangle PAB \sim \triangle CDB$, $\Rightarrow \triangle BAD \sim \triangle PBC$
 $\Rightarrow AB\cdot CD + BC\cdot AD =(PA+PC)BD \ge AC\cdot BD$，用$PA+PC\ge AC$来记忆不等式的大小方向。
 
-从毕氏定理($c\cdot c=a\cdot a+b\cdot b$)到托勒密定理，等腰梯形中托勒密定理退化为余弦定理，下图：
+从毕氏定理($c\cdot c=a\cdot a+b\cdot b$)到托勒密定理，等腰梯形中运用托勒密定理则为余弦定理，也就是圆内接矩形退化为勾股定理，圆内接等腰梯形退化为余弦定理。如下图：
 
 \begin{minipage}{0.15\textwidth}
   \centering
@@ -470,9 +470,9 @@ $AB\cdot CD + AD\cdot BC=a\cdot c+(a+b+c)\cdot b=(a+b)(b+c) = AC\cdot BD$
 
 \textbf{强型推广之托勒密定理}: 四边形边长分别为$a,b,c,d$，对角线长为$x,y$,那么：
 $$x^2y^2=a^2c^2+b^2d^2-2abcd\cos(B+D)$$
-多么的像余弦定理，当$\angle B+\angle D$为$180^{\circ}$时，$x^2y^2$取到最大$(ac+bd)^2$，也就是$xy=ac+bd$。美中不足的是，当$D$无限接近$C$点的时候，四边形$ABCD$退化为三角形$ABC$，但此等式无法约为余弦定理。其实这个等式反应的是托勒密不等式不等的量。大致证明是，图中的$\angle APC = 2\pi -\angle C -\angle A$，对三角形$APC$用余弦定理，再利用之前的相似。
+多么的像余弦定理(称之为\textbf{四边形的余弦定理}也未尝不可)，当$\angle B+\angle D$为$180^{\circ}$时，$x^2y^2$取到最大$(ac+bd)^2$，就是托勒密定理。美中不足的是，当$D$无限接近$C$点的时候，四边形$ABCD$退化为三角形$ABC$，但此等式无法约为余弦定理。其实这个等式反应的是托勒密不等式不等的量。大致证明是，图中的$\angle APC = 2\pi -\angle C -\angle A$，对三角形$APC$用余弦定理，再利用之前的相似。
 
-\textbf{四边形面积(布雷特施奈德公式，四边形无论凸凹都成立，$B,D$是对角)：}
+\textbf{四边形面积(布雷特施奈德公式，四边形无论凹凸都成立，$B,D$是对角)：}
 \[A^2=(s-a)(s-b)(s-c)(s-d)-abcd\cos^2(\frac{\angle B+\angle D}{2}), \;\;\;s=\frac{1}{2}(a+b+c+d)\]
 
 \textbf{圆内接四边形面积(婆罗摩笈多公式)：}
