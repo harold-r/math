@@ -49,29 +49,31 @@
 \contentsline {subsection}{\numberline {23.3}角平分线、角平分线定理、内心}{32}{subsection.23.3}%
 \contentsline {subsection}{\numberline {23.4}中线、重心定理、中位线定理}{33}{subsection.23.4}%
 \contentsline {subsection}{\numberline {23.5}垂心}{34}{subsection.23.5}%
+\contentsline {subsection}{\numberline {23.6}MISC(三角形)}{34}{subsection.23.6}%
 \contentsline {section}{\numberline {24}圆}{35}{section.24}%
 \contentsline {section}{\numberline {25}直线}{35}{section.25}%
-\contentsline {subsection}{\numberline {25.1}点到直线的距离}{35}{subsection.25.1}%
-\contentsline {subsection}{\numberline {25.2}平行线之间的距离}{35}{subsection.25.2}%
-\contentsline {section}{\numberline {26}一元二次方程}{36}{section.26}%
-\contentsline {subsection}{\numberline {26.1}例子}{36}{subsection.26.1}%
-\contentsline {section}{\numberline {27}几何模型}{37}{section.27}%
-\contentsline {subsection}{\numberline {27.1}费马点(Fermat point)}{37}{subsection.27.1}%
-\contentsline {subsection}{\numberline {27.2}探照灯模型- 定角定高}{38}{subsection.27.2}%
-\contentsline {section}{\numberline {28}MISC}{38}{section.28}%
-\contentsline {part}{V\hspace {1em}MISC}{40}{part.5}%
-\contentsline {section}{\numberline {29}prelude}{40}{section.29}%
-\contentsline {section}{\numberline {30}坐标平移、缩放、旋转}{40}{section.30}%
-\contentsline {subsection}{\numberline {30.1}平移translation}{40}{subsection.30.1}%
-\contentsline {subsection}{\numberline {30.2}缩放scale}{41}{subsection.30.2}%
-\contentsline {subsection}{\numberline {30.3}旋转rotation}{41}{subsection.30.3}%
-\contentsline {subsection}{\numberline {30.4}Summary}{41}{subsection.30.4}%
-\contentsline {subsection}{\numberline {30.5}例子example}{42}{subsection.30.5}%
-\contentsline {subsection}{\numberline {30.6}misc}{42}{subsection.30.6}%
-\contentsline {section}{\numberline {31}因式分解}{43}{section.31}%
-\contentsline {section}{\numberline {32}最值}{44}{section.32}%
-\contentsline {subsection}{\numberline {32.1}三角函数}{45}{subsection.32.1}%
-\contentsline {subsection}{\numberline {32.2}柯西}{45}{subsection.32.2}%
-\contentsline {subsection}{\numberline {32.3}misc}{46}{subsection.32.3}%
-\contentsline {section}{\numberline {33}根式方程、根式化简、指数方程}{47}{section.33}%
-\contentsline {section}{\numberline {34}misc}{47}{section.34}%
+\contentsline {subsection}{\numberline {25.1}斜率(slope)}{35}{subsection.25.1}%
+\contentsline {subsection}{\numberline {25.2}点到直线的距离}{35}{subsection.25.2}%
+\contentsline {subsection}{\numberline {25.3}平行线之间的距离}{36}{subsection.25.3}%
+\contentsline {section}{\numberline {26}一元二次方程}{37}{section.26}%
+\contentsline {subsection}{\numberline {26.1}例子}{37}{subsection.26.1}%
+\contentsline {section}{\numberline {27}几何模型}{38}{section.27}%
+\contentsline {subsection}{\numberline {27.1}费马点(Fermat point)}{38}{subsection.27.1}%
+\contentsline {subsection}{\numberline {27.2}探照灯模型- 定角定高}{39}{subsection.27.2}%
+\contentsline {section}{\numberline {28}MISC}{39}{section.28}%
+\contentsline {part}{V\hspace {1em}MISC}{41}{part.5}%
+\contentsline {section}{\numberline {29}prelude}{41}{section.29}%
+\contentsline {section}{\numberline {30}坐标平移、缩放、旋转}{41}{section.30}%
+\contentsline {subsection}{\numberline {30.1}平移translation}{41}{subsection.30.1}%
+\contentsline {subsection}{\numberline {30.2}缩放scale}{42}{subsection.30.2}%
+\contentsline {subsection}{\numberline {30.3}旋转rotation}{42}{subsection.30.3}%
+\contentsline {subsection}{\numberline {30.4}Summary}{42}{subsection.30.4}%
+\contentsline {subsection}{\numberline {30.5}例子example}{43}{subsection.30.5}%
+\contentsline {subsection}{\numberline {30.6}misc}{43}{subsection.30.6}%
+\contentsline {section}{\numberline {31}因式分解}{44}{section.31}%
+\contentsline {section}{\numberline {32}最值}{45}{section.32}%
+\contentsline {subsection}{\numberline {32.1}三角函数}{46}{subsection.32.1}%
+\contentsline {subsection}{\numberline {32.2}柯西}{46}{subsection.32.2}%
+\contentsline {subsection}{\numberline {32.3}misc}{47}{subsection.32.3}%
+\contentsline {section}{\numberline {33}根式方程、根式化简、指数方程}{48}{section.33}%
+\contentsline {section}{\numberline {34}misc}{48}{section.34}%

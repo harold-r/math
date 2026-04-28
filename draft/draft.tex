@@ -71,7 +71,66 @@
 
 \section{draft}
 
-xb
+\begin{minipage}{0.5\textwidth}
+  \centering
+  \begin{tikzpicture}[rotate=-20]
+    \tkzDefPoints{0/0/B, 2/0/C, 1.7/1.7/A}
+
+    \tkzDefLine[bisector](B,A,C)  \tkzGetPoint{a}
+    \tkzInterLL(B,C)(A,a) \tkzGetPoint{D}
+
+    \tkzDefLine[parallel=through C](A,D) \tkzGetPoint{c'}
+    \tkzInterLL(C,c')(B,A) \tkzGetPoint{C'}
+
+    \tkzMarkAngles[scale=.8](B,A,D A,C',C D,A,C C',C,A)
+    \tkzLabelAngles[pos=1, red, scale=0.8](B,A,D A,C',C){$\alpha$}
+    \tkzLabelAngles[pos=1, red, scale=0.8](D,A,C C',C,A){$\beta$}
+
+    \tkzDrawSegments(B,C A,C B,A)
+    \tkzDrawSegments[dashed](A,D C,C' A,C')
+    \tkzLabelPoints(B,C,D)
+    \tkzLabelPoints[above left](A, C')
+  \end{tikzpicture}
+
+  内角平分线定理及其逆定理
+  \[
+    \angle \alpha=\angle \beta \Longleftrightarrow \frac{AB}{AC} = \frac{BD}{DC}
+  \]
+  \begin{align*}
+   \hspace{2em} & & \angle \alpha=\angle \beta \Longleftrightarrow \frac{AB}{AC} = \frac{BD}{DC}& &
+  \end{align*}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \tkzDefPoints{0/0/B, 2/0/C, 2.8/2/A}
+
+    \tkzDefLine[bisector out](B,A,C)  \tkzGetPoint{a'}
+    \tkzInterLL(B,C)(A,a') \tkzGetPoint{E}
+
+    \tkzDefPointOnLine[pos=1.5](B,A)  \tkzGetPoint{A'}
+
+    \tkzDefLine[parallel=through C](A,E) \tkzGetPoint{c'}
+    \tkzInterLL(C,c')(B,A) \tkzGetPoint{C'}
+
+    \tkzMarkAngles[scale=0.6](C,A,E E,A,A' A,C,C' C,C',A)
+    \tkzLabelAngles[pos=0.7, red, scale=0.8](C,A,E A,C,C'){$\gamma$}
+    \tkzLabelAngles[pos=0.7, red, scale=0.8](E,A,A' C,C',A){$\delta$}
+
+    \tkzDrawSegments(B,C A,C B,A)
+    \tkzDrawSegments[dashed](A,E C,E A,A' C,C')
+    \tkzLabelPoints(B,C,E)
+    \tkzLabelPoints[above left](A, C')
+  \end{tikzpicture}
+
+  外角平分线定理及其逆定理
+  $\angle \alpha=\angle \beta \Longleftrightarrow \frac{AB}{AC} = \frac{BD}{DC}$
+\end{minipage}
+
+\section{todo}
+反演
+
+最大张角（最大视角，米勒定理）
 
 
 \end{document}
