@@ -27,7 +27,7 @@
 \usetikzlibrary{trees}
 
 \usepackage[framemethod=TikZ]{mdframed} % Boxes, should set tikz to use roundcorner etc...
-\mdfsetup{roundcorner=9pt, skipbelow=0pt}              % Settings
+\mdfsetup{roundcorner=9pt, skipbelow=0pt, nobreak=true}              % Settings
 
 % Drawing
 \usepackage{pgf,pgfplots}
@@ -66,6 +66,26 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 %%%%%%%%%%%%%%%%%%%%%%%% End Special %%%%%%%%%%%%%%%%%
 \usepackage{tablefootnote}
+
+\usepackage{xsim}
+\xsimsetup{
+  % exercise/name = 习题,
+  % solution/name = 答案,
+  exercise/within = section,
+  % solution/print = true,
+  print-solutions/headings = false,
+  solution/template = solution-with-question
+}
+% Solution Template
+\DeclareExerciseEnvironmentTemplate{solution-with-question}{
+  % \textbf{【题干】\GetExerciseProperty{counter}：}
+  {\XSIMprint{exercise}{exercise}{\GetExerciseProperty{id}} }
+}{
+  {\XSIMprint{exercise}{solution}{\GetExerciseProperty{id}}}
+  \par\nopagebreak \hrulefill
+}
+
+\renewcommand\parallel{\mathrel{/\mskip-2.5mu/}}
 
 \begin{document}
 

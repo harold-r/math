@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: tkzAngle-mark-fill-label
+# key: tkzAngle
+# --
+\tkzMarkAngles[size=1, mark=||, mksize=2pt](${1:A},${2:B},${3:C})
+\tkzFillAngles[size=1, fill=red!20,opacity=.5]($1,$2,$3)
+\tkzLabelAngle[pos=0.9,  font=\scriptsize, red]($1,$2,$3){$${4:\theta}$}$0

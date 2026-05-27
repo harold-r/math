@@ -1,0 +1,25 @@
+# -*- mode: snippet -*-
+# name: tkzTemplateMinipage
+# key: tkzTemplateMinipage
+# --
+\begin{minipage}{0.3\textwidth}
+  \centering
+  \begin{tikzpicture}[scale=1]
+    \tkzDefPoints{2/1/A, 0/0/B, 3/0/C}
+     
+    \tkzDrawSegments(A,B A,C B,C)
+    \tkzDrawPoints(A,B,C)
+    \tkzLabelPoints[above](A)
+    \tkzLabelPoints[left](B)
+    \tkzLabelPoints[right](C)
+    \tkzLabelPoints[above left](A)
+    \tkzLabelPoints[above right](A)
+    \tkzLabelPoints[below left](A)
+    \tkzLabelPoints[below right](A)
+  \end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+  \centering
+  \begin{tikzpicture}
+  \end{tikzpicture}
+\end{minipage}

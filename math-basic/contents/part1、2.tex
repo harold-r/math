@@ -20,15 +20,6 @@
 数学基本方法：\\
 数形结合、分类讨论、换元、数学归纳法、反证法、类比
 
-数域(域：field)：\\
-指一个数集，它对加法、减法、乘法和除法（除数不为零）运算是封闭的，并且包含$0$和$1$\\
-换句话说，对数域中任意两个数进行这四种基本运算，其结果仍然属于这个数域。\\
-常见的数域包括有理数域(Q)、实数域(R) 和复数域(C)\\
-一个集合成为数域，需满足以下条件：\\
-1. 包含0和1：数域中必须有加法单位元0和乘法单位元1\\
-2. 封闭性：加法和减法封闭；乘法封闭；除法封闭\\
-非数域例子：自然数集和整数集，不构成数域，因为除法运算不封闭，例如$2/3$不属于自然数或者整数
-
 丢番图方程:\\
 丢番图方程，又称为不定方程(Diophantine equation), Diophantus is a Greek mathematician\\
 丢番图的研究在数论中占有重要地位，如丢番图方程、丢番图集合、丢番图逼近等都是数学的重要领域
@@ -38,6 +29,9 @@ e.g. $gcd(3,9)=3$ , $gcd(-3,9)=3$
 
 $0!$规定为$1$
 
+充分必要、充分、必要 条件：不妨用丘比特之箭(Cupid's arrow)来记忆。\\
+\textcolor{red}{\textbf{$\to Q \to$}}(本想一个箭头穿过字母Q，无奈不好打出来，丘比特的英文首字母是C)，前充分后必要。也就是，if $P\to Q$，$Q$的充分条件是$P$($P$是$Q$的充分条件)，if $Q\to P$，$Q$的必要条件是$P$($P$是$Q$的必要条件)，瞧，说法不一样，味道也不太一样。以$Q$为主语最好，能推出$Q$的是充分条件，$Q$能推出的是必要条件。
+\clearpage
 \part{Part2 }
 
 \section{算术基本定理}
@@ -62,7 +56,7 @@ Since $a^0=1$, any positive integer can be uniquely represented as an infinite p
 
 等价命题：\\
 If a prime divides the product of two integers, then it must divide at least one of these integers.That is:\\
-If Prime $P|ab$, then, either $P|a$ or $P|b$ \todo{???}
+If Prime $P|ab$, then, either $P|a$ or $P|b$
 
 Proof:
 
@@ -71,10 +65,8 @@ Proof:
 n不可为素数，因为$n=n$，可以写成素数的成绩，因此$n$一定是合数，而每个合数都可以分解为两个严格小于自身而大于$1$的自然数的乘积。设$n=a\times b$，根据假设，$n$是最小的不能写为素数乘积的自然数，$a<n, b<n$，所以$a=p_1p_2\times p_n, b=q_1q_2\cdots q_n$, and $n=ab=p_1p_2\cdots p_nq_1q_2\cdots q_n$可以写为素数的乘积，由此产生矛盾，故大于$1$的自然数必可以写为素数的乘积
 
 2. Uniqueness\\
-欧几里得引理：if $p|ab$, either $p|a$ or $p|b$
-
-\todo{todo...}
-
+欧几里得引理：if $p|ab$, either $p|a$ or $p|b$。
+详见wiki
 \section{代数基本定理}
 Fundamental theorem of algebra, Also called "d'Alembert–Gauss theorem"
 \begin{mdframed}

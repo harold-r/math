@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.18)  28 APR 2026 15:56
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.18)  26 MAY 2026 12:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -631,6 +631,15 @@ Package: esvect
 \symesvector=\mathgroup9
 LaTeX Font Info:    Redeclaring math symbol \fldr on input line 38.
 )
+(d:/texlive/2023/texmf-dist/tex/latex/answers/answers.sty
+Package: answers 2014/08/24 v2.16 Production of solution sheets in LaTeX2e
+
+(d:/texlive/2023/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks45
+\verbatim@line=\toks46
+\verbatim@in@stream=\read3
+))
 (d:/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
@@ -651,11 +660,11 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layoutheight=\dimen305
 \Gm@layouthoffset=\dimen306
 \Gm@layoutvoffset=\dimen307
-\Gm@dimlist=\toks45
+\Gm@dimlist=\toks47
 )
 (d:/texlive/2023/texmf-dist/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2022/03/08 v6.0d a miscellany of footnote facilities
-\FN@temptoken=\toks46
+\FN@temptoken=\toks48
 \footnotemargin=\dimen308
 \@outputbox@depth=\dimen309
 Package footmisc Info: Declaring symbol style bringhurst on input line 695.
@@ -837,7 +846,7 @@ brarymath.code.tex
 braryfpu.code.tex)
 \tikz@math@for@depth=\count330
 \tikz@math@dimen=\dimen322
-\tikz@math@toks=\toks47
+\tikz@math@toks=\toks49
 )
 (d:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 braryplotmarks.code.tex
@@ -1089,9 +1098,9 @@ Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
 
 (d:/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
 (d:/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks48
-\t@pgfplots@tokb=\toks49
-\t@pgfplots@tokc=\toks50
+\t@pgfplots@toka=\toks50
+\t@pgfplots@tokb=\toks51
+\t@pgfplots@tokc=\toks52
 \pgfplots@tmpa=\dimen334
 \c@pgfplots@coordindex=\count340
 \c@pgfplots@scanlineindex=\count341
@@ -1103,9 +1112,9 @@ x))
 (d:/texlive/2023/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfs
 upp_loader.code.tex
 Package pgfplots: loading complementary utilities for your pgf version...
-\t@pgf@toka=\toks51
-\t@pgf@tokb=\toks52
-\t@pgf@tokc=\toks53
+\t@pgf@toka=\toks53
+\t@pgf@tokb=\toks54
+\t@pgf@tokc=\toks55
 
 (d:/texlive/2023/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfs
 upp_pgfutil-common-lists.tex))
@@ -1123,7 +1132,7 @@ ode.tex)
 (d:/texlive/2023/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.c
 ode.tex
 \c@pgfplotstable@counta=\count343
-\t@pgfplotstable@a=\toks54
+\t@pgfplotstable@a=\toks56
 )
 (d:/texlive/2023/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.co
 de.tex)
@@ -1305,6 +1314,95 @@ Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
 (d:/texlive/2023/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
 Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
 )))
+(d:/texlive/2023/texmf-dist/tex/latex/xsim/xsim.sty
+(d:/texlive/2023/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2023-02-02 LaTeX2e option processing using LaTeX3 keys
+)
+(d:/texlive/2023/texmf-dist/tex/latex/xsim/xsimverb.sty
+Package: xsimverb 2022/02/12 v0.4 write environments verbatim to files
+\l__xsimverb_tmpa_int=\count360
+\l_xsim_line_gobble_int=\count361
+)
+Package: xsim 2022/02/12 v0.21 eXercise Sheets IMproved
+Loading module `base' ...
+\l__xsim_tmpa_dim=\dimen345
+\l__xsim_tmpb_dim=\dimen346
+\l__xsim_tmpc_dim=\dimen347
+\l__xsim_tmpa_int=\count362
+\l__xsim_tmpb_int=\count363
+\l__xsim_tmpc_int=\count364
+\l__xsim_tmpa_box=\box100
+\l__xsim_tmpb_box=\box101
+\l__xsim_tmpc_box=\box102
+Loading module `auxfile' ...
+Loading module `properties' ...
+Loading module `environments' ...
+Loading module `templates' ...
+Loading module `tags' ...
+Loading module `goals' ...
+Loading module `exercises' ...
+\g_xsim_id_int=\count365
+\g_xsim_max_id_int=\count366
+Loading module `solutions' ...
+\l_xsim_printsolutions_section_int=\count367
+\l_xsim_printsolutions_chapter_int=\count368
+Loading module `collections' ...
+Loading module `blanks' ...
+\l__xsim_blank_dim=\dimen348
+\l__xsim_blank_line_increment_dim=\dimen349
+\l__xsim_blank_line_minimum_length_dim=\dimen350
+\l__xsim_blank_box=\box103
+Loading module `grades' ...
+Loading module `random' ...
+
+
+Package xsim Warning: You are compiling your document using XeLaTeX. Please be
+(xsim)                aware that random selection of exercises is unavailable
+(xsim)                in XeLaTeX. If you use this feature you can safely
+(xsim)                ignore this message.
+
+\g__xsim_random_list_id_int=\count369
+Loading module `translations' ...
+(d:/texlive/2023/texmf-dist/tex/latex/translations/translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
+ (CN)
+)
+Loading module `interface' ...
+Loading module `definitions' ...
+\c@exercise=\count370
+\c@solution=\count371
+\c@numberofexercises=\count372
+
+(d:/texlive/2023/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen351
+\ar@mcellbox=\box104
+\extrarowheight=\dimen352
+\NC@list=\toks57
+\extratabsurround=\skip147
+\backup@length=\skip148
+\ar@cellbox=\box105
+)
+(d:/texlive/2023/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen353
+\lightrulewidth=\dimen354
+\cmidrulewidth=\dimen355
+\belowrulesep=\dimen356
+\belowbottomsep=\dimen357
+\aboverulesep=\dimen358
+\abovetopsep=\dimen359
+\cmidrulesep=\dimen360
+\cmidrulekern=\dimen361
+\defaultaddspace=\dimen362
+\@cmidla=\count373
+\@cmidlb=\count374
+\@aboverulesep=\dimen363
+\@belowrulesep=\dimen364
+\@thisruleclass=\count375
+\@lastruleclass=\count376
+\@thisrulewidth=\dimen365
+))
 
 Package xeCJK Warning: Fandol is being set as the default font for CJK text.
 (xeCJK)                Please make sure it has been properly installed.
@@ -1332,96 +1430,101 @@ Package fontspec Info: Font family 'FandolSong-Regular(0)' created for font
 (fontspec)             <->"[FandolKai-Regular.otf]/OT:language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 
-(./draft.aux)
+\g_xsim_collection_exercise_in_all exercises_int=\count377
+\c@totalexerciseinall exercises=\count378
+Package translations Info: No language package found. I am going to use `englis
+h' as default language. on input line 91.
+(./draft.aux (./draft.xsim))
 \openout1 = `draft.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 7
-0.
- (d:/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 9
+1.
+
+(d:/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
 
 \symlegacymaths=\mathgroup11
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 70.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 70.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 70.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 70.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 70.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 70.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 70.
-LaTeX Font Info:    Redeclaring math accent \check on input line 70.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 70.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 70.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 70.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 70.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 91.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 91.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 91.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 91.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 91.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 91.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 91.
+LaTeX Font Info:    Redeclaring math accent \check on input line 91.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 91.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 91.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 91.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 91.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 91.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 91.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 91.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 91.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 91.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 91.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 91.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 91.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 91.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 91.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 91.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 91.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 70.
+(Font)              `operators' in the math version `normal' on input line 91.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 70.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 91.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 70.
+(Font)              `operators' in the math version `bold' on input line 91.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 70.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 91.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 70.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 70.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 70.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 70.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 70.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 91.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 70.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 70.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 70.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 70.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 91.
 
 
 Package todonotes Warning: The length marginparwidth is less than 2cm and will 
 most likely cause issues with the appearance of inserted todonotes. The issue c
 an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
-loading the todonotes package. on input line 70.
+loading the todonotes package. on input line 91.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1460,52 +1563,81 @@ loading the todonotes package. on input line 70.
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.18} (current compat level: 1.15).
 
-Package hyperref Info: Link coloring ON on input line 70.
+Package hyperref Info: Link coloring ON on input line 91.
 (./draft.out) (./draft.out)
 \@outlinefile=\write4
 \openout4 = `draft.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 86.
+\l__xsim_aux_file_iow=\write5
+\openout5 = `draft.xsim'.
 
 
-(d:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+(d:/texlive/2023/texmf-dist/tex/latex/translations/translations-basic-dictionar
+y-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 91.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 151
+.
+ (d:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 86.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 151
+.
 
 (d:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+esvect on input line 
-86.
+151.
 
 (d:/texlive/2023/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 86
-.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 15
+1.
 
 (d:/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Overfull \hbox (2.608pt too wide) in paragraph at lines 74--129
-$[]$ $[]$ 
+Underfull \hbox (badness 10000) in paragraph at lines 151--151
+
+ []
+
+
+Overfull \hbox (0.38168pt too wide) in paragraph at lines 192--192
+[]$[]$ $[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--192
+
  []
 
 [1
 
-] (./draft.aux)
+]
+Overfull \hbox (2.608pt too wide) in paragraph at lines 192--192
+[]$[]$ $[]$ 
+ []
+
+
+Package xsim Warning: Exercise properties may have changed. Rerun to get them
+(xsim)                synchronized.
+
+[2] (./draft.aux (./draft.xsim))
 Package rerunfilecheck Info: File `draft.out' has not changed.
 (rerunfilecheck)             Checksum: E71216BFF57E5E860A898637FA0BDAB1;131.
  ) 
 Here is how much of TeX's memory you used:
- 44255 strings out of 476675
- 1096578 string characters out of 5807326
- 1880290 words of memory out of 5000000
- 63648 multiletter control sequences out of 15000+600000
- 523274 words of font info for 88 fonts, out of 8000000 for 9000
+ 47725 strings out of 476675
+ 1201634 string characters out of 5807326
+ 1888290 words of memory out of 5000000
+ 67079 multiletter control sequences out of 15000+600000
+ 523298 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,10n,134p,1152b,1208s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,7n,107p,5297b,958s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on draft.pdf (1 page).
+Output written on draft.pdf (2 pages).
