@@ -18,6 +18,8 @@
 
 到定点与定直线距离相等的点的轨迹是 抛物线
 
+事实上，《几何原本》的命题都建议去自己去证明一下，会很有裨益。
+
 \clearpage
 \section{三角形}
 
@@ -562,8 +564,6 @@ Proof\footnote{$\vv{AG}=2\vv{GD}=\vv{GC}+\vv{GB} \Rightarrow (x-x_1, y-y_1)=(x_2
 
 命题\uppercase\expandafter{\romannumeral4}.22：圆内接四边形的对角之和等于两直角
 
-事实上，几何原本的命题都建议去自己去证明一下，会很有裨益。
-
 \textbf{四点共圆(Cyclic quadrilateral)判定：}对角互补、圆周角逆定理、托勒密定理、定点到同一平面四点距离相等。核心是对角互补，圆周角的逆定理也可以用相似得出对角互补，外角等于内对角本质也是对角互补，还有相交弦定理，也是可以用相似证明对角互补，托勒密逆定理最后也是对角互补。所以 \textbf{四点共圆的核心是对角互补。}对角互补共圆的判定证明方法，一般用反证法，先三点做出一个圆，假设另外一个点不在圆上，得出矛盾。详见练习。
 
 几何原本中没有现代的“四点共圆”的描述，相关的有命题\uppercase\expandafter{\romannumeral4}.22：圆内接四边形的对角之和等于两直角。命题\uppercase\expandafter{\romannumeral4}.5：可以为任何给定的三角形作外接圆。命题\uppercase\expandafter{\romannumeral3}.25：给定弧可以做出一个圆。
@@ -686,7 +686,7 @@ Proof\footnote{$\vv{AG}=2\vv{GD}=\vv{GC}+\vv{GB} \Rightarrow (x-x_1, y-y_1)=(x_2
 斜率连接了代数和几何，用来分析“变化快慢”和“倾斜方向”(倾斜程度)。也是直角坐标系中直线的倾斜度的直接表达。
 
 \subsection{点到直线的距离}
-若点$P(x_0,y_0)$, 则距离：$\displaystyle  d=\frac{|Ax_0+By_0+C|}{\sqrt{A^2+B^2}}$
+若点$P(x_0,y_0)$, 直线$Ax+By+C=0$，则距离：$\displaystyle  d=\frac{|Ax_0+By_0+C|}{\sqrt{A^2+B^2}}$
 
 证明方法很多，这里用平移坐标系的方式来证明。
 
@@ -973,6 +973,15 @@ $AB=2r\sin\theta$，只需找出最小外接圆半径即可， while $h\le r+r\c
 \section{Exercises}
 
 \begin{exercise}
+在初中知识下：如果$\sin A=\sin B$，$A,B$是锐角，求证$A=B$
+\end{exercise}
+\begin{solution}
+\textbf{【解析】}构造直角三角形， 证相似
+\end{solution}
+
+\hrulefill
+
+\begin{exercise}
   \begin{minipage}{0.3\textwidth}
     \centering
     \begin{tikzpicture}[scale=1]
@@ -1089,14 +1098,6 @@ $AB=2r\sin\theta$，只需找出最小外接圆半径即可， while $h\le r+r\c
   \end{minipage}
 \end{exercise}
 \begin{solution}
-  此题需要先进行探讨，权且命题成立，去打听这个腰上的点具体的“消息”。如下左图，很明显全等得出$DE=EF=EC$，也就是$E$是腰的中点。那我们就顺着这个思路，反过去证。
-
-  先做$\angle B$的角平分线，交$CD$于$E$点，连接$AE$，如果$AE$平分$\angle A$，那么就得证。$\triangle BFE \cong \triangle BCE$很容易，接下来要求证$\angle 1=\angle 2$。$\triangle AEF \cong \triangle AED$，限于现在的辅助线，$AF=AD, AE=AE$，条件不足了。这时候就分析一下，\textbf{什么条件没用上？} 很明显，是已知的梯形，梯形的上下边平行。这时候就应该需要额外的辅助线了。我们就延长$BE$，如下中图，$\angle 4 = \angle G$，$\triangle ABE$是等腰，$\angle 3 = \angle G$，可以推出$AB=AG$，瞧，我们可以得出$DG=BC$，很明显$\triangle EDG \cong \triangle ECB$。局势瞬间就明朗了，之前的辅助点$F$也就不需要了。
-
-  可是，总觉得，哪里有点“不舒服”，我们设想，如果$E$为腰的中点，那么$AE,BE$是不是必平分两个角呢？很显然也是。而且梯形的中位线长度正好等于$\frac{1}{2}(BC+AD)$，可以在梯形的中位线做点文章，如下图右，看似更简单了不是？
-
-  \textbf{中位线定理在三角形和梯形题型中的重要性也是独一无二的存在。}
-
   \begin{minipage}{0.3\textwidth}
     \centering
     \begin{tikzpicture}[scale=1]
@@ -1165,6 +1166,120 @@ $AB=2r\sin\theta$，只需找出最小外接圆半径即可， while $h\le r+r\c
       \tkzLabelPoints[right](C,E,D)
     \end{tikzpicture}
   \end{minipage}
+
+  此题需要先进行探讨，权且命题成立，去打听这个腰上的点具体的“消息”。如上图-左，很明显全等得出$DE=EF=EC$，也就是$E$是腰的中点。那我们就顺着这个思路，反过去证。
+
+  先做$\angle B$的角平分线，交$CD$于$E$点，连接$AE$，如果$AE$平分$\angle A$，那么就得证。$\triangle BFE \cong \triangle BCE$很容易，接下来要求证$\angle 1=\angle 2$。$\triangle AEF \cong \triangle AED$，限于现在的辅助线，$AF=AD, AE=AE$，条件不足了。这时候就分析一下，\textbf{什么条件没用上？} 很明显，是已知的梯形，梯形的上下边平行。这时候就应该需要额外的辅助线了。我们就延长$BE$，如上图-中，$\angle 4 = \angle G$，$\triangle ABE$是等腰，$\angle 3 = \angle G$，可以推出$AB=AG$，瞧，我们可以得出$DG=BC$，很明显$\triangle EDG \cong \triangle ECB$。局势瞬间就明朗了，之前的辅助点$F$也就不需要了。
+
+  可是，总觉得，哪里有点“不舒服”，我们设想，如果$E$为腰的中点，那么$AE,BE$是不是必平分两个角呢？很显然也是。而且梯形的中位线长度正好等于$\frac{1}{2}(BC+AD)$，可以在梯形的中位线做点文章，如上图-右，看似更简单了不是？
+
+  \textbf{中位线在平面几何中的重要性也是独一无二的存在。}
+
+\end{solution}
+
+\hrulefill
+\begin{exercise}
+  \begin{minipage}{0.3\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1]
+      \tkzDefPoints{0/3/A, 0/0/B, 3/0/C}
+      \tkzDefPointOnLine[pos=0.5](A,B)  \tkzGetPoint{D}
+      \tkzDefPointsBy[projection=onto C--D](B){E}
+      \tkzInterLL(A,C)(B,E) \tkzGetPoint{F}
+      \tkzMarkRightAngles[scale=0.8](D,E,B C,B,A)
+      \tkzDrawSegments(A,B A,C B,C D,F B,F C,D)
+      \tkzLabelPoints(E)
+      \tkzLabelPoints[above](A)
+      \tkzLabelPoints[left](B,D)
+      \tkzLabelPoints[right](C,F)
+    \end{tikzpicture}
+  \end{minipage}
+  \begin{minipage}{0.7\textwidth}
+    如图：等腰直角三角形$ABC$，$\angle B$为直角，$AB=BC$，$D$为$AB$的中点，连接$CD$，从$B$作$CD$的垂线，$E,F$分别为垂足和与$AC$的交点。 求证：$\angle ADF=\angle BDC$\\
+    变形：求证 $3AF=AC$。
+  \end{minipage}
+\end{exercise}
+\begin{solution}
+  \begin{minipage}{.25\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1]
+      \tkzSetUpAxis[tickwd=0pt, ticka=0pt, tickb=0pt]
+      \tkzDefPoints{0/3/A, 0/0/B, 3/0/C, 3/3/G}
+      \tkzDefPointOnLine[pos=0.5](A,B)  \tkzGetPoint{D}
+      \tkzDefPointsBy[projection=onto C--D](B){E}
+      \tkzInterLL(A,C)(B,E) \tkzGetPoint{F}
+      \tkzInterLL(A,G)(B,E) \tkzGetPoint{J}
+      \tkzMarkRightAngles[scale=0.8](D,E,B C,B,A)
+      \tkzDrawSegments(A,B A,C B,C D,F B,F C,D)
+      \tkzLabelPoints(E)
+      \tkzLabelPoints[left](A,B,D)
+      \tkzLabelPoints[right](F)
+      \tkzLabelPoints[above right](C)
+      \draw[->](3,0)--(3.2,0);
+      \draw[->](0,3)--(0,3.2);
+    \end{tikzpicture}
+  \end{minipage}
+  \begin{minipage}{.25\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1]
+      \tkzDefPoints{0/3/A, 0/0/B, 3/0/C, 3/3/G}
+      \tkzDefPointOnLine[pos=0.5](A,B)  \tkzGetPoint{D}
+      \tkzDefPointsBy[projection=onto C--D](B){E}
+      \tkzInterLL(A,C)(B,E) \tkzGetPoint{F}
+      \tkzInterLL(A,G)(B,E) \tkzGetPoint{J}
+      \tkzMarkRightAngles[scale=0.8](D,E,B C,B,A)
+      \tkzDrawSegments(A,B A,C B,C D,F B,F C,D)
+      \tkzDrawSegments[dashed](A,G C,G F,J)
+      \tkzLabelPoints(E)
+      \tkzLabelPoints[above](A,J)
+      \tkzLabelPoints[left](B,D)
+      \tkzLabelPoints[right](C,G)
+    \end{tikzpicture}
+  \end{minipage}
+  \begin{minipage}{.25\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1]
+      \tkzDefPoints{0/3/A, 0/0/B, 3/0/C, 3/3/G}
+      \tkzDefPointOnLine[pos=0.5](A,B)  \tkzGetPoint{D}
+      \tkzDefPointsBy[projection=onto C--D](B){E}
+      \tkzInterLL(A,C)(B,E) \tkzGetPoint{F}
+      \tkzInterLL(A,G)(B,E) \tkzGetPoint{J}
+      \tkzDrawSegments(A,B B,C B,F C,D A,G C,G F,J)
+      \tkzLabelPoints(E)
+      \tkzLabelPoints[above](A,J)
+      \tkzLabelPoints[left](B,D)
+      \tkzLabelPoints[right](C,G)
+    \end{tikzpicture}
+  \end{minipage}
+  \begin{minipage}{.25\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1]
+      \tkzDefPoints{0/3/A, 0/0/B, 3/0/C}
+      \tkzDefPointOnLine[pos=0.5](A,B)  \tkzGetPoint{D}
+      \tkzDefPointOnLine[pos=0.33](C,A)  \tkzGetPoint{G}
+      \tkzDefPointsBy[projection=onto C--D](B){E}
+      \tkzInterLL(A,C)(B,E) \tkzGetPoint{F}
+      \tkzMarkRightAngles[scale=0.8](D,E,B C,B,A)
+      \tkzDrawSegments(A,B A,C B,C D,F B,F C,D)
+      \tkzDrawSegments[dashed](B,G)
+      \tkzLabelPoints(E)
+      \tkzLabelPoints[above](A)
+      \tkzLabelPoints[left](B,D)
+      \tkzLabelPoints[right](C,F,G)
+    \end{tikzpicture}
+  \end{minipage}
+
+\textbf{【解析】}Honestly, 一开始，无从下手，主要是那个垂直。等腰直角三角形定，$AB$中点定，$AE,AF$定，所有的点都是定的，角度也是定的，这两个角度相等，而且角度的值也是定的。最后不得已建立直角坐标系，用三角函数。
+
+上图左：建立直角坐标系，设直角边为$2$, Line $AC: x+y=2$; Line $CD: y=-\frac{1}{2}x$; Line $BF: y=2x$，可以求出$F(\frac{2}{3}, \frac{4}{3})$，$\tan \angle ADF=\frac{F_x-D_x}{F_{y}-D_y}=2=\tan \angle BDC$.
+
+建系虽能很快解决问题，但是总感觉差点意思，在初中知识下算是不合适的解答。所以要用平面几何。因为$D$是中点，所以，可以作平行线，但是角度也不好转换，全等不太好找。所以，就考虑扩展图形，如上图-2：延长$BF$后，就出现了一对貌似全等的图形$\triangle AFJ, \triangle AFD$，而垂线$BE$恰好可以用来证明$\triangle BDC \cong \triangle AJB$。
+
+扩展成正方形后，产生一个很有趣的问题，如上图-3：如果$D,J$分别正方形两个临边的中点，$CD$和$BJ$什么关系？事实上，$D,J$只要满足$BD=AJ$，那么两条线段都是垂直关系。
+
+回到原题，一般碰到中点，辅助线作平行线，我们试一下。其实这个辅助线first sight就是跟$BE,CD$的垂直有点割裂。如果不是看到书本，也想不到这种思路的。假设所证成立，那么$\angle ADF = \angle FBC$，就有$\triangle ADF \sim CBF$，得到$\angle AFD = \angle CFB$，可以推出$\angle BGC = \angle BFA$，得到$CG=AF$，那么中位线定理已知$AF=FG$，所以，$F,G$是$AC$的三等分点，还有就是，角度上的收获，$C$点射向$AB$的中点，镜面$AB$反射到$F$点，镜面$AC$再反射到$B$点，意外收获。但是如果用这个辅助线去做，还是不简单。书中取$AC$的三等分点$F', G'$，证明$F,F'$重合，用三角函数。
+
+题目变形后，稍显麻烦。
 \end{solution}
 
 \hrulefill
@@ -1385,8 +1500,8 @@ $AB=2r\sin\theta$，只需找出最小外接圆半径即可， while $h\le r+r\c
 \end{solution}
 
 \clearpage
-\section{Solutions}
-\printsolutions
+\subsection{Solutions}
+\printsolutions[section=true]
 
 \clearpage
 \end{document}

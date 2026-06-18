@@ -15,6 +15,7 @@
 \usepackage[a]{esvect}          %vector arrow, [a] is arrow style, then use \vv{}
 \usepackage{answers}
 \renewcommand\parallel{\mathrel{/\mskip-2.5mu/}}
+\usepackage{tabularray}         % tabular&array, modern one
 
 \graphicspath{{images/}}
 \usepackage[a4paper, top=10mm, bottom=20mm, left=20mm, right=20mm]{geometry} %page dimension
@@ -27,6 +28,7 @@
 \usetikzlibrary{arrows,calc,patterns,positioning,shapes,angles,quotes}
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{trees}
+\usepackage{tkz-base}
 \usepackage{tkz-euclide}
 
 \usepackage[framemethod=TikZ]{mdframed} % Boxes, should set tikz to use roundcorner etc...
@@ -45,7 +47,7 @@
 \tkzSetUpColors[background=white,text=black]
 \tkzSetUpPoint[size=2,color=teal]
 \tkzSetUpCompass[color=orange, line width=.4pt,delta=10]
-\tkzSetUpArc[color=gray,line width=.4pt]
+\tkzSetUpArc[color=teal,line width=.4pt]
 \tkzSetUpCircle[color=teal,thin]  % Set circle style globally
 
 %%%%%%%%%%%%%%%%%%%%%%%% MISC %%%%%%%%%%%%%%%%%%%%%%%%
@@ -88,10 +90,14 @@
   \hrulefill
  }
 
-\begin{document}
+ \begin{document}
+
+
 \section{draft}
 
+$A,B,C$是三角形的三个角，求$\cos A+\cos B +\cos C$的最大值。
 
+求证：$\sin \frac{A}{2} \sin \frac{B}{2} \sin \frac{C}{2} \le \frac{1}{8}$
 
 \printsolutions
 
@@ -100,7 +106,7 @@
 
 最大张角（最大视角，米勒定理）
 
- 01
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex

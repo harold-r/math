@@ -7,12 +7,13 @@
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert} % for absolute values
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}%
 \usepackage{graphicx} %figures
-\usepackage[dvipsnames]{xcolor} %dvipsnames loads 68 names colors(CMYK)
+\usepackage[dvipsnames]{xcolor} % dvipsnames loads 68 names colors(CMYK)
 \usepackage{todonotes}
-\usepackage{bm}                 %bold math
+\usepackage{bm}                 % bold math
 \usepackage{enumitem}
-\setlist{nosep}                 %remove all vertical spaces in all lists
-\usepackage[a]{esvect}          %vector arrow, [a] is arrow style, then use \vv{}
+\setlist{nosep}                 % remove all vertical spaces in all lists
+\usepackage[a]{esvect}          % vector arrow, [a] is arrow style, then use \vv{}
+\usepackage{tabularray}         % tabular&array, modern one
 
 \graphicspath{{images/}}
 \usepackage[a4paper, top=10mm, bottom=20mm, left=20mm, right=20mm]{geometry} %page dimension
@@ -33,17 +34,16 @@
 \usepackage{pgf,pgfplots}
 \pgfplotsset{compat=1.15}
 \usepackage{mathrsfs}
-\usetikzlibrary{arrows}
 \pagestyle{empty}
 \definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
 
-\usepackage{tkz-euclide}
+\usepackage{tkz-base,tkz-euclide}
 \tkzSetUpLabel[below, font=\scriptsize, color=teal] % Set the label size
 \tkzSetUpLine[color=teal, line width=.5pt] % Set the line
 \tkzSetUpColors[background=white,text=black]
 \tkzSetUpPoint[size=2,color=teal]
 \tkzSetUpCompass[color=orange, line width=.4pt,delta=10]
-\tkzSetUpArc[color=gray,line width=.4pt]
+\tkzSetUpArc[color=teal,line width=.4pt]
 \tkzSetUpCircle[color=teal, line width=.5pt]  % Set circle style globally
 
 %%%%%%%%%%%%%%%%%%%%%%%% MISC %%%%%%%%%%%%%%%%%%%%%%%%
