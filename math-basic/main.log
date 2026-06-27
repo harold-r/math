@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.18)  18 JUN 2026 15:45
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.18)  27 JUN 2026 16:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1869,21 +1869,21 @@ Overfull \hbox (22.25209pt too wide) detected at line 345
 [25
 
 ] [26] [27]
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 424--441
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 431--448
 []$[]$ $[]$ 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 446.
+(mdframed)              on input line 453.
 [28
 
 ]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 476.
+(mdframed)              on input line 483.
 
-Underfull \hbox (badness 10000) in paragraph at lines 476--477
+Underfull \hbox (badness 10000) in paragraph at lines 483--484
 
  []
 
@@ -1905,19 +1905,24 @@ Missing character: There is no ; ("3B) in font nullfont!
 ] [33
 
 ]
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 659--684
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 666--691
 $[]$ $[]$ 
  []
 
 [34] [35]
-Overfull \hbox (7.35153pt too wide) detected at line 736
+Overfull \hbox (7.35153pt too wide) detected at line 765
  []$[] \OMS/cmsy/m/n/12 ^^U []\OT1/cmr/m/n/12 ([] + []) \OMS/cmsy/m/n/12 ^^U []
  \OT1/cmr/m/n/12 = []  $ 
  []
 
+
+Overfull \hbox (2.608pt too wide) in paragraph at lines 765--765
+[]$[]$ $[]$ 
+ []
+
 [36
 
-]) (./contents/part4.tex [37
+] [37]) (./contents/part4.tex [38
 
 ]
 Overfull \hbox (2.60799pt too wide) in paragraph at lines 36--57
@@ -1934,7 +1939,7 @@ Overfull \hbox (2.60799pt too wide) in paragraph at lines 97--116
 []$[]$ $[]$ 
  []
 
-[38
+[39
 
 ]
 Overfull \hbox (2.60799pt too wide) in paragraph at lines 135--156
@@ -1946,7 +1951,7 @@ Overfull \hbox (2.60799pt too wide) in paragraph at lines 164--183
 []$[]$ $[]$ 
  []
 
-[39]
+[40]
 Overfull \hbox (7.82397pt too wide) in paragraph at lines 205--258
 []$[]$ $[]$ $[]$ $[]$ 
  []
@@ -1956,7 +1961,7 @@ Overfull \hbox (2.608pt too wide) in paragraph at lines 263--313
 $[]$ $[]$ 
  []
 
-[40]
+[41]
 Overfull \hbox (2.608pt too wide) in paragraph at lines 356--383
 []$[]$ $[]$ 
  []
@@ -1966,209 +1971,217 @@ Overfull \hbox (0.38168pt too wide) in paragraph at lines 385--441
 $[]$ $[]$ $[]$ 
  []
 
-[41]
+[42]
 Overfull \hbox (0.38168pt too wide) in paragraph at lines 460--529
 $[]$ $[]$ $[]$ 
  []
 
-[42]
-Underfull \hbox (badness 10000) in paragraph at lines 626--626
+[43]
+Missing character: There is no π (U+03C0) in font [lmroman12-regular]:mapping=t
+ex-text;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 634--634
 
  []
 
-[43
+[44
 
-] [44
+] [45] [46
 
-] [45
+] [47
 
 ]
-Overfull \hbox (5.21599pt too wide) in paragraph at lines 728--780
+Overfull \hbox (5.21599pt too wide) in paragraph at lines 736--788
 []$[]$ $[]$ $[]$ 
  []
 
 
-Overfull \hbox (5.21599pt too wide) in paragraph at lines 787--862
+Overfull \hbox (5.21599pt too wide) in paragraph at lines 795--870
 []$[]$ $[]$ $[]$ 
  []
 
 
-Overfull \hbox (0.38168pt too wide) in paragraph at lines 871--965
+Overfull \hbox (0.38168pt too wide) in paragraph at lines 879--973
 $[]$ $[]$ $[]$ 
- []
-
-[46
-
-] [47]
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1008--1008
-$[]$ $[]$ 
- []
-
-
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1099--1099
-$[]$ $[]$ 
- []
-
-
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1201--1201
-$[]$ $[]$ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1311--1311
-
- []
-
-
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1311--1311
-$[]$ $[]$ 
  []
 
 [48
 
+] [49]
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1016--1016
+$[]$ $[]$ 
+ []
+
+
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1107--1107
+$[]$ $[]$ 
+ []
+
+
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1209--1209
+$[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1319--1319
+
+ []
+
+
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1319--1319
+$[]$ $[]$ 
+ []
+
+[50
+
 ]
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1363--1363
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1371--1371
 $[]$ $[]$ 
  []
 
 
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1395--1395
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1403--1403
 $[]$ $[]$ 
  []
 
 
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1427--1427
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1435--1435
 $[]$ $[]$ 
  []
 
 
-Underfull \hbox (badness 2173) in paragraph at lines 1467--1467
+Underfull \hbox (badness 2173) in paragraph at lines 1475--1475
 []$\OML/cmm/m/it/12 BD \OT1/cmr/m/n/12 = 6\OML/cmm/m/it/12 ;  DC \OT1/cmr/m/n/1
 2 = 4\OML/cmm/m/it/12 ;  AD \OMS/cmsy/m/n/12 ? \OML/cmm/m/it/12 BC; \U/msa/m/n/
 12 \\OML/cmm/m/it/12 AEC \OT1/cmr/m/n/12 =
  []
 
 
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1467--1467
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1475--1475
 $[]$ $[]$ 
  []
 
-[49]
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1497--1497
+[51]
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1505--1505
 $[]$ $[]$ 
  []
 
-[50]
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1504--1504
+[52]
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1512--1512
 $[]$ $[]$ 
  []
 
 
-Overfull \hbox (5.21599pt too wide) in paragraph at lines 1504--1504
+Overfull \hbox (5.21599pt too wide) in paragraph at lines 1512--1512
 []$[]$ $[]$ $[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1504--1504
+Underfull \hbox (badness 10000) in paragraph at lines 1512--1512
 
  []
 
 
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1504--1504
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1512--1512
 $[]$ $[]$ 
  []
 
 
-Overfull \hbox (5.21599pt too wide) in paragraph at lines 1504--1504
+Overfull \hbox (5.21599pt too wide) in paragraph at lines 1512--1512
 []$[]$ $[]$ $[]$ 
  []
 
-[51
+[53
 
 ]
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1504--1504
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1512--1512
 $[]$ $[]$ 
  []
 
 
-Overfull \hbox (7.82397pt too wide) in paragraph at lines 1504--1504
+Overfull \hbox (7.82397pt too wide) in paragraph at lines 1512--1512
 []$[]$ $[]$ $[]$ $[]$ 
  []
 
-[52]
-Underfull \hbox (badness 10000) in paragraph at lines 1504--1504
+[54]
+Underfull \hbox (badness 10000) in paragraph at lines 1512--1512
 
  []
 
 
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1504--1504
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1512--1512
 $[]$ $[]$ 
  []
 
 
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1504--1504
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1512--1512
 []$[]$ $[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1504--1504
+Underfull \hbox (badness 10000) in paragraph at lines 1512--1512
 
  []
 
 
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1504--1504
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1512--1512
 $[]$ $[]$ 
  []
 
 
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1504--1504
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1512--1512
 $[]$ $[]$ 
  []
 
-[53]
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1504--1504
+[55]
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1512--1512
 $[]$ $[]$ 
  []
 
 
-Underfull \hbox (badness 2173) in paragraph at lines 1504--1504
+Underfull \hbox (badness 2173) in paragraph at lines 1512--1512
 []$\OML/cmm/m/it/12 BD \OT1/cmr/m/n/12 = 6\OML/cmm/m/it/12 ;  DC \OT1/cmr/m/n/1
 2 = 4\OML/cmm/m/it/12 ;  AD \OMS/cmsy/m/n/12 ? \OML/cmm/m/it/12 BC; \U/msa/m/n/
 12 \\OML/cmm/m/it/12 AEC \OT1/cmr/m/n/12 =
  []
 
 
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1504--1504
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1512--1512
 $[]$ $[]$ 
  []
 
-[54]
-Overfull \hbox (2.60799pt too wide) in paragraph at lines 1504--1504
+[56]
+Overfull \hbox (2.60799pt too wide) in paragraph at lines 1512--1512
 $[]$ $[]$ 
  []
 
-[55]) (./contents/misc.tex [56
+[57]) (./contents/misc.tex [58
 
-] [57
+] [59
 
-] [58] [59
+] [60] [61
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 146--146
 
  []
 
-) [60] (./main.aux (./main.xsim))
+)
+
+Package xsim Warning: Exercise properties may have changed. Rerun to get them
+(xsim)                synchronized.
+
+[62] (./main.aux (./main.xsim))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C689285AB0555BAA743F85D1915C4050;9959.
+(rerunfilecheck)             Checksum: 386229A2FF43890F84779FF2868E510E;9964.
  ) 
 Here is how much of TeX's memory you used:
- 53011 strings out of 476675
- 1367578 string characters out of 5807326
- 2087005 words of memory out of 5000000
- 72251 multiletter control sequences out of 15000+600000
+ 53032 strings out of 476675
+ 1372056 string characters out of 5807326
+ 2099685 words of memory out of 5000000
+ 72272 multiletter control sequences out of 15000+600000
  526862 words of font info for 127 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,16n,158p,19766b,1776s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,16n,158p,20863b,1776s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (60 pages).
+Output written on main.pdf (62 pages).
