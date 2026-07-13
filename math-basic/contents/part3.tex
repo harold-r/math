@@ -333,7 +333,7 @@ $A_{n}^{k}=C_{n}^{k}\times k!$ or $A_{n}^{k}=P_{n}^{k}/k!$. The $A_{n}^{k}$ ofte
   \phantom{x}\\
   x^4+4y^4=x^4+4x^2y^2+4y^2-4x^2y^2  \;\;\;\text{Sophie Germain's identity}\\
   a^4+a^2b^2+b^4=a^4+2a^2b^2+b^4-a^2b^2\\
-  \text{上述两个可以简称为444，四次的基本上都是他们的变形，比如：}\\
+  \text{上述两个可以简称为\textbf{444}，四次的基本上都是他们的变形，比如：}\\
   x^4+4, \;\; x^4+y^4, \;\;x^4+\frac{1}{4}, \;\;x^4+x^2+1, x^4+4x^2+16\\
   [x^2+y^2+(x+y)^2]^2 = 2[x^4+y^4+(x+y)^4] \;\; \text{Candido's identity}\\
   (f_n^2+f_{n+1}^2+f_{n+2}^{2})^2=2(f_n^4+f_{n+1}^4+f_{n+2}^4) \;\;\text{Fibonacci number}\\
@@ -426,7 +426,7 @@ tips\footnote{比较大小，直接减}
  算术平均数在统计学中，较中位数、众数更少受到随机因素影响，缺点是更容易收到极端值的影响
  几何平均数多用于计算平均比率和平均速度。如: 平均利率、平均发展速度、平均合格率等，而且要求样本为正，几何平均数受极端值的影响较算术平均数小
 
- 当数据最终结果是一个和时，用算术平均数更合适，当数据最终结果是一个积时，用几何平均数更加合适
+ 当数据最终结果是一个和时，用算术平均数更合适，当数据最终结果是一个积时，用几何平均数更加合适，注意，几何平均数要求数据为正。
 
  \begin{minipage}{0.3\textwidth}
    \centering
@@ -458,25 +458,32 @@ tips\footnote{比较大小，直接减}
   \[(x_1^2+x_2^2+\cdots + x_n^2)(y_1^2+y_2^2+\cdots +y_n^2) \ge (x_1y_1+x_2y_2+\cdots x_ny_n)^2\]
   等式成立时存在实数$\lambda \in \mathbb{R}$，对于任意正整数$i\in \mathbb{N}$有$y_i=\lambda x_i$
 \end{mdframed}
+
+
 对于复数或者向量的大小关系，自然的选择就是其长度，也就是模，对于任意复数$z=x+iy$，其长度是$|z|=\sqrt{x^2+y^2}$,这是平方的意义，可作为模的平方。
 
-余弦定理：考虑三角形$\triangle ABC$, 三边的向量分别是$\vec{a} = \vv{AB}, \; \vec{b} = \vv{AC}, \; \vec{c}=\vv{CB}=\vec{a}-\vec{b}$,将余弦定理替换成向量可以表示为：
-\[
-  |\vec{a}^2| + |\vec{b}^2| -|\vec{a}^2- \vec{b}^2| = 2|\vec{a}||\vec{b}|\cos \theta \Rightarrow \vec{a} \cdot \vec{b}=|\vec{a}||\vec{b}|\cos \theta \le |\vec{a}||\vec{b}|
-\]
-告诉我们，两个向量的内积永远小于这两个向量长度的乘积
+\textbf{向量内积去记忆}柯西不等式：$\vec{a} \cdot \vec{b} = |\vec{a}| |\vec{b}| \cos \theta$, 其中$\vec{a}=(x_1,x_2,\cdots), \vec{b}=(y_1,y_2,\cdots)$，取等的时候，向量是平行的。也就是，两个向量的内积永远小于这两个向量长度的乘积。也可以用$(1a+1b)^2\le (1^2+1^2)(a^2+b^2) \Rightarrow (a+b)^2\le 2(a^2+b^2)$来记忆。
 
-所以用\textbf{向量内积去记忆}柯西不等式：$\vec{a} \cdot \vec{b} = |\vec{a}| |\vec{b}| \cos \theta$, 其中$\vec{a}=(x_1,x_2,\cdots), \vec{b}=(y_1,y_2,\cdots)$，取等的时候，向量是平行的
-
-Proof(实数域):\\
-构造$f(t)=(x_1t+y_i)^2+\cdots (x_nt+y_n)^2$, That is\\
+Proof(实数域): 构造$f(t)=(x_1t+y_1)^2+\cdots (x_nt+y_n)^2$, That is\\
 $f(t)=(x_1^2+x_2^2+\cdots +x_n^2)t^2+2(x_1y_1+x_2y_2+\cdots x_ny_n)+(y_1^2+y_2^2+\cdots y_n^2)$\\
 关于$t$的一元二次方程$f(t)=0$，对于任意实数$t \in \mathbb{R}$都有$f(t)\ge 0$，根据一元二次方程公式解有：
 $\Delta= 4(x_1y_1+x_2y_2+\cdots +x_ny_n)^2-4(x_1^2+x_2^2+\cdots x_n^2)(y_1^2+y_2^2+ \cdots y_n^2) \le 0 $，得证。\\
 另一方面：$\Delta =0$时，正好是有重根的情况，这时$x_1t+y_1=\cdots =x_nt+y_n=0$，得证。
-
 \subsection{反向柯西不等式？}
 $(x_1^2-x_2^2)(y_1^2-y_2^2) \le (x_1y_1-x_2y_2)^2$
+
+ \subsection{闵可夫斯基不等式}
+二维、三维闵可夫斯基不等式是几何中得“三角形两边之和大于第三边”的推广，退化为欧几里得距离公式。
+$$ \sqrt{x_1^2+x_2^2} + \sqrt{y_1^2+y_2^2} \ge \sqrt{(x_1+y_1)^2+(x_2+y_2)^2} $$
+$$ \sqrt{x_1^2+x_2^2+x_3^2} + \sqrt{y_1^2+y_2^2+y_3^2} \ge \sqrt{(x_1+y_1)^2+(x_2+y_2)^2+(x_3+y_3)^2} $$
+常用于形如：$\sqrt{(x-a)^2+b^2} + \sqrt{(x-c)^2+d^2}$的最小值，几何本质上就是两点之间线段最短。
+
+\subsection{琴生不等式}
+琴生不等式也被称为詹森不等式，是以丹麦数学家约翰·詹森(John Jensen)命名。
+
+$f(x)$在区间$[a,b]$上是凸函数，则有：
+$$ f\big(\frac{x_1+x_2+\cdots x_n}{n}\big) \ge \frac{f(x_1+x_2+\cdots x_n)}{n} $$
+当且仅当$x_1=x_2=\cdots =x_n$时取等。$f(x)$时凹函数时，不等号相反。
 
 \subsection{卡尔松不等式(Carleman's inequality)}
 \begin{mdframed}

@@ -20,6 +20,16 @@
 
 事实上，《几何原本》的命题都建议去自己去证明一下，会很有裨益。
 
+圆被定义为360度是人类历史、天文学和数学实用性共同演化的结果。
+
+古巴比伦发明并使用六十进制，不仅讲圆周划分为$6$个$60^{\circ}$，还进一步把小时划分为$60$分钟，分钟细分为$60$秒，这套系统被古希腊天文学家和数学家采纳并标准化。$360$在数学上是一个高度的合成数，有极多的因数，便于整除，从$1$到$10$除了$7$，都可以被整除。如果圆被定义为$100$度，那么三分就是$33.333\ldots$，选择$360\circ$也就是更容易被平分。
+
+虽然$360^{\circ}$在日常生活和航海等机器方便，但在现代高级数学和物理学（如微积分）中，科学家们更倾向于使用弧度制（Radian）。在弧度制中，一个完整的圆被定义为 2π，因为它是纯粹基于圆的半径和弧长计算出来的自然度量，不再依赖人类主观规定的数字。
+
+为什么一天是$24$个小时？人们最容易取得的计算工具是手指，一只手，去除大拇指，4根手指有12个指节，中国的“子丑寅卯 辰巳午未 申酉戌亥”也是12个。
+
+
+
 \clearpage
 \section{三角形}
 
@@ -123,7 +133,8 @@ $$\frac{a}{\sin \angle A} = \frac{b}{\sin \angle B} = \frac{c}{\sin \angle C}=2R
   \Rightarrow
     t^2(x+y)+xy(x+y)=a^2y+b^2x
 \]
-当$x=y$时，也即$AD$是中线时，也就是中位线定理：$2t^2+2x^2=a^2+b^2$\\
+当$x=y$时，也即$AD$是中线时，也就是中位线定理：$2t^2+2x^2=a^2+b^2$
+
 当$x/y=a/b$时，也就是$AD$是角平分线时，此时是内角平分线长度：$t^2=ab-xy$。
 
 如果$a=b, \; x=y$，也就是三角形为等腰时，$D$为底边中点时，等式就是勾股定理。
@@ -568,14 +579,6 @@ Proof\footnote{$\vv{AG}=2\vv{GD}=\vv{GC}+\vv{GB} \Rightarrow (x-x_1, y-y_1)=(x_2
 
 几何原本中没有现代的“四点共圆”的描述，相关的有命题\uppercase\expandafter{\romannumeral4}.22：圆内接四边形的对角之和等于两直角。命题\uppercase\expandafter{\romannumeral4}.5：可以为任何给定的三角形作外接圆。命题\uppercase\expandafter{\romannumeral3}.25：给定弧可以做出一个圆。
 
-圆被定义为360度是人类历史、天文学和数学实用性共同演化的结果。
-
-古巴比伦发明并使用六十进制，不仅讲圆周划分为$6$个$60^{\circ}$，还进一步把小时划分为$60$分钟，分钟细分为$60$秒，这套系统被古希腊天文学家和数学家采纳并标准化。$360$在数学上是一个高度的合成数，有极多的因数，便于整除，从$1$到$10$除了$7$，都可以被整除。如果圆被定义为$100$度，那么三分就是$33.333\ldots$，选择$360\circ$也就是更容易被平分。
-
-虽然$360^{\circ}$在日常生活和航海等机器方便，但在现代高级数学和物理学（如微积分）中，科学家们更倾向于使用弧度制（Radian）。在弧度制中，一个完整的圆被定义为 2π，因为它是纯粹基于圆的半径和弧长计算出来的自然度量，不再依赖人类主观规定的数字。
-
-为什么一天是$24$个小时？人们最容易取得的计算工具是手指，一只手，去除大拇指，4根手指有12个指节，中国的“子丑寅卯 辰巳午未 申酉戌亥”也是12个。
-
 \begin{exercise}
   求证：若凸四边形满足一组对角互补，那么四边形的四个点共圆。
 \end{exercise}
@@ -670,6 +673,10 @@ Proof\footnote{$\vv{AG}=2\vv{GD}=\vv{GC}+\vv{GB} \Rightarrow (x-x_1, y-y_1)=(x_2
   \textbf{【解析】}连接$AD$，如上图-右，已知$\angle 1=\angle 2$，那么$\triangle EBA\sim \triangle ECD$，$\angle 3= \angle 4$，$BE:AE=EC:ED$，所以$\triangle EAD \sim \triangle EBC$，进一步得$\angle 5=\angle 6, \; \angle 7 = \angle 8$。$\angle B+\angle D=\angle 3+\angle 6+\angle 7+\angle 2=\angle 3+\angle 5 +\angle 7 +\angle 1=180^{\circ}$。这就是说，四边形$ABCD$，对角互补，那么四点共圆，得证。\\
   Look，圆周角的逆定理的也可指向四边形对角互补。
 \end{solution}
+
+\clearpage
+\subsection{ExerciseSolutions}
+\printsolutions[section=true]
 
 \clearpage
 \section{直线}
@@ -979,6 +986,58 @@ $AB=2r\sin\theta$，只需找出最小外接圆半径即可， while $h\le r+r\c
 
 \clearpage
 \section{Exercises}
+ 平面几何一些常用辅助线：
+
+\textbf{中点：}1.大概率跟中位线有关，2.还有倍长中线(构造全等，得出平行)
+
+\begin{minipage}{0.7\textwidth}
+  \textbf{倍角：}比如一个角是另一个角得两倍，那么往外延伸大角，出来一个等腰，得出$1/2$角，这个常见。如果做大角得角平分线或者双倍角往往无从下手。如右图，已知$AB$的长，$M$是$BC$的中点，求$DM$长。作出辅助线后，可知$DM=EC/2-BC/2=AB/2$。当然，用三角函数也可以求出，何其难！
+  \end{minipage}
+\begin{minipage}{0.3\textwidth}
+  \centering
+  \begin{tikzpicture}[scale=1]
+    \tkzDefPoints{0/0/B, 3/0/C}
+    \tkzDefPointsBy[rotation=center B angle 60](C){A'}
+    \tkzDefPointsBy[rotation=center C angle -30](B){A''}
+    \tkzInterLL(B,A')(C,A'') \tkzGetPoint{A}
+    \tkzDefPointsBy[rotation=center B angle 120](A){E}
+    \tkzLabelAngle[pos=.7,  font=\scriptsize, red](A,C,B){$\theta$}
+    \tkzLabelAngle[pos=.4,  font=\scriptsize, red](C,B,A){$2\theta$}
+    \tkzDefPointOnLine[pos=0.5](B,C)  \tkzGetPoint{M}
+    \tkzDefPointsBy[projection=onto B--C](A){D}
+    \tkzMarkRightAngles[scale=0.8](A,D,C)
+    \tkzDrawSegments(A,B A,C B,C A,D)
+    \tkzDrawPoints(M)
+    \tkzDrawSegments[dashed](B,E A,E)
+    \tkzLabelPoints[above](A)
+    \tkzLabelPoints[](D,B,E,C,M)
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \textbf{截长补短、位置角：} \\比如出现求证$AB=BC+CF$之类，还有特殊，如右图：\\
+  等边三角形$ABC$，腰上动点$E,F$, $EB=2AF$，做等边$EFG$，求$\angle FCG$的度数。 围绕内部的等边作全等，可以延长$BA$至$F'$, $AF'=AF$，那么$EF'=FC$，$\triangle EFF' \cong \triangle FGC$.当然，也可以截取，$CA$上，取一点$E'$，使得$CE'=AF$，那么$EF'=AE$。
+
+  全等需要一个\textbf{等角}，也是常用，就是$\angle GFC+ \angle AFE=120^{\circ} = \angle AEF + \angle AFE \Rightarrow \angle AEF= \angle GFC$
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+  \centering
+  \begin{tikzpicture}[scale=1]
+    \tkzDefPoints{0/0/B, 3/0/C}
+    \tkzDefPointsBy[rotation=center B angle 60](C){A}
+    \tkzDefPointOnLine[pos=0.3](B,A)  \tkzGetPoint{E}
+    \tkzDefPointOnLine[pos=0.15](A,C)  \tkzGetPoint{F}
+    \tkzDefPointsBy[rotation=center E angle -60](F){G}
+    \tkzDrawSegments(A,B A,C B,C E,F C,G)
+    \tkzDrawPolygons(E,F,G)
+    \tkzLabelPoints[above](A)
+    \tkzLabelPoints[left](B,E)
+    \tkzLabelPoints[right](C,F)
+    \tkzLabelPoints[](G)
+  \end{tikzpicture}
+\end{minipage}
+
+\hrulefill
 
 \begin{exercise}
 在初中知识下：如果$\sin A=\sin B$，$A,B$是锐角，求证$A=B$
@@ -1347,6 +1406,120 @@ $AB=2r\sin\theta$，只需找出最小外接圆半径即可， while $h\le r+r\c
 \end{solution}
 
 \hrulefill
+ \begin{exercise}
+   \begin{minipage}{0.3\textwidth}
+     \centering
+     \begin{tikzpicture}[scale=1]
+       \tkzDefPoints{0/1/A, 0/0/B, 2.5/0/C}
+       \tkzDefPointsBy[rotation=center A angle 60](C){D}
+       \tkzDefPointsBy[rotation=center A angle 30](B){E'}
+       \tkzInterLL(A,E')(B,C) \tkzGetPoint{E}
+       \tkzMarkRightAngles[scale=0.8](A,B,C)
+       \tkzDrawSegments(A,B B,C A,C C,D A,D D,E A,E)
+       \tkzLabelPoints[above](A)
+       % \tkzLabelPoints[left](B)
+       \tkzLabelPoints[right](C,D)
+       \tkzLabelPoints(B,E)
+     \end{tikzpicture}
+   \end{minipage}
+   \begin{minipage}{0.7\textwidth}
+     如图：直角三角形$ABC$，$\angle ABC=90^{\circ}$，$AC=AD$，$\angle CAD = 2\angle BAE$，下面正确的结论是：\textcircled{\footnotesize 1}$AC \perp DE$, \textcircled{\footnotesize 2}$\angle BCA=\angle EDA$, \textcircled{\footnotesize 3}如果$CD\parallel AB$那么$\angle EAD=90^{\circ}$，\textcircled{\footnotesize 4}$DE=CE+2BE$
+   \end{minipage}
+\end{exercise}
+\begin{solution}
+  \begin{minipage}{0.7\textwidth}
+    \textbf{【解析】}如果按照1234的顺序去做，事倍功半。比如1毫无头绪，那就看2，乍一看$A,E,C,D$四点共圆，对角互补可求证，然后我们再做3、4，那么到4后，发现，之前的也没必要去那么麻烦去做。$\triangle E'AC \cong EAD$，一切迎刃而解。所以，对于填空或选择题来说，这类题型一定要从大局出发。
+  \end{minipage}
+  \begin{minipage}{0.3\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1]
+      \tkzDefPoints{0/1/A, 0/0/B, 2.5/0/C}
+      \tkzDefPointsBy[rotation=center A angle 60](C){D}
+      \tkzDefPointsBy[rotation=center A angle 30](B){E'}
+      \tkzInterLL(A,E')(B,C) \tkzGetPoint{E}
+      \tkzDefPointOnLine[pos=2](E,B)  \tkzGetPoint{E'}
+      \tkzMarkRightAngles[scale=0.8](A,B,C)
+      \tkzDrawSegments(A,B B,C A,C C,D A,D D,E A,E)
+      \tkzDrawSegments[dashed](B,E' A,E')
+      \tkzLabelPoints[above](A)
+      % \tkzLabelPoints[left](B)
+      \tkzLabelPoints[right](C,D)
+      \tkzLabelPoints(B,E,E')
+    \end{tikzpicture}
+  \end{minipage}
+\end{solution}
+
+\hrulefill
+
+ \begin{exercise}
+   \begin{minipage}{0.3\textwidth}
+     \centering
+     \begin{tikzpicture}[scale=1]
+       \tkzDefPoints{0/0/B, 2/0/C}
+       \tkzDefPointBy[rotation=center B angle 60](C) \tkzGetPoint{A}
+       \tkzDefPointOnLine[pos=1.5](B,A)  \tkzGetPoint{D}
+       \tkzDefPointBy[rotation=center D angle 120](C) \tkzGetPoint{E}
+       \tkzDrawSegments(A,B A,C B,C C,D D,E)
+       \tkzDrawSegment[add= 0 and 1.2](B,A)
+       \tkzDefPointOnLine[pos=.5](B,E)  \tkzGetPoint{F}
+       \tkzDrawSegments(A,B A,C B,C C,D B,E D,F)
+       \tkzDrawSegment[add= 0 and 0.7](B,A)
+       \tkzLabelPoints[left](A,B,D)
+       \tkzLabelPoints[right](E,F)
+       \tkzLabelPoints(C)
+     \end{tikzpicture}
+   \end{minipage}
+   \begin{minipage}{0.7\textwidth}
+     如图：三角形$ABC$为等边三角形，$D$为$BA$延长线一点，连接$CD$，$DC$绕$D$逆时针旋转$120^{\circ}$，得到$E$点，$F$为$BE$的中点，求$DF$和$DA$的数量关系，另，$DF$和$AC$平行吗？
+   \end{minipage}
+ \end{exercise}
+ \begin{solution}
+   \textbf{【解析】}乍一看，应该是$2$倍的关系，$\angle CDE=120^{\circ} \Rightarrow \angle EDA'=\angle ACD$，所以需要一个全等，又$F$是中点，所以，中位线定理再合适不过了，所以$D$应该是另一个边的中点，需要延长$BD$使得，$DB'=DB$，又需要一个全等，所以，需要一个$A'$使得$DA'=AB$，那么$\triangle A'DE \cong ACD$，$\triangle A'B'E$是等边三角形。
+
+   但是中位线定理之前，还有一个很重要的点，就是倍长中线，如下右图，延长$DF$使得$DF=FG$，那么$DBGE$就是一个平行四边形，直接找含有$DG,AD$的三角形全等比较困难，只能曲线救国，$\triangle BAG \cong \triangle CAD$，$\triangle ADG$ 是等边三角形。
+
+   \begin{minipage}{0.5\textwidth}
+     \centering
+     \begin{tikzpicture}[scale=1]
+       \tkzDefPoints{0/0/B, 2/0/C}
+       \tkzDefPointBy[rotation=center B angle 60](C) \tkzGetPoint{A}
+       \tkzDefPointOnLine[pos=1.5](B,A)  \tkzGetPoint{D}
+       \tkzDefPointOnLine[pos=2.5](B,A)  \tkzGetPoint{A'}
+       \tkzDefPointOnLine[pos=3](B,A)  \tkzGetPoint{B'}
+       \tkzDefPointBy[rotation=center D angle 120](C) \tkzGetPoint{E}
+       \tkzDrawSegments(A,B A,C B,C C,D D,E)
+       \tkzDrawSegment[add= 0 and 1.2](B,A)
+       \tkzDefPointOnLine[pos=.5](B,E)  \tkzGetPoint{F}
+       \tkzDrawSegments(A,B A,C B,C C,D B,E D,F D,B')
+       \tkzDrawSegments[dashed](B',E A',E)
+       \tkzDrawSegment[add= 0 and 0.7](B,A)
+       \tkzLabelPoints[left](A,B,D,A',B')
+       \tkzLabelPoints[right](E,F)
+       \tkzLabelPoints(C)
+     \end{tikzpicture}
+   \end{minipage}
+   \begin{minipage}{0.5\textwidth}
+     \centering
+     \begin{tikzpicture}[scale=1]
+       \tkzDefPoints{0/0/B, 2/0/C}
+       \tkzDefPointBy[rotation=center B angle 60](C) \tkzGetPoint{A}
+       \tkzDefPointOnLine[pos=1.5](B,A)  \tkzGetPoint{D}
+       \tkzDefPointBy[rotation=center D angle 120](C) \tkzGetPoint{E}
+       \tkzDrawSegments(A,B A,C B,C C,D D,E)
+       \tkzDrawSegment[add= 0 and 1.2](B,A)
+       \tkzDefPointOnLine[pos=.5](B,E)  \tkzGetPoint{F}
+       \tkzDefPointOnLine[pos=2](D,F)  \tkzGetPoint{G}
+       \tkzDrawSegments(A,B A,C B,C C,D B,E D,F)
+       \tkzDrawSegments[dashed](F,G E,G B,G A,G)
+       \tkzDrawSegment[add= 0 and 0.7](B,A)
+       \tkzLabelPoints[left](A,B,D)
+       \tkzLabelPoints[right](E,F,G)
+       \tkzLabelPoints(C)
+     \end{tikzpicture}
+   \end{minipage}
+ \end{solution}
+
+\hrulefill
 
 \begin{exercise}
   \begin{minipage}{0.3\textwidth}
@@ -1451,10 +1624,8 @@ $AB=2r\sin\theta$，只需找出最小外接圆半径即可， while $h\le r+r\c
       \tkzDrawSegments(A,B B,C A,C A,D C,E)
       \tkzLabelPoints(B,C,D,E)
       \tkzLabelPoints[above right](A)
-
       \tkzMarkAngles[scale=0.8](C,E,A)
       \tkzLabelAngle[pos=1.4, red, scale=0.8](C,E,A){$45^{\circ}$}
-
       \tkzMarkAngles[size=1.2, mark=|](A,C,E)
       \tkzMarkAngles[size=1.2, mark=|](E,C,B)
 

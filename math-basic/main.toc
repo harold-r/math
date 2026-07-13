@@ -39,7 +39,9 @@
 \contentsline {subsection}{\numberline {21.1}算术-几何平均值不等式}{28}{subsection.21.1}%
 \contentsline {subsection}{\numberline {21.2}柯西不等式(Cauchy–Schwarz inequality)}{28}{subsection.21.2}%
 \contentsline {subsection}{\numberline {21.3}反向柯西不等式？}{29}{subsection.21.3}%
-\contentsline {subsection}{\numberline {21.4}卡尔松不等式(Carleman's inequality)}{29}{subsection.21.4}%
+\contentsline {subsection}{\numberline {21.4}闵可夫斯基不等式}{29}{subsection.21.4}%
+\contentsline {subsection}{\numberline {21.5}琴生不等式}{29}{subsection.21.5}%
+\contentsline {subsection}{\numberline {21.6}卡尔松不等式(Carleman's inequality)}{29}{subsection.21.6}%
 \contentsline {section}{\numberline {22}三角函数(Trigonometric functions)}{30}{section.22}%
 \contentsline {section}{\numberline {23}绝对值}{32}{section.23}%
 \contentsline {subsection}{\numberline {23.1}最值}{32}{subsection.23.1}%
@@ -64,6 +66,7 @@
 \contentsline {subsection}{\numberline {27.6}垂心}{43}{subsection.27.6}%
 \contentsline {subsection}{\numberline {27.7}Summary}{43}{subsection.27.7}%
 \contentsline {section}{\numberline {28}圆}{44}{section.28}%
+\contentsline {subsection}{\numberline {28.1}ExerciseSolutions}{45}{subsection.28.1}%
 \contentsline {section}{\numberline {29}直线}{46}{section.29}%
 \contentsline {subsection}{\numberline {29.1}斜率(slope)}{46}{subsection.29.1}%
 \contentsline {subsection}{\numberline {29.2}点到直线的距离}{46}{subsection.29.2}%
@@ -74,12 +77,12 @@
 \contentsline {subsection}{\numberline {31.1}费马点(Fermat point)}{48}{subsection.31.1}%
 \contentsline {subsection}{\numberline {31.2}探照灯模型- 定角定高}{49}{subsection.31.2}%
 \contentsline {section}{\numberline {32}Exercises}{50}{section.32}%
-\contentsline {subsection}{\numberline {32.1}Solutions}{53}{subsection.32.1}%
-\contentsline {part}{V\hspace {1em}MISC}{58}{part.5}%
-\contentsline {section}{\numberline {33}prelude}{58}{section.33}%
-\contentsline {section}{\numberline {34}最值}{59}{section.34}%
-\contentsline {subsection}{\numberline {34.1}三角函数}{59}{subsection.34.1}%
-\contentsline {subsection}{\numberline {34.2}柯西}{60}{subsection.34.2}%
-\contentsline {subsection}{\numberline {34.3}misc}{60}{subsection.34.3}%
-\contentsline {section}{\numberline {35}根式方程、根式化简、指数方程}{61}{section.35}%
-\contentsline {section}{\numberline {36}misc}{61}{section.36}%
+\contentsline {subsection}{\numberline {32.1}Solutions}{54}{subsection.32.1}%
+\contentsline {part}{V\hspace {1em}MISC}{60}{part.5}%
+\contentsline {section}{\numberline {33}prelude}{60}{section.33}%
+\contentsline {section}{\numberline {34}最值}{61}{section.34}%
+\contentsline {subsection}{\numberline {34.1}三角函数}{61}{subsection.34.1}%
+\contentsline {subsection}{\numberline {34.2}柯西}{62}{subsection.34.2}%
+\contentsline {subsection}{\numberline {34.3}misc}{62}{subsection.34.3}%
+\contentsline {section}{\numberline {35}根式方程、根式化简、指数方程}{63}{section.35}%
+\contentsline {section}{\numberline {36}misc}{63}{section.36}%
