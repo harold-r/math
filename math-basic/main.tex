@@ -14,9 +14,10 @@
 \setlist{nosep}                 % remove all vertical spaces in all lists
 \usepackage[a]{esvect}          % vector arrow, [a] is arrow style, then use \vv{}
 \usepackage{tabularray}         % tabular&array, modern one
+\usepackage{pifont}             % ding{172-181} is number 1 with circle
 
 \graphicspath{{images/}}
-\usepackage[a4paper, top=10mm, bottom=20mm, left=20mm, right=20mm]{geometry} %page dimension
+\usepackage[a4paper, top=14mm, bottom=13mm, left=20mm, right=20mm]{geometry} %page dimension
 \usepackage[hang,flushmargin]{footmisc} %footnote no indent
 \interfootnotelinepenalty=10000
 %%%%%%%%%%%%%%%%%%%%%%%% End Packages %%%%%%%%%%%%%%%%
@@ -52,9 +53,14 @@
 \setlength{\parskip}{0.5em}  % paragragh spacing or use \bigskip \medskip \smallskip in contenty
 \newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
 \linespread{1.2} % line spacing
+
 \usepackage{fancyhdr}
-\pagestyle{plain}
+\pagestyle{fancy}
 \fancyhf{} % Clear headers/footers
+\fancyhead[R]{\footnotesize{\leftmark}}  % 偶数页左侧显示章标题
+% \fancyhead[RO]{\rightmark} % 奇数页右侧显示节标题
+\fancyfoot[C]{\thepage}    % 页脚居中显示页码
+
 
 \title{MATH} \author{zhb} \date{2025}
 %%%%%%%%%%%%%%%%%%%%%%%% End MISC %%%%%%%%%%%%%%%%%%%%

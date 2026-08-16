@@ -120,7 +120,7 @@ Proof2(欧几里得)：\\
 
 向量指具有大小和方向的量，用$\vec{a}$表示，basic vectors: $\hat{\imath}$ and $\hat{\jmath}$
 
-"Span" is the set of all linear combinations: $a\vec{i}+b\vec{j}$
+``Span'' is the set of all linear combinations: $a\vec{i}+b\vec{j}$
 
 向量正统的表示为 $\bigl[ \begin{smallmatrix}  x\\y \end{smallmatrix} \bigr]$，有时候(x,y), $(x,y)^{T}$, $[x,y]^T$。In $\mathbb{R}^2$ coordinate is $\bigl[ \begin{smallmatrix} x\\y \end{smallmatrix} \bigr]$, In $\mathbb{R}^3$ coordinate is $ \bigl[ \begin{smallmatrix} x\\y\\z \end{smallmatrix} \bigr]$ and so on and on
 
@@ -151,7 +151,7 @@ Let $\vec a=\left[a_1,a_2,\cdots a_n\right], \; \vec b=\left[b_1,b_2, \cdots b_n
 
 \textbf{代数定义：}$\vec a \cdot \vec b = \sum_{i=1}^na_ib_i=a_1b_1+a_2b_2+\cdots a_nb_n$
 
-\textbf{几何定义:}$\vec a \cdot \vec b=||\vec a|| \, ||\vec b|| \cos \theta$
+\textbf{几何定义：}$\vec a \cdot \vec b=||\vec a|| \, ||\vec b|| \cos \theta$
 
 根据代数定义或者几何定义都有：\bm{$\vec v \cdot \vec v=|\vec v|^2$}，这个也是两种定义等价的证明的关键。
 
@@ -436,9 +436,11 @@ tips\footnote{比较大小，直接减}
      \tkzInterLC(D,D')(B,C) \tkzGetPoints{E}{E'}
      \tkzDrawSegments(A,C D,E)
      \tkzDrawSegments[dashed](A,E C,E)
-     \tkzLabelSegment[above, midway, red](A,D){a}
-     \tkzLabelSegment[above, midway, red](D,C){b}
-     \tkzLabelSegment[right, midway, red](D,E){$\sqrt{ab}$}
+     \begin{scope}[dim style/.style={dashed,red}]
+       \tkzDrawSegment[dim={$a$,-6pt,}](A,D)
+       \tkzDrawSegment[dim={$b$,-6pt,}](D,C)
+       \tkzDrawSegment[dim={$\sqrt{ab}$,6pt,}](E,D)
+     \end{scope}
    \end{tikzpicture}
  \end{minipage}
  \begin{minipage}{0.7\textwidth}
@@ -599,7 +601,7 @@ $f(x) = |x-a_1| + |x-a_2|+ |x-a_3| + \cdots + |x-a_{n}| $
 
 平移大致分为两种，关键在于\textbf{新旧坐标系的确定}：
 
-\textbf{1. 函数的平移：}也就是点或者图像在原坐标系中的平移\\
+\textbf{1. 函数图像的平移：}也就是点或者图像在原坐标系中的平移\\
 此种情况，还是在原有的坐标系内，比如函数$y=x^2$，如果往上一个单位，在原坐标系内$y'=y+1 \rightarrow y=y'-1$，函数图像就变为$y'=x'^2+1$。\\
 也就是如果现有的$(x,y)$，移动$h,k$后，注意，现在$h,k$是数值($h$是横向移动，如果是正的就是往右，如果是负的就是往左，$k$是竖向移动，同理)不是坐标，$(0,0)$移至$(h,k)$也讲得通，注意不是移动原点，坐标系的原点并没有动，这里是讲，相对的位置变化。那么新的坐标$(x', y')$满足$x+h=x', y+k=y'$，原函数为$y=f(x)$，那么新的就是$y'-k=f(x'-h)$。
 
@@ -613,24 +615,24 @@ $(0,0) \rightarrow (h,k)$, $(x,y) \rightarrow (x', y')$，对比之下，也就�
 
 起初让我困惑的是，$(x',y')$到底在哪个坐标系呢，原方程在哪个坐标系内hold。其实，移动图像$(x',y')$还在原坐标系，只有移动坐标系才有新坐标系，坐标原点才会变化。但是无论哪种平移，$(x,y)$和$x',y'$是\textbf{数值对应上的关系}，把原方程看作纯代数，不用管坐标系，直接纯代数代入即可。也就是如果是移动图像，那么$(x',y')$是在原坐标系内的新坐标，$x'=x+h; y=y'+k \Rightarrow $ \fbox{$x=x'-h;y=y'-k$}；如果是移动坐标系，那么$(x',y')$是新坐标系内的新坐标，$x'=x-h, y'=y-h \Rightarrow $ \fbox{$x=x'+h; y=y'+k$}。
 
-\textbf{记忆大法:新加 \; 坡}，也就是移动坐标系，事关重大，连根都变了，想到新加坡($x=x'+h, y=y'+k$)，移动图像就是相反的，也比较直观，要用减法($x=x'-h, y=y'-k$)。
+\textbf{记忆大法:新加坡}，新+ = 破(旧)，也就是移动坐标系，事关重大，连根都变了，想到新加坡($x=x'+h, y=y'+k$)，移动图像就是相反的，也比较直观，没必要此法去记，直接写出新旧数量关系即可。
 
 其实，按照图像平移去记忆就ok了，下面的旋转也是。
 
 \subsection{缩放scale}
-核心还是一样的，新旧坐标的数量关系。
+核心还是一样的，新旧的数量关系。
 
 \subsection{旋转rotation}
 旋转的变化用极坐标既直接又简单，当然，直角坐标系作图也可以。这里用极坐标来推导。
 
-直角坐标系转化为以原点为极点，$x$轴为极轴的极坐标，对应关系就是$x=\rho \cos \theta, y=\rho \sin \theta$。我们把函数逆时针旋转$\psi$度，这是对应的新的$x', y'$有：
+直角坐标系转化为以原点为极点，$x$轴为极轴的极坐标，对应关系就是$x=\rho \cos \theta, y=\rho \sin \theta$。我们把函数\textbf{逆时针}旋转$\psi$度，这是对应的新的$x', y'$有：
 {
  \setlength{\mathindent}{0em}
 \[
   \left\{
     \begin{aligned}
-      x'=\rho \cos(\theta + \psi)=\rho \cos\theta\cos\psi-\rho \sin\theta\sin\psi=x\cos\psi-y\sin\psi\\
-      y'=\rho \sin(\theta + \psi)=\rho \sin\theta\cos\psi+\rho \cos\theta\sin\psi=y\cos\psi+x\sin\psi
+      x'&=\rho \cos(\theta + \psi)=\rho \cos\theta\cos\psi-\rho \sin\theta\sin\psi=x\cos\psi-y\sin\psi\\
+      y'&=\rho \sin(\theta + \psi)=\rho \sin\theta\cos\psi+\rho \cos\theta\sin\psi=y\cos\psi+x\sin\psi
     \end{aligned}
   \right.
   \Rightarrow
@@ -642,7 +644,32 @@ $(0,0) \rightarrow (h,k)$, $(x,y) \rightarrow (x', y')$，对比之下，也就�
   \right.
 \]
 }
-这里有几个特例，比如旋转$90^{\circ}, 180^{\circ}, 270^{\circ}$。\\
+这里有几个特例，比如逆时针旋转$90^{\circ}, 180^{\circ}, 270^{\circ}(-90^{\circ})$。
+{
+ \setlength{\mathindent}{0em}
+\[
+  \left\{
+    \begin{aligned}
+      x'&=-y\\
+      y'&=x
+    \end{aligned}
+  \right.
+  \phantom{xxxxxx}
+  \left\{
+    \begin{aligned}
+      x'&=-x\\
+      y'&=-y
+    \end{aligned}
+  \right.
+  \phantom{xxxxxx}
+  \left\{
+    \begin{aligned}
+      x'&=y\\
+      y'&=-x
+    \end{aligned}
+  \right.
+\]
+}
 注意上面是旋转图像，如果旋转坐标系呢，那就是相反的方向，也就是$-\psi$：
 {
  \setlength{\mathindent}{0em}
@@ -729,7 +756,7 @@ $y'=kx'$，联立方程：
      \phantom{xx}\frac{x_1+x_2+\cdots x_n+y_1+y_2+\cdots y_n}{2n}=\frac{1}{2}\left(\frac{x_1+x_2+\cdots x_n}{n}+\frac{y_1+y_2+\cdots y_n}{n}\right)\\
      \ge \frac{1}{2}(\sqrt[n]{x_1x_2\cdots x_n}+\sqrt[n]{y_1y_2\cdots y_n}) \ge \sqrt{\sqrt[n]{x_1x_2\cdots x_n} \sqrt[n]{y_1y_2\cdots y_n}}=\sqrt[2n]{x_1x_2\cdots x_ny_1y_2\cdots y_n}
    \end{multline*}
-   即：$P_{2n}$成立。现在证明，$P_n$成立，那么$P_{n-1}$成立。
+   即：$P_{2n}$成立。现在证明：$P_n$成立，那么$P_{n-1}$成立。
 
    证明过程：$n-1$个正实数$x_1,x_2\cdots x_{n-1}$, 设$A_{n-1}=(x_1+x_2+\cdots x_{n-1})/(n-1), \; G_{n-1}=\sqrt[n-1]{x_1x_2\cdots x_{n-1}}$，由于$P_n$成立，可得：
 

@@ -30,7 +30,7 @@ e.g. $gcd(3,9)=3$ , $gcd(-3,9)=3$
 $0!$规定为$1$
 
 充分必要、充分、必要 条件：不妨用丘比特之箭(Cupid's arrow)来记忆。\\
-\textcolor{red}{\textbf{$\to Q \to$}}(本想一个箭头穿过字母Q，无奈不好打出来，丘比特的英文首字母是C)，前充分后必要。也就是，if $P\to Q$，$Q$的充分条件是$P$($P$是$Q$的充分条件)，if $Q\to P$，$Q$的必要条件是$P$($P$是$Q$的必要条件)，瞧，说法不一样，味道也不太一样。以$Q$为主语最好，能推出$Q$的是充分条件，$Q$能推出的是必要条件。
+\textcolor{red}{\textbf{$\to Q \to$}}(本想一个箭头穿过字母Q，无奈不好打出来，虽然丘比特的英文首字母是C)，前充分后必要。也就是，if $P\to Q$，$Q$的充分条件是$P$($P$是$Q$的充分条件)，if $Q\to P$，$Q$的必要条件是$P$($P$是$Q$的必要条件)，瞧，说法不一样，味道也不太一样。以$Q$为主语最好，能推出$Q$的是充分条件，$Q$能推出的是必要条件。记忆的时候最好不要有$P$干扰。
 \clearpage
 \part{Part2 }
 
@@ -42,7 +42,7 @@ Fundamental theorem of arithmetic, also called unique factorization theorem(正�
   $ n = p_1^{n_1}p_2^{n_2}\cdots p_k^{n_k} = \prod_{i=1}^kp_i^{n_i}$, where $p_1<p_2\ldots <p_k$ are primes, $n_i$ are positive integers
 \end{mdframed}
 Since $a^0=1$, any positive integer can be uniquely represented as an infinite product taken over all the positive prime numbers, as
-\[ n = 2^{n_1}3^{n_2}5^{n_3}7^{n_4}\cdots = \prod_{i=1}^{\infty}P_i^{n_i} \]
+$$ n = 2^{n_1}3^{n_2}5^{n_3}7^{n_4}\cdots = \prod_{i=1}^{\infty}P_i^{n_i} $$
 
 每个大于1的自然数，要么本身就是素数，要么可以写为2个或以上的素数的积，而且这些素因子按大小排列之后，写法仅有一种方式。例如： $ 1200 = 2^4\cdot 3 \cdot 5^2$
 
@@ -153,13 +153,13 @@ $\Rightarrow a_{n}p^{n}+ a_{n-1}p^{n-1}q+\cdots +a_1pq^{n-1}+ a_{0}q^{n} = 0$\\
 \[
   \Rightarrow
   \begin{cases}
-  p(a_{n}p^{n-1}+a_{n-1}qp^{n-2}+\cdots +a_1q^{n-1}) = -a_{0}q^{n} \;\;\; \Rightarrow ()=-a_{0}\frac{q^{n}}{p}\\
-  q(a_{n-1}p^{n-1}+a_{n-2}qp^{n-2}+\cdots +a_{0}q^{n-1}) = -a_{n}p^{n} \Rightarrow ()=-a_{n}\frac{p^{n}}{q}
+  p(a_{n}p^{n-1}+a_{n-1}qp^{n-2}+\cdots +a_1q^{n-1}) = -a_{0}q^{n} \;\;\; \Rightarrow ()=-a_{0}\frac{q^{n}}{p} =-\frac{a_0}{p}q^n\\
+  q(a_{n-1}p^{n-1}+a_{n-2}qp^{n-2}+\cdots +a_{0}q^{n-1}) = -a_{n}p^{n} \Rightarrow ()=-a_{n}\frac{p^{n}}{q} = -\frac{a_n}{q}p^n
   \end{cases}
 \]
 }
 
-我们注意到，\textbf{括弧内是整数}，因为$a_{i}$是整数，所以这是关键。
+我们注意到，\textbf{括弧内是整数}，因为$a_{i}$是整数，这是关键。
 \[\frac{p}{q} = \pm \frac{a_0\text{的因子}}{a_n\text{的因子}},\;\; p,q\text{互质} \]
 
 注意$p, q$为$1$的特殊情况，显而易见$\pm 1$永远是第一优选择
@@ -169,7 +169,7 @@ $\Rightarrow a_{n}p^{n}+ a_{n-1}p^{n-1}q+\cdots +a_1pq^{n-1}+ a_{0}q^{n} = 0$\\
 2. 如存在有理根，此根则必符合此定理，否则存在无理根(如$\sqrt{89}$)亦或复数根
 
 Examples:\\
-$x^3-7x+6=0$，有理根有可能是：$\pm \frac{\{1,2,3,6\}}{1}=\pm {1, 2, 3, 6}$，恰好$1, 2, -3$，所以也恰好可以写为：$(x-1)(x-2)(x+3)=0$。另，如果只看出$1$是一个根，根据欧几里得算法，可以凑出一个含有$x-1$的因式，那么剩下的肯定也能分解为含$x-1$的因式，这里可以凑成$x^3-x-6x+6$，也可以凑成$x^3-1-7x+7$.
+$x^3-7x+6=0$，有理根有可能是：$\pm \frac{\{1,2,3,6\}}{1}=\pm {1, 2, 3, 6}$，恰好$1, 2, -3$，所以也恰好可以写为：$(x-1)(x-2)(x+3)=0$。另，如果只看出$1$是一个根，根据欧几里得算法，可以凑出一个含有$x-1$的因式，那么剩下的肯定也能分解为含$x-1$的因式，这里可以凑成$(x^3-x)-(6x-6)$，也可以凑成$(x^3-1)-(7x-7)$.
 
 $3x^3-5x^2+5x-2=0$, 如果有有理根，则必在$\pm \frac{1,2}{1,3}=\pm{1,2, \frac{1}{3}, \frac{2}{3}}$中。8个候选根，需要测试8次，最后才知道$x=2/3$是唯一有理根.\\
 很是繁琐不是？所以可以通过评估$P(r)$来测试缩小范围(比如使用秦九韶算法?)。\\
@@ -276,19 +276,21 @@ Let $t$为$a,b$的一个公因数，then $t|a,\; t|b, \;t|qb$, $r=a-qb$. $\becau
 $\because s|(qb+r)$, i.e.  $s|a$, $\therefore \; s$也是$a,b$的公因数。\\
 So $a,b$的全体公因数和$b,r$的全体公因数是一致的，故它们有共同的最大公因数。
 
-\begin{tikzpicture}
-  \draw[|-|, ultra thick] (0,1)--(12,1);
-  \node[anchor=south] at (6,1) {$a$};
-  \draw[|-|, thick] (0,0)--(2,0);
-  \draw[-|, thick] (2,0)--(4,0);
-  \draw[dashed] (4,0)--(9,0);
-  \draw[|-|, thick] (9,0)--(11,0);
-  \draw[-|, thick] (11,0)--(12,0);
-  \node[anchor=south] at (1,0) {$b$};
-  \node[anchor=south] at (3,0) {$b$};
-  \node[anchor=south] at (10,0) {$b$};
-  \node[anchor=south] at (11.5,0) {$r$};
-\end{tikzpicture}
+\begin{center}
+  \begin{tikzpicture}
+    \draw[|-|, ultra thick] (0,1)--(12,1);
+    \node[anchor=south] at (6,1) {$a$};
+    \draw[|-|, thick] (0,0)--(2,0);
+    \draw[-|, thick] (2,0)--(4,0);
+    \draw[dashed] (4,0)--(9,0);
+    \draw[|-|, thick] (9,0)--(11,0);
+    \draw[-|, thick] (11,0)--(12,0);
+    \node[anchor=south] at (1,0) {$b$};
+    \node[anchor=south] at (3,0) {$b$};
+    \node[anchor=south] at (10,0) {$b$};
+    \node[anchor=south] at (11.5,0) {$r$};
+  \end{tikzpicture}
+\end{center}
 
 上图，我们从丈量的角度也理解。能同时丈量$a,b$的线段，都能够量尽$b,r$，反之亦然。
 
@@ -424,7 +426,7 @@ $\to$
     \tkzDefPointsBy[projection=onto B--C](D){D'}
     \tkzDrawSegments[dashed](A,C B,D A,D C,D A,A' D,D')
     \tkzLabelSegments[left,midway](A,B){$a$}
-    \tkzLabelSegments[midway,above](B,C){$b$}
+    \tkzLabelSegments[midway](A,D){$b$}
     \tkzLabelSegments[pos=0.6,above](A,C){$c$}
     \tkzMarkAngles[size=.3, mksize=2pt](C,B,A)
     \tkzLabelAngle[scale=.7, pos=0.7, red](C,B,A){$\theta$}
